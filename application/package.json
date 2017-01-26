@@ -1,0 +1,44 @@
+{
+  "name": "hp_newsfeeds_application",
+  "version": "1.0.0",
+  "description": "An application that provides uses with daily news content",
+  "main": "./app/app.js",
+  "scripts": {
+    "debug": "./node_modules/.bin/electron .",
+    "clean": "rm -rf ./dist",
+    "clean-win32": "rm -rf ./dist/win32",
+    "clean-linux": "rm -rf ./dist/linux",
+    "clean-macos": "rm -rf ./dist/macOS",
+    "clean-uwp": "rm -rf ./dist/uwp",
+    "build-win32-all": "./node_modules/.bin/electron-packager . Project_Pluto_Mk2 --platform=win32 --arch=all --out=dist/win32 --ignore=dist --overwrite",
+    "build-win32-32": "./node_modules/.bin/electron-packager . Project_Pluto_Mk2 --platform=win32 --arch=ia32 --out=dist/win32 --ignore=dist --overwrite",
+    "build-win32-64": "./node_modules/.bin/electron-packager . Project_Pluto_Mk2 --platform=win32 --arch=x64 --out=dist/win32 --ignore=dist --overwrite",
+    "build-linux-all": "./node_modules/.bin/electron-packager . Project_Pluto_Mk2 --platform=linux --arch=all --out=dist/linux --ignore=dist --overwrite",
+    "build-linux-32": "./node_modules/.bin/electron-packager . Project_Pluto_Mk2 --platform=linux --arch=ia32 --out=dist/linux --ignore=dist --overwrite",
+    "build-linux-64": "./node_modules/.bin/electron-packager . Project_Pluto_Mk2 --platform=linux --arch=x64 --out=dist/linux --ignore=dist --overwrite",
+    "build-linux-armv7": "./node_modules/.bin/electron-packager . Project_Pluto_Mk2 --platform=linux --arch=armv7l --out=dist/linux --ignore=dist --overwrite",
+    "build-macos-all": "npm run build-macos-norm && npm run build-macos-mas --out=dist/macOS --ignore=dist --overwrite",
+    "build-macos-norm": "./node_modules/.bin/electron-packager . Project_Pluto_Mk2 --platform=darwin --arch=all --out=dist/macOS --ignore=dist --overwrite",
+    "build-macos-mas": "./node_modules/.bin/electron-packager . Project_Pluto_Mk2 --platform=mas --arch=all --out=dist/macOS --ignore=dist --overwrite",
+    "build-uwp-all": "./node_modules/.bin/electron-packager .",
+    "build-uwp-32": "./node_modules/.bin/electron-packager .",
+    "build-uwp-64": "./node_modules/.bin/electron-packager .",
+    "build-all": "npm run build-win32-all && npm run build-linux-all && npm run build-macos-all"
+  },
+  "author": "Ashley Chapman (B00240396)",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.4.14",
+    "electron-packager": "^8.5.0",
+    "electron-windows-store": "^0.7.4"
+  },
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-aria": "^1.6.1",
+    "angular-material": "^1.1.1",
+    "angular-material-icons": "^0.7.1",
+    "angular-messages": "^1.6.1",
+    "svg-morpheus": "^0.3.0"
+  }
+}

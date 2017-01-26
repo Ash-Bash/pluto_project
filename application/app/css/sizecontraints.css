@@ -1,0 +1,780 @@
+@media only screen and (min-width: 0px) and (min-height :0px) {
+  @include sm-iot(){
+        @include define-breakpoint("sm-iot");
+  }
+  body:after {
+    content: "sm-iot";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: visible;
+  }
+  #sm_mobile_testheader {
+    visibility: hidden;
+  }
+  #m_mobile_testheader {
+    visibility: hidden;
+  }
+  #l_mobile_testheader {
+    visibility: hidden;
+  }
+  #xl_mobile_testheader {
+    visibility: hidden;
+  }
+  #portait_tablet_testheader {
+    visibility: hidden;
+  }
+  #landscape_tablet_testheader {
+    visibility: hidden;
+  }
+  #m_desktop_testheader {
+    visibility: hidden;
+  }
+  #l_desktop_testheader {
+    visibility: hidden;
+  }
+  #xl_desktop_testheader {
+    visibility: hidden;
+  }
+  #xxl_desktop_testheader {
+    visibility: hidden;
+  }
+
+  #HomeTab {
+    visibility: visible;
+  }
+  #AllNewsTab {
+    visibility: hidden;
+  }
+  #MyFeedsTab {
+    visibility: hidden;
+  }
+  #FavoritesTab {
+    visibility: visible;
+  }
+  #FavoritesStandaloneTab {
+    visibility: hidden;
+  }
+  #ReadLaterTab {
+    visibility: hidden;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 320px) and (min-height :480px) {
+  @include sm-mobile(){
+        @include define-breakpoint("sm-mobile");
+  }
+  body:after {
+    content: "sm-mobile";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: hidden;
+  }
+  #sm_mobile_testheader {
+    visibility: visible;
+  }
+  #m_mobile_testheader {
+    visibility: hidden;
+  }
+  #l_mobile_testheader {
+    visibility: hidden;
+  }
+  #xl_mobile_testheader {
+    visibility: hidden;
+  }
+  #portait_tablet_testheader {
+    visibility: hidden;
+  }
+  #landscape_tablet_testheader {
+    visibility: hidden;
+  }
+  #m_desktop_testheader {
+    visibility: hidden;
+  }
+  #l_desktop_testheader {
+    visibility: hidden;
+  }
+  #xl_desktop_testheader {
+    visibility: hidden;
+  }
+  #xxl_desktop_testheader {
+    visibility: hidden;
+  }
+
+  #HomeTab {
+    visibility: visible;
+  }
+  #AllNewsTab {
+    visibility: hidden;
+  }
+  #MyFeedsTab {
+    visibility: hidden;
+  }
+  #FavoritesTab {
+    visibility: visible;
+  }
+  #FavoritesStandaloneTab {
+    visibility: hidden;
+  }
+  #ReadLaterTab {
+    visibility: hidden;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 320px) and (min-height: 568px) {
+  @include m-mobile(){
+        @include define-breakpoint("m-mobile");
+  }
+  body:after {
+    content: "m-mobile";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: hidden;
+  }
+  #sm_mobile_testheader {
+    visibility: hidden;
+  }
+  #m_mobile_testheader {
+    visibility: visible;
+  }
+  #l_mobile_testheader {
+    visibility: hidden;
+  }
+  #xl_mobile_testheader {
+    visibility: hidden;
+  }
+  #portait_tablet_testheader {
+    visibility: hidden;
+  }
+  #landscape_tablet_testheader {
+    visibility: hidden;
+  }
+  #m_desktop_testheader {
+    visibility: hidden;
+  }
+  #l_desktop_testheader {
+    visibility: hidden;
+  }
+  #xl_desktop_testheader {
+    visibility: hidden;
+  }
+  #xxl_desktop_testheader {
+    visibility: hidden;
+  }
+
+  #HomeTab {
+    visibility: visible;
+  }
+  #AllNewsTab {
+    visibility: hidden;
+  }
+  #MyFeedsTab {
+    visibility: hidden;
+  }
+  #FavoritesTab {
+    visibility: visible;
+  }
+  #FavoritesStandaloneTab {
+    visibility: hidden;
+  }
+  #ReadLaterTab {
+    visibility: hidden;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 375px) and (min-height: 640px) {
+  @include l-mobile(){
+        @include define-breakpoint("l-mobile");
+  }
+  body:after {
+    content: "l-mobile";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: hidden;
+  }
+  #sm_mobile_testheader {
+    visibility: hidden;
+  }
+  #m_mobile_testheader {
+    visibility: hidden;
+  }
+  #l_mobile_testheader {
+    visibility: visible;
+  }
+  #xl_mobile_testheader {
+    visibility: hidden;
+  }
+  #portait_tablet_testheader {
+    visibility: hidden;
+  }
+  #landscape_tablet_testheader {
+    visibility: hidden;
+  }
+  #m_desktop_testheader {
+    visibility: hidden;
+  }
+  #l_desktop_testheader {
+    visibility: hidden;
+  }
+  #xl_desktop_testheader {
+    visibility: hidden;
+  }
+  #xxl_desktop_testheader {
+    visibility: hidden;
+  }
+
+  #HomeTab {
+    visibility: visible;
+  }
+  #AllNewsTab {
+    visibility: hidden;
+  }
+  #MyFeedsTab {
+    visibility: hidden;
+  }
+  #FavoritesTab {
+    visibility: visible;
+  }
+  #FavoritesStandaloneTab {
+    visibility: hidden;
+  }
+  #ReadLaterTab {
+    visibility: hidden;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 414px) and (min-height: 732px) {
+  @include xl-mobile(){
+        @include define-breakpoint("lx-mobile");
+  }
+  body:after {
+    content: "xl-mobile";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: hidden;
+  }
+  #sm_mobile_testheader {
+    visibility: hidden;
+  }
+  #m_mobile_testheader {
+    visibility: hidden;
+  }
+  #l_mobile_testheader {
+    visibility: hidden;
+  }
+  #xl_mobile_testheader {
+    visibility: visible;
+  }
+  #portait_tablet_testheader {
+    visibility: hidden;
+  }
+  #landscape_tablet_testheader {
+    visibility: hidden;
+  }
+  #m_desktop_testheader {
+    visibility: hidden;
+  }
+  #l_desktop_testheader {
+    visibility: hidden;
+  }
+  #xl_desktop_testheader {
+    visibility: hidden;
+  }
+  #xxl_desktop_testheader {
+    visibility: hidden;
+  }
+
+  #HomeTab {
+    visibility: visible;
+  }
+  #AllNewsTab {
+    visibility: hidden;
+  }
+  #MyFeedsTab {
+    visibility: hidden;
+  }
+  #FavoritesTab {
+    visibility: visible;
+  }
+  #FavoritesStandaloneTab {
+    visibility: hidden;
+  }
+  #ReadLaterTab {
+    visibility: hidden;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  @include portait_tablet(){
+        @include define-breakpoint("portait_tablet");
+  }
+  body:after {
+    content: "portait-tablet";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: hidden;
+  }
+  #sm_mobile_testheader {
+    visibility: hidden;
+  }
+  #m_mobile_testheader {
+    visibility: hidden;
+  }
+  #l_mobile_testheader {
+    visibility: hidden;
+  }
+  #xl_mobile_testheader {
+    visibility: hidden;
+  }
+  #portait_tablet_testheader {
+    visibility: visible;
+  }
+  #landscape_tablet_testheader {
+    visibility: hidden;
+  }
+  #m_desktop_testheader {
+    visibility: hidden;
+  }
+  #l_desktop_testheader {
+    visibility: hidden;
+  }
+  #xl_desktop_testheader {
+    visibility: hidden;
+  }
+  #xxl_desktop_testheader {
+    visibility: hidden;
+  }
+
+  #HomeTab {
+    visibility: visible;
+  }
+  #AllNewsTab {
+    visibility: hidden;
+  }
+  #MyFeedsTab {
+    visibility: hidden;
+  }
+  #FavoritesTab {
+    visibility: visible;
+  }
+  #FavoritesStandaloneTab {
+    visibility: hidden;
+  }
+  #ReadLaterTab {
+    visibility: hidden;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 768px) {
+  @include landscape_tablet(){
+        @include define-breakpoint("landscape_tablet");
+  }
+  body:after {
+    content: "landscape-tablet";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: hidden;
+  }
+  #sm_mobile_testheader {
+    visibility: hidden;
+  }
+  #m_mobile_testheader {
+    visibility: hidden;
+  }
+  #l_mobile_testheader {
+    visibility: hidden;
+  }
+  #xl_mobile_testheader {
+    visibility: hidden;
+  }
+  #portait_tablet_testheader {
+    visibility: hidden;
+  }
+  #landscape_tablet_testheader {
+    visibility: visible;
+  }
+  #m_desktop_testheader {
+    visibility: hidden;
+  }
+  #l_desktop_testheader {
+    visibility: hidden;
+  }
+  #xl_desktop_testheader {
+    visibility: hidden;
+  }
+  #xxl_desktop_testheader {
+    visibility: hidden;
+  }
+
+  #HomeTab {
+    visibility: visible;
+  }
+  #AllNewsTab {
+    visibility: hidden;
+  }
+  #MyFeedsTab {
+    visibility: hidden;
+  }
+  #FavoritesTab {
+    visibility: visible;
+  }
+  #FavoritesStandaloneTab {
+    visibility: hidden;
+  }
+  #ReadLaterTab {
+    visibility: hidden;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (min-height: 720px) {
+  @include m_desktop(){
+        @include define-breakpoint("m_desktop");
+  }
+  body:after {
+    content: "m-desktop";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: hidden;
+  }
+  #sm_mobile_testheader {
+    visibility: hidden;
+  }
+  #m_mobile_testheader {
+    visibility: hidden;
+  }
+  #l_mobile_testheader {
+    visibility: hidden;
+  }
+  #xl_mobile_testheader {
+    visibility: hidden;
+  }
+  #portait_tablet_testheader {
+    visibility: hidden;
+  }
+  #landscape_tablet_testheader {
+    visibility: hidden;
+  }
+  #m_desktop_testheader {
+    visibility: visible;
+  }
+  #l_desktop_testheader {
+    visibility: hidden;
+  }
+  #xl_desktop_testheader {
+    visibility: hidden;
+  }
+  #xxl_desktop_testheader {
+    visibility: hidden;
+  }
+
+  #HomeTab {
+    visibility: hidden;
+  }
+  #AllNewsTab {
+    visibility: visible;
+  }
+  #MyFeedsTab {
+    visibility: visible;
+  }
+  #FavoritesTab {
+    visibility: hidden;
+  }
+  #FavoritesStandaloneTab {
+    visibility: visible;
+  }
+  #ReadLaterTab {
+    visibility: visible;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 1920px) and (min-height: 1080px) {
+  @include l_desktop(){
+        @include define-breakpoint("l_desktop");
+  }
+  body:after {
+    content: "l-desktop";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: hidden;
+  }
+  #sm_mobile_testheader {
+    visibility: hidden;
+  }
+  #m_mobile_testheader {
+    visibility: hidden;
+  }
+  #l_mobile_testheader {
+    visibility: hidden;
+  }
+  #xl_mobile_testheader {
+    visibility: hidden;
+  }
+  #portait_tablet_testheader {
+    visibility: hidden;
+  }
+  #landscape_tablet_testheader {
+    visibility: hidden;
+  }
+  #m_desktop_testheader {
+    visibility: hidden;
+  }
+  #l_desktop_testheader {
+    visibility: visible;
+  }
+  #xl_desktop_testheader {
+    visibility: hidden;
+  }
+  #xxl_desktop_testheader {
+    visibility: hidden;
+  }
+
+  #HomeTab {
+    visibility: hidden;
+  }
+  #AllNewsTab {
+    visibility: visible;
+  }
+  #MyFeedsTab {
+    visibility: visible;
+  }
+  #FavoritesTab {
+    visibility: hidden;
+  }
+  #FavoritesStandaloneTab {
+    visibility: visible;
+  }
+  #ReadLaterTab {
+    visibility: visible;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 2556px) and (min-height: 1440px) {
+  @include xl_desktop(){
+        @include define-breakpoint("xl_desktop");
+  }
+  body:after {
+    content: "xl-desktop";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: hidden;
+  }
+  #sm_mobile_testheader {
+    visibility: hidden;
+  }
+  #m_mobile_testheader {
+    visibility: hidden;
+  }
+  #l_mobile_testheader {
+    visibility: hidden;
+  }
+  #xl_mobile_testheader {
+    visibility: hidden;
+  }
+  #portait_tablet_testheader {
+    visibility: hidden;
+  }
+  #landscape_tablet_testheader {
+    visibility: hidden;
+  }
+  #m_desktop_testheader {
+    visibility: hidden;
+  }
+  #l_desktop_testheader {
+    visibility: hidden;
+  }
+  #xl_desktop_testheader {
+    visibility: visible;
+  }
+  #xxl_desktop_testheader {
+    visibility: hidden;
+  }
+
+  #HomeTab {
+    visibility: hidden;
+  }
+  #AllNewsTab {
+    visibility: visible;
+  }
+  #MyFeedsTab {
+    visibility: visible;
+  }
+  #FavoritesTab {
+    visibility: hidden;
+  }
+  #FavoritesStandaloneTab {
+    visibility: visible;
+  }
+  #ReadLaterTab {
+    visibility: visible;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}
+
+@media only screen and(min-width: 3840px) and (min-height: 2160px) {
+  @include xxl_desktop(){
+        @include define-breakpoint("xxl_desktop");
+  }
+  body:after {
+    content: "xxl-desktop";
+    display: none;
+  }
+  #sm_iot_testheader {
+    visibility: hidden;
+  }
+  #sm_mobile_testheader {
+    visibility: hidden;
+  }
+  #m_mobile_testheader {
+    visibility: hidden;
+  }
+  #l_mobile_testheader {
+    visibility: hidden;
+  }
+  #xl_mobile_testheader {
+    visibility: hidden;
+  }
+  #portait_tablet_testheader {
+    visibility: hidden;
+  }
+  #landscape_tablet_testheader {
+    visibility: hidden;
+  }
+  #m_desktop_testheader {
+    visibility: hidden;
+  }
+  #l_desktop_testheader {
+    visibility: hidden;
+  }
+  #xl_desktop_testheader {
+    visibility: hidden;
+  }
+  #xxl_desktop_testheader {
+    visibility: visible;
+  }
+
+  #HomeTab {
+    visibility: hidden;
+  }
+  #AllNewsTab {
+    visibility: visible;
+  }
+  #MyFeedsTab {
+    visibility: visible;
+  }
+  #FavoritesTab {
+    visibility: hidden;
+  }
+  #FavoritesStandaloneTab {
+    visibility: visible;
+  }
+  #ReadLaterTab {
+    visibility: visible;
+  }
+  #HistoryTab {
+    visibility: visible;
+  }
+  #FeedListTab {
+    visibility: visible;
+  }
+  #SettingsTab {
+    visibility: visible;
+  }
+}

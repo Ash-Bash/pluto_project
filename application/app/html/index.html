@@ -1,0 +1,487 @@
+<html>
+  <head>
+    <title>Project Pluto Mk 2</title>
+    <link rel="stylesheet" type="text/css" href="../css/sizecontraints.css" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="../../node_modules/angular-material/angular-material.min.css">
+  </head>
+  <body ng-app="BlankApp" style="-webkit-app-region: drag" ng-cloak>
+    <!--<h1>Hello, World!</h1>
+    <h2 id="sm_iot_testheader">IoT Device</h2>
+    <h2 id="sm_mobile_testheader">Small Mobile Device (iPhone 4, 3.5in)</h2>
+    <h2 id="m_mobile_testheader">Medium Mobile Device (iPhone 5, 4in)</h2>
+    <h2 id="l_mobile_testheader">Large Mobile Device (iPhone 6, 4.7in)</h2>
+    <h2 id="xl_mobile_testheader">Extra Large Mobile Device (iPhone 6Plus, 5.5in)</h2>
+    <h2 id="portait_tablet_testheader">Portait Table Device (iPad)</h2>
+    <h2 id="landscape_tablet_testheader">Landscape Table Device (iPad)</h2>
+    <h2 id="m_desktop_testheader">Medium Desktop Device (Windows, Mac and Linux, 18in)</h2>
+    <h2 id="l_desktop_testheader">Large Desktop Device (Windows, Mac and Linux, 21in)</h2>
+    <h2 id="xl_desktop_testheader">Extra Large Desktop Device (Windows, Mac and Linux, 24in)</h2>
+    <h2 id="xxl_desktop_testheader">Extra Extra Large Desktop Device (Windows, Mac and Linux, 27in)</h2>-->
+
+    <div ng-controller="ApplicationController" ng-cloak style="bottom: 0 !important; height: 100% !important; overflow: hidden;">
+      <div>
+        <md-content>
+            <md-menu-bar style="padding-right: 0px !important;">
+              Project Pluto
+            <md-menu>
+              <button ng-click="$mdOpenMenu()">
+                File
+              </button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="exitApplication()">
+                    <ng-md-icon icon="highlight_off" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Exit
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+            <md-menu>
+              <button ng-click="$mdOpenMenu()">
+                View
+              </button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="reloadView()">
+                    <ng-md-icon icon="rotate_right" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Reload
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="openDevTools()">
+                    <ng-md-icon icon="code" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Toggle Developer Tools
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item ng-if="mobileScreenSizeMode()">
+                  <md-button ng-click="changeMainTabViewSelectedIndex(0)">
+                    <ng-md-icon icon="home" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Home
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="desktopScreenSizeMode()">
+                  <md-button ng-click="changeMainTabViewSelectedIndex(0)">
+                    <ng-md-icon icon="public" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    All News
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="desktopScreenSizeMode()">
+                  <md-button ng-click="changeMainTabViewSelectedIndex(1)">
+                    <ng-md-icon icon="art_track" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    My Feeds
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="mobileScreenSizeMode()">
+                  <md-button ng-click="changeMainTabViewSelectedIndex(1)">
+                    <ng-md-icon icon="star_half" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Favorites
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="desktopScreenSizeMode()">
+                  <md-button ng-click="changeMainTabViewSelectedIndex(2)">
+                    <ng-md-icon icon="star" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Favorites
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="desktopScreenSizeMode()">
+                  <md-button ng-click="changeMainTabViewSelectedIndex(3)">
+                    <ng-md-icon icon="visibility" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Read Later
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="changeMainTabViewSelectedIndexInDeskopModeAddOne(2)">
+                    <ng-md-icon icon="history" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    History
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="changeMainTabViewSelectedIndexInDeskopModeAddOne(3)">
+                    <ng-md-icon icon="apps" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Feed List
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="changeMainTabViewSelectedIndexInDeskopModeAddOne(4)">
+                    <ng-md-icon icon="settings" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Settings
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                  <md-button ng-click="setContentToActualSize()">
+                    <ng-md-icon icon="add_to_queue" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Actual Size
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="zoomContentViewIn()">
+                    <ng-md-icon icon="zoom_in" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Zoom In
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="zoomContentViewOut()">
+                    <ng-md-icon icon="zoom_out" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Zoom Out
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                  <md-button ng-click="enterFullScreenMode()">
+                    <ng-md-icon icon="picture_in_picture" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Toggle Full Screen
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+            <md-menu>
+              <button ng-click="$mdOpenMenu()">
+                Favorites
+              </button>
+              <md-menu-content>
+                <md-menu-item ng-if="mobileScreenSizeMode()">
+                  <md-button ng-click="changeMainTabViewSelectedIndex(1)">
+                    <ng-md-icon icon="star_half" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Show Favorites
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="desktopScreenSizeMode()">
+                  <md-button ng-click="changeMainTabViewSelectedIndex(2)">
+                    <ng-md-icon icon="star" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Show Favorites
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="desktopScreenSizeMode()">
+                  <md-button ng-click="changeMainTabViewSelectedIndex(3)">
+                    <ng-md-icon icon="visibility" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Show Read Later
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-subheader>Favorites Items</md-subheader>
+                <md-menu-item>
+                  <md-button disabled="disabled" ng-click="">
+                    No Favorites Items
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-subheader>Read Later Items</md-subheader>
+                <md-menu-item>
+                  <md-button disabled="disabled" ng-click="">
+                    No Read Later Items
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+            <md-menu>
+              <button ng-click="$mdOpenMenu()">
+                History
+              </button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="changeMainTabViewSelectedIndexInDeskopModeAddOne(2)">
+                    <ng-md-icon icon="history" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Show History
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-subheader>History Items</md-subheader>
+                <md-menu-item>
+                  <md-button disabled="disabled" ng-click="">
+                    No History Items
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                  <md-button ng-click="">
+                    <ng-md-icon icon="delete_sweep" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Clear History
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+            <md-menu>
+              <button ng-click="$mdOpenMenu()">
+                Window
+              </button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="minimizeApplication()">
+                    <ng-md-icon icon="remove" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Minimize
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="exitApplication()">
+                    <ng-md-icon icon="clear" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Close
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+            <md-menu>
+              <button ng-click="$mdOpenMenu()">
+                Help
+              </button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="">
+                    <ng-md-icon icon="school" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Learn More
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="">
+                    <ng-md-icon icon="account_balance" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Documentation
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="">
+                    <ng-md-icon icon="group" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Community Descussions
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="">
+                    <ng-md-icon icon="youtube_searched_for" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                    Search Issues
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+            <md-menu style="float: right;">
+              <button ng-click="exitApplication()">
+                <ng-md-icon icon="clear" style="fill: #484848; margin-right: 10px; width: 12px; height: 12px;" size="18"></ng-md-icon>
+              </button>
+            </md-menu>
+            <md-menu ng-if="!isFullScreenMode" style="float: right;">
+              <button ng-click="maximizeApplication()">
+                <ng-md-icon icon="crop_din" style="fill: #484848; margin-right: 10px; width: 12px; height: 12px;" size="18"></ng-md-icon>
+              </button>
+            </md-menu>
+            <md-menu style="float: right;">
+              <button ng-click="minimizeApplication()">
+                <ng-md-icon icon="remove" style="fill: #484848; margin-right: 10px; width: 12px; height: 12px;" size="18"></ng-md-icon>
+              </button>
+            </md-menu>
+          </md-menu-bar>
+          <md-tabs id="MainTabView" md-selected="selectedIndex" md-dynamic-height md-border-bottom>
+            <md-tab ng-if="mobileScreenSizeMode()" id="HomeTab" label="Home" hide-gt-md>
+              <md-content>
+                <!-- SplitView -->
+                <section layout="row" flex>
+                <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
+                  <md-toolbar class="md-theme-indigo">
+                    <h1 class="md-toolbar-tools">Home</h1>
+                  </md-toolbar>
+                  <md-content>
+                    <md-list>
+                      <md-subheader class="md-no-sticky">Home</md-subheader>
+                        <md-list-item ng-click="">
+                          <ng-md-icon icon="public" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                          <p>All News</p>
+                        </md-list-item>
+                        <md-list-item ng-click="">
+                          <ng-md-icon icon="art_track" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                          <p>My Feeds</p>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                    </md-list>
+                  </md-content>
+                </md-sidenav>
+                <md-content flex layout-padding>
+                  <h1>Content</h1>
+                </md-content>
+                </section>
+              </md-content>
+            </md-tab>
+            <!--All News Tab-->
+            <md-tab ng-if="desktopScreenSizeMode()" id="AllNewsTab" label="All News">
+              <md-content>
+                <md-toolbar class="md-theme-indigo">
+                  <div class="md-toolbar-tools">
+                    <h2>
+                      <span>All News</span>
+                    </h2>
+                    <span flex></span>
+                  </div>
+                </md-toolbar>
+                <h1 class="md-display-2">All News</h1>
+                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+              </md-content>
+            </md-tab>
+            <!--My Feeds Tab-->
+            <md-tab ng-if="desktopScreenSizeMode()" label="My Feeds">
+              <md-content>
+                <md-toolbar class="md-theme-indigo">
+                  <div class="md-toolbar-tools">
+                    <h2>
+                      <span>My Feeds</span>
+                    </h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                      <ng-md-icon icon="create" style="fill: white; margin-right: 10px;"></ng-md-icon>
+                    </md-button>
+                  </div>
+                </md-toolbar>
+                <h1 class="md-display-2">My Feeds</h1>
+                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+              </md-content>
+            </md-tab>
+            <!--Favorites Tab-->
+            <md-tab ng-if="mobileScreenSizeMode()" id="FavoritesTab" label="Favorites">
+              <md-content>
+                <!-- SplitView -->
+                <section layout="row" flex>
+                <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
+                  <md-toolbar class="md-theme-indigo">
+                    <h1 class="md-toolbar-tools">Favorites</h1>
+                  </md-toolbar>
+                  <md-content>
+                    <md-list>
+                      <md-subheader class="md-no-sticky">Favorites</md-subheader>
+                        <md-list-item ng-click="">
+                          <ng-md-icon icon="star" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                          <p>Favorites</p>
+                        </md-list-item>
+                        <md-list-item ng-click="">
+                          <ng-md-icon icon="visibility" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                          <p>Read Later</p>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                    </md-list>
+                  </md-content>
+                </md-sidenav>
+                <md-content flex layout-padding>
+                  <h1>Content</h1>
+                </md-content>
+                </section>
+              </md-content>
+            </md-tab>
+            <!--Favorites Standalone Tab-->
+            <md-tab ng-if="desktopScreenSizeMode()" id="FavoritesStandaloneTab" label="Favorites">
+              <md-content>
+                <md-toolbar class="md-theme-indigo">
+                  <div class="md-toolbar-tools">
+                    <h2>
+                      <span>Favorites</span>
+                    </h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                      <ng-md-icon icon="create" style="fill: white; margin-right: 10px;"></ng-md-icon>
+                    </md-button>
+                  </div>
+                </md-toolbar>
+                <h1 class="md-display-2">Favorites</h1>
+                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+              </md-content>
+            </md-tab>
+            <!--Read Later Tab-->
+            <md-tab ng-if="desktopScreenSizeMode()" id="ReadLaterTab" label="Read Later">
+              <md-content>
+                <md-toolbar class="md-theme-indigo">
+                  <div class="md-toolbar-tools">
+                    <h2>
+                      <span>Read Later</span>
+                    </h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                      <ng-md-icon icon="create" style="fill: white; margin-right: 10px;"></ng-md-icon>
+                    </md-button>
+                  </div>
+                </md-toolbar>
+                <h1 class="md-display-2">Read Later</h1>
+                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+              </md-content>
+            </md-tab>
+            <md-tab id="HistoryTab" label="History">
+              <md-content>
+                <md-toolbar class="md-theme-indigo">
+                  <div class="md-toolbar-tools">
+                    <h2>
+                      <span>History</span>
+                    </h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                      <ng-md-icon icon="create" style="fill: white; margin-right: 10px;"></ng-md-icon>
+                    </md-button>
+                  </div>
+                </md-toolbar>
+                <h1 class="md-display-2">History</h1>
+                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+              </md-content>
+            </md-tab>
+            <md-tab id="FeedListTab" label="Feed List">
+              <md-content>
+                <md-toolbar class="md-theme-indigo">
+                  <div class="md-toolbar-tools">
+                    <h2>
+                      <span>Feed List</span>
+                    </h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                      <ng-md-icon icon="add" style="fill: white; margin-right: 10px;"></ng-md-icon>
+                    </md-button>
+                  </div>
+                </md-toolbar>
+                <h1 class="md-display-2">Feed List</h1>
+                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+              </md-content>
+            </md-tab>
+            <md-tab id="SettingsTab" label="Settings">
+              <md-content>
+                <md-toolbar class="md-theme-indigo">
+                  <div class="md-toolbar-tools">
+                    <h2>
+                      <span>Settings</span>
+                    </h2>
+                    <span flex></span>
+                  </div>
+                </md-toolbar>
+                <md-list>
+                  <md-subheader class="md-no-sticky">General</md-subheader>
+                    <md-list-item ng-click="">
+                      <ng-md-icon icon="star" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                      <p>Favorites</p>
+                    </md-list-item>
+                    <md-list-item ng-click="">
+                      <ng-md-icon icon="visibility" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                      <p>Read Later</p>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                </md-list>
+              </md-content>
+            </md-tab>
+          </md-tabs>
+        </md-content>
+      </div>
+    </div>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="../../node_modules/angular/angular.min.js"></script>
+    <script src="../../node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="../../node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="../../node_modules/angular-messages/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="../../node_modules/angular-material/angular-material.min.js"></script>
+    <script src="../../node_modules/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="../../node_modules/svg-morpheus/source/js/svg-morpheus.js"></script>
+
+    <script src="../js/index.js"></script>
+
+    <!-- Your application bootstrap  -->
+
+
+    <!-- Angular Material Library -->
+    <script src="../js/applicationcontroller.js"></script>
+
+  </body>
+</html>

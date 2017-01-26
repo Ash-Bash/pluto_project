@@ -1,0 +1,7 @@
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+  color: white;
+}
+
+button, md-menu, md-tab, md-list, md-list-item, md-tabs {
+  -webkit-app-region: no-drag;
+}

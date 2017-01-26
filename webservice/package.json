@@ -1,0 +1,25 @@
+{
+  "name": "pluto_webservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-aria": "^1.6.1",
+    "angular-material": "^1.1.1",
+    "angular-material-icons": "^0.7.1",
+    "angular-messages": "^1.6.1",
+    "body-parser": "^1.15.0",
+    "cloud-env": "^0.2.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.4.6",
+    "node-restful": "^0.2.5",
+    "svg-morpheus": "^0.3.0"
+  }
+}
