@@ -215,7 +215,7 @@
                         <md-list>
                           <md-subheader class="md-no-sticky">Feeds</md-subheader>
                           <md-list-item class="md-3-line" ng-repeat="item in jsonBatchData" ng-click="null">
-                            <img ng-src="{{dsnIP}}:2000{{item.icon}}" class="md-avatar" />
+                            <img ng-src="{{item.icon}}" class="md-avatar" />
                             <div class="md-list-item-text" layout="column">
                               <h3>{{ item.name }}</h3>
                               <h4>{{ item.category }} : {{ item.region }}</h4>
