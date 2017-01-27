@@ -33,6 +33,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   refresh();
 
   // Functions
+  //Newsfeeds Section
   // Adds A Newsfeed To The Newsfeed Database
   $scope.addFeed = function() {
       console.log($scope.feed);
@@ -42,7 +43,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
           refresh();
       });
   }
-  // Updates A Station To The Database
+  // Updates A Newsfeed To The Database
   $scope.updateFeed = function() {
       console.log($scope.feed._id);
       $http.put('/api/newsfeeds/' + $scope.feed._id, $scope.feed).success(function(response) {
@@ -51,14 +52,14 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
           refresh();
       });
   }
-  // Edits A Station From The Database
+  // Edits A Newsfeed From The Database
   $scope.editFeed = function(id) {
       console.log(id);
       $http.get('/api/newsfeeds/' + id).success(function(response){
           $scope.feed = response;
       });
   }
-  // Deletes A Station From The Station Database
+  // Deletes A Newsfeed From The Station Database
   $scope.deleteFeed = function(id) {
       console.log(id);
       $http.delete('/api/newsfeeds/' + id).success(function(response) {
@@ -66,6 +67,63 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
           // Refresh WebPage
           refresh();
       });
+  }
+
+  //Requested Feeds Section
+  $scope.approveRequestedFeed = function(id) {
+    console.log(id);
+    $http.get('/api/requestedfeeds/' + id).success(function(response){
+        $scope.requestedfeed = response;
+
+        $http.post('/api/approvedfeeds', $scope.requestedfeed).success(function(response) {
+            console.log(response);
+            $http.delete('/api/requestedfeeds/' + id).success(function(response) {
+                console.log(response);
+                // Refresh WebPage
+                refresh();
+            });
+        });
+    });
+
+  }
+
+  $scope.denyRequestedFeed = function(id) {
+    console.log(id);
+    $http.delete('/api/requestedfeeds/' + id).success(function(response) {
+        console.log(response);
+        // Refresh WebPage
+        refresh();
+    });
+  }
+
+  //Approved Feeds Section
+  $scope.addApprovedFeed = function() {
+    console.log($scope.approvedfeed);
+    $http.post('/api/newsfeeds', $scope.approvedfeed).success(function(response) {
+        console.log(response);
+
+        $http.delete('/api/approvedfeeds/' + $scope.approvedfeed._id).success(function(response) {
+            console.log(response);
+            // Refresh WebPage
+            refresh();
+        });
+    });
+  }
+
+  $scope.amendApprovedFeed = function() {
+    console.log($scope.approvedfeed._id);
+    $http.put('/api/approvedfeeds/' + $scope.approvedfeed._id, $scope.approvedfeed).success(function(response) {
+        console.log(response);
+        // Refresh WebPage
+        refresh();
+    });
+  }
+
+  $scope.reviewApprovedFeed = function(id) {
+    console.log(id);
+    $http.get('/api/approvedfeeds/' + id).success(function(response){
+        $scope.approvedfeed = response;
+    });
   }
 
   $scope.openBatchFile = function(openFileDialog) {

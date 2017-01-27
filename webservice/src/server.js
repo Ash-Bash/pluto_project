@@ -204,7 +204,7 @@ app.put('/api/requestedfeeds/:id', function(req, res){
 //------------------------ApprovedFeeds--------------------//
 
 // Updates a ApprovedFeeds Item To The Database
-app.put('/api/requestedfeeds/:id', function(req, res){
+app.put('/api/approvedfeeds/:id', function(req, res){
     var id = req.params.id;
     console.log("requestedfeed ID: " + id);
 
