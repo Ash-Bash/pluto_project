@@ -91,6 +91,48 @@
                 </table>
               </md-content>
             </md-tab>
+            <md-tab id="HomeTab" label="Batch Feeds" hide-gt-md>
+                <md-content layout-padding>
+                  <h2 align="center">Batch Feeds</h2>
+                  <div layout="column">
+                    <div flex="10">
+                      <div layout="row">
+                        <div flex="25">
+
+                        </div>
+                        <div flex="50">
+                          <input type="file" id="openFileDialog" ng-model="batchFileUrl" ng-change="batchFileDir()" align="center"/>
+                          </br>
+                          <md-progress-linear id="progress_bar" md-mode="determinate" value="{{determinateBatchFileValue}}"></md-progress-linear>
+                          <div  align="center">
+
+                            <md-button class="md-warn" ng-click="viewBatchFile('openFileDialog')">View</md-button>
+                            <md-button class="md-warn" ng-click="updateBatchFile('openFileDialog')">Upload</md-button>
+                          </div>
+                        </div>
+                        <div flex="25">
+
+                        </div>
+                      </div>
+                    </div>
+                    <div flex="90">
+                      <md-content style="overflow:auto;">
+                        <md-list>
+                          <md-subheader class="md-no-sticky">Feeds</md-subheader>
+                          <md-list-item class="md-3-line" ng-repeat="item in jsonBatchData" ng-click="null">
+                            <img ng-src="http://localhost:2000{{item.icon}}" class="md-avatar" />
+                            <div class="md-list-item-text" layout="column">
+                              <h3>{{ item.name }}</h3>
+                              <h4>{{ item.category }} : {{ item.region }}</h4>
+                              <p>Website: {{ item.websiteUrl }}, Feed Url: {{ item.feedUrl }}</p>
+                            </div>
+                          </md-list-item>
+                        </md-list>
+                      </md-content>
+                    </div>
+                  </div>
+                </md-content>
+              </md-tab>
           </md-tabs>
         </md-content>
       </div>
@@ -99,6 +141,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <!-- Angular Material Library -->
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
@@ -110,5 +154,6 @@
 
     <!-- Angular Material Library -->
     <script src="./js/ApplicationController.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
