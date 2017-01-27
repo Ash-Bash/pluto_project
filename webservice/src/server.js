@@ -45,15 +45,41 @@ var NewsFeeds = restful.model('newsfeeds', NewsFeedsSchema);
 NewsFeeds.methods(['get', 'put', 'post', 'delete']);
 NewsFeeds.register(app, '/api/data/newsfeeds');
 
+// RequestedFeeds Schema
+var RequestedFeedsSchema = schema ({
+    name: String,
+    icon: String,
+    region: String,
+    category: String,
+    websiteUrl: String,
+    feedUrl:String
+});
+var RequestedFeeds = restful.model('requestedfeeds', RequestedFeedsSchema);
+RequestedFeeds.methods(['get', 'put', 'post', 'delete']);
+RequestedFeeds.register(app, '/api/data/requestedfeeds');
+
+// RequestedFeeds Schema
+var ApprovedFeedsSchema = schema ({
+    name: String,
+    icon: String,
+    region: String,
+    category: String,
+    websiteUrl: String,
+    feedUrl:String
+});
+var ApprovedFeeds = restful.model('approvedfeeds', ApprovedFeedsSchema);
+ApprovedFeeds.methods(['get', 'put', 'post', 'delete']);
+ApprovedFeeds.register(app, '/api/data/approvedfeeds');
+
 ////////////////////////////////////////////////////////
 //-----------------------API-Section------------------//
 ////////////////////////////////////////////////////////
 
 // Get API's
 
-//------------------------Stations--------------------//
+//------------------------Newsfeeds--------------------//
 
-// Gets The Whole StationsList Database
+// Gets The Whole Newsfeeds Database
 app.get("/api/newsfeeds", function(req, res) {
     console.log("I Received a GET Request");
 
@@ -63,7 +89,7 @@ app.get("/api/newsfeeds", function(req, res) {
     });
 });
 
-// Gets a StationsList Item From The Database.
+// Gets a Newsfeeds Item From The Database.
 app.get('/api/newsfeeds/:id', function(req, res){
     var id = req.params.id;
     console.log("NewsFeed ID: " + id);
@@ -73,18 +99,62 @@ app.get('/api/newsfeeds/:id', function(req, res){
     });
 });
 
+//------------------------RequestedFeeds--------------------//
+
+// Gets The Whole RequestedFeeds Database
+app.get("/api/requestedfeeds", function(req, res) {
+    console.log("I Received a GET Request");
+
+    RequestedFeeds.find(function(err, requestedfeeds) {
+        console.log(requestedfeeds);
+        res.json(requestedfeeds);
+    });
+});
+
+// Gets a RequestedFeeds Item From The Database.
+app.get('/api/requestedfeeds/:id', function(req, res){
+    var id = req.params.id;
+    console.log("requestedfeed ID: " + id);
+
+    RequestedFeeds.findOne({ _id: id}, function(err, requestedfeeds){
+        res.json(requestedfeeds);
+    });
+});
+
+//------------------------ApprovedFeeds--------------------//
+
+// Gets The Whole ApprovedFeeds Database
+app.get("/api/approvedfeeds", function(req, res) {
+    console.log("I Received a GET Request");
+
+    ApprovedFeeds.find(function(err, approvedfeeds) {
+        console.log(approvedfeeds);
+        res.json(approvedfeeds);
+    });
+});
+
+// Gets a ApprovedFeeds Item From The Database.
+app.get('/api/approvedfeeds/:id', function(req, res){
+    var id = req.params.id;
+    console.log("approvedfeed ID: " + id);
+
+    ApprovedFeeds.findOne({ _id: id}, function(err, approvedfeeds){
+        res.json(approvedfeeds);
+    });
+});
+
 // Put API's
 
-//------------------------Stations--------------------//
+//------------------------Newsfeeds--------------------//
 
-// Updates a StationList Item To The Database
+// Updates a Newsfeeds Item To The Database
 app.put('/api/newsfeeds/:id', function(req, res){
     var id = req.params.id;
     console.log("NewsFeed ID: " + id);
 
     var newsfeeds = new NewsFeeds();
 
-    // Allocates The Station Record data.
+    // Allocates The Newsfeed Record data.
     newsfeeds.name = req.body.name;
     newsfeeds.icon = req.body.icon;
     newsfeeds.region = req.body.region;
@@ -103,17 +173,73 @@ app.put('/api/newsfeeds/:id', function(req, res){
     });
 });
 
+//------------------------RequestedFeeds--------------------//
+
+// Updates a RequestedFeeds Item To The Database
+app.put('/api/requestedfeeds/:id', function(req, res){
+    var id = req.params.id;
+    console.log("requestedfeed ID: " + id);
+
+    var requestedfeeds = new RequestedFeeds();
+
+    // Allocates The RequestedFeed Record data.
+    requestedfeeds.name = req.body.name;
+    requestedfeeds.icon = req.body.icon;
+    requestedfeeds.region = req.body.region;
+    requestedfeeds.category = req.body.category;
+    requestedfeeds.websiteUrl = req.body.websiteUrl;
+    requestedfeeds.feedUrl = req.body.feedUrl;
+
+    var upsertedData = requestedfeeds.toObject();
+
+    delete upsertedData._id;
+
+    RequestedFeeds.update({ _id: id }, {$set: upsertedData }, {upsert: true}, function(err, requestedfeed) {
+        // we have the updated user returned to us
+        console.log(requestedfeed);
+        res.json(requestedfeed);
+    });
+});
+
+//------------------------ApprovedFeeds--------------------//
+
+// Updates a ApprovedFeeds Item To The Database
+app.put('/api/requestedfeeds/:id', function(req, res){
+    var id = req.params.id;
+    console.log("requestedfeed ID: " + id);
+
+    var approvedfeeds = new ApprovedFeeds();
+
+    // Allocates The ApprovedFeed Record data.
+    approvedfeeds.name = req.body.name;
+    approvedfeeds.icon = req.body.icon;
+    approvedfeeds.region = req.body.region;
+    approvedfeeds.category = req.body.category;
+    approvedfeeds.websiteUrl = req.body.websiteUrl;
+    approvedfeeds.feedUrl = req.body.feedUrl;
+
+    var upsertedData = approvedfeeds.toObject();
+
+    delete upsertedData._id;
+
+    ApprovedFeeds.update({ _id: id }, {$set: upsertedData }, {upsert: true}, function(err, approvedfeed) {
+        // we have the updated user returned to us
+        console.log(approvedfeed);
+        res.json(approvedfeed);
+    });
+});
+
 // Post API's
 
-//------------------------Stations--------------------//
+//------------------------Newsfeeds--------------------//
 
-// Posts a StationsList Item
+// Posts a Newsfeeds Item
 app.post('/api/newsfeeds', function(req, res){
     console.log(req.body);
 
     var newsfeeds = new NewsFeeds();
 
-    // Allocates The Station Record data.
+    // Allocates The Newsfeed Record data.
     newsfeeds.name = req.body.name;
     newsfeeds.icon = req.body.icon;
     newsfeeds.region = req.body.region;
@@ -126,11 +252,53 @@ app.post('/api/newsfeeds', function(req, res){
     });
 });
 
+//------------------------RequestedFeeds--------------------//
+
+// Posts a RequestedFeeds Item
+app.post('/api/requestedfeeds', function(req, res){
+    console.log(req.body);
+
+    var requestedfeeds = new RequestedFeeds();
+
+    // Allocates The RequestedFeed Record data.
+    requestedfeeds.name = req.body.name;
+    requestedfeeds.icon = req.body.icon;
+    requestedfeeds.region = req.body.region;
+    requestedfeeds.category = req.body.category;
+    requestedfeeds.websiteUrl = req.body.websiteUrl;
+    requestedfeeds.feedUrl = req.body.feedUrl;
+
+    requestedfeeds.save(function(err, requestedfeed){
+        res.json(requestedfeed);
+    });
+});
+
+//------------------------ApprovedFeeds--------------------//
+
+// Posts a ApprovedFeeds Item
+app.post('/api/approvedfeeds', function(req, res){
+    console.log(req.body);
+
+    var approvedfeeds = new ApprovedFeeds();
+
+    // Allocates The ApprovedFeed Record data.
+    approvedfeeds.name = req.body.name;
+    approvedfeeds.icon = req.body.icon;
+    approvedfeeds.region = req.body.region;
+    approvedfeeds.category = req.body.category;
+    approvedfeeds.websiteUrl = req.body.websiteUrl;
+    approvedfeeds.feedUrl = req.body.feedUrl;
+
+    approvedfeeds.save(function(err, approvedfeed){
+        res.json(approvedfeed);
+    });
+});
+
 // Delete API's
 
-//------------------------Stations--------------------//
+//------------------------Newsfeeds--------------------//
 
-// Deletes a StationsList Item
+// Deletes a Newsfeeds Item
 app.delete('/api/newsfeeds/:id', function(req, res){
     var id = req.params.id;
     console.log("NewsFeed ID: " + id);
@@ -140,10 +308,34 @@ app.delete('/api/newsfeeds/:id', function(req, res){
     });
 });
 
+//------------------------RequestedFeeds--------------------//
+
+// Deletes a RequestedFeeds Item
+app.delete('/api/requestedfeeds/:id', function(req, res){
+    var id = req.params.id;
+    console.log("requestedfeed ID: " + id);
+
+    RequestedFeeds.remove({ _id: id }, function(err, requestedfeed){
+        res.json(requestedfeed);
+    });
+});
+
+//------------------------ApprovedFeeds--------------------//
+
+// Deletes a ApprovedFeeds Item
+app.delete('/api/approvedfeeds/:id', function(req, res){
+    var id = req.params.id;
+    console.log("ApprovedFeed ID: " + id);
+
+    ApprovedFeeds.remove({ _id: id }, function(err, approvedfeed){
+        res.json(approvedfeed);
+    });
+});
+
 ////////////////////////////////////////////////////////
 //-----------------Server-Info-Section----------------//
 ////////////////////////////////////////////////////////
 
 // Starts Server
 app.listen(port);
-console.log('Elavate API and Web App is Running on port 2000');
+console.log('Pluto API and Web App is Running on port 2000');
