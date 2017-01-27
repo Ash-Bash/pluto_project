@@ -10,12 +10,22 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   $scope.jsonBatchData = [];
 
   // HTTP Get Requests
-  // Gets StationsList Database
+  // Gets Newsfeeds Database
   var refresh = function() {
       $http.get('/api/newsfeeds').success(function(response) {
           console.log("I got My Data I Requested");
           $scope.newsfeeds = response;
           $scope.feed = "";
+      });
+      $http.get('/api/requestedfeeds').success(function(response) {
+          console.log("I got My Data I Requested");
+          $scope.requestedfeeds = response;
+          $scope.requestedfeed = "";
+      });
+      $http.get('/api/approvedfeeds').success(function(response) {
+          console.log("I got My Data I Requested");
+          $scope.approvedfeeds = response;
+          $scope.approvedfeed = "";
       });
   };
 
@@ -23,7 +33,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   refresh();
 
   // Functions
-  // Adds A Station To The Station Database
+  // Adds A Newsfeed To The Newsfeed Database
   $scope.addFeed = function() {
       console.log($scope.feed);
       $http.post('/api/newsfeeds', $scope.feed).success(function(response) {

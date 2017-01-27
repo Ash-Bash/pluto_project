@@ -43,8 +43,8 @@
                         </tr>
                       </thead>
                       <tbody>
-                          <!--Displays The Newsfeeds List Data In A Table-->
-                          <tr ng-repeat="feed in newsfeeds">
+                          <!--Displays The RequestedFeeds List Data In A Table-->
+                          <tr ng-repeat="feed in requestedfeeds">
                               <td>{{feed.name}}</td>
                               <td><img src="{{feed.icon}}" width="48" height="48"/></td>
                               <td>{{feed.region}}</td>
@@ -61,8 +61,8 @@
             <md-tab id="HomeTab" label="Approved List" hide-gt-md>
               <md-content flex layout-padding>
                 <h2 align="center">Approved List</h2>
-                <md-list flex>
-                  <md-subheader class="md-no-sticky">Approved List</md-subheader>
+                <div layout="column">
+                  <div flow="10">
                   <table class="table" align="center">
                       <thead>
                       </thead>
@@ -105,22 +105,32 @@
                                   <input ng-model="feed.feedUrl">
                                 </md-input-container>
                               </td>
-                              <td style="display: inline-flex;"><md-button class="md-raised md-warn" ng-click="updateFeed()">Amend Feed</md-button></td>
+                              <td style="display: inline-flex;"><md-button class="md-raised md-primary" ng-click="addApprovedFeed()">Add to Feed List</md-button></td>
+                              <td style="display: inline-flex;"><md-button class="md-raised md-warn" ng-click="amendApprovedFeed()">Amend</md-button></td>
                           </tr>
                           <tr></tr>
-                          <!--Displays The Newsfeeds List Data In A Table-->
-                          <tr ng-repeat="feed in newsfeeds">
-                              <td>{{feed.name}}</td>
-                              <td><img src="{{feed.icon}}" width="48" height="48"/></td>
-                              <td>{{feed.region}}</td>
-                              <td>{{feed.category}}</td>
-                              <td><a href="{{feed.websiteUrl}}">{{feed.websiteUrl}}</a></td>
-                              <td><a href="{{feed.feedUrl}}">{{feed.feedUrl}}</a></td>
-                              <td style="display: inline-flex;"><md-button class="md-primary" ng-click="editFeed(feed._id)">Add To List</md-button></td>
-                              <td style="display: inline-flex;"><md-button class="md-accent" ng-click="deleteFeed(feed._id)">Edit</md-button></td>
-                          </tr>
-                      </tbody>
-                  </table>
+                          </tbody>
+                      </table>
+                    </div>
+                    <div style="overflow:scroll; height: 75%;" flex="90">
+                      <table class="table" align="center" style="height: 75%;">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <!--Displays The ApprovedFeeds List Data In A Table-->
+                            <tr ng-repeat="feed in approvedfeeds">
+                                <td>{{feed.name}}</td>
+                                <td><img src="{{feed.icon}}" width="48" height="48"/></td>
+                                <td>{{feed.region}}</td>
+                                <td>{{feed.category}}</td>
+                                <td><a href="{{feed.websiteUrl}}">{{feed.websiteUrl}}</a></td>
+                                <td><a href="{{feed.feedUrl}}">{{feed.feedUrl}}</a></td>
+                                <td style="display: inline-flex;"><md-button class="md-accent" ng-click="reviewApprovedFeed(feed._id)">Review</md-button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
               </md-content>
             </md-tab>
             <md-tab id="HomeTab" label="Add NewsFeeds" hide-gt-md>
