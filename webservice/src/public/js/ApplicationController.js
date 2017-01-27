@@ -5,6 +5,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
   //Declared Vars
   $scope.dsnIP = "http://192.168.1.10";
+  $scope.determinateBatchFileValue = 0;
   $scope.batchFileUrl = "";
   $scope.jsonBatchData = [];
 
@@ -104,8 +105,27 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   }
 
   $scope.uploadBatchFile = function() {
-    for (var i = 0; i < $scope.jsonBatchData.length; i++) {
-      console.log($scope.jsonBatchData[i]);
+    //Loops jsonBatchData to colleced and save each feed item
+    for (i in $scope.jsonBatchData){
+      var obj = $scope.jsonBatchData[i];
+      console.log("Feed: " + obj);
+
+      //Saves each feed to the newsfeeds entity in the Database
+      $http.post('/api/newsfeeds', obj).success(function(response) {
+          console.log(response);
+      });
+
+      // Renders the progress bar's value
+      if ($scope.determinateBatchFileValue < 100) {
+        $scope.determinateBatchFileValue = (i / $scope.jsonBatchData.length) * 100;
+      } else {
+        $scope.determinateBatchFileValue = 0;
+      }
+
+      //Checks if batching process has be complete if so refresh()
+      if(i == $scope.jsonBatchData.length - 1){
+        refresh();
+      }
     }
   }
 
