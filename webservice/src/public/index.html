@@ -27,6 +27,102 @@
                 </md-list>
               </md-content>
             </md-tab>
+            <md-tab id="HomeTab" label="Request List" hide-gt-md>
+              <md-content flex layout-padding>
+                <h2 align="center">Request List</h2>
+                <md-list flex>
+                  <table align="center">
+                      <thead>
+                        <tr>
+                          <th>Feed Name</th>
+                          <th>Feed Icon</th>
+                          <th>Feed Region</th>
+                          <th>Feed Category</th>
+                          <th>Feed Website Url</th>
+                          <th>Feed Url</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <!--Displays The Newsfeeds List Data In A Table-->
+                          <tr ng-repeat="feed in newsfeeds">
+                              <td>{{feed.name}}</td>
+                              <td><img src="{{feed.icon}}" width="48" height="48"/></td>
+                              <td>{{feed.region}}</td>
+                              <td>{{feed.category}}</td>
+                              <td><a href="{{feed.websiteUrl}}">{{feed.websiteUrl}}</a></td>
+                              <td><a href="{{feed.feedUrl}}">{{feed.feedUrl}}</a></td>
+                              <td style="display: inline-flex;"><md-button class="md-primary" ng-click="approveFeed(feed._id)">Approve</md-button></td>
+                              <td style="display: inline-flex;"><md-button class="md-accent" ng-click="denyFeed(feed._id)">Deny</md-button></td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </md-content>
+            </md-tab>
+            <md-tab id="HomeTab" label="Approved List" hide-gt-md>
+              <md-content flex layout-padding>
+                <h2 align="center">Approved List</h2>
+                <md-list flex>
+                  <md-subheader class="md-no-sticky">Approved List</md-subheader>
+                  <table class="table" align="center">
+                      <thead>
+                      </thead>
+                      <tbody>
+                          <!--Inputs So The User Can add a Record To The Station List-->
+                          <tr>
+                              <td rowspan="2">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                  <label>Feed Name</label>
+                                  <input ng-model="feed.name">
+                                </md-input-container>
+                              </td>
+                              <td rowspan="2">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                  <label>Feed Icon</label>
+                                  <input ng-model="feed.icon">
+                                </md-input-container>
+                              </td>
+                              <td rowspan="2">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                  <label>Region</label>
+                                  <input ng-model="feed.region">
+                                </md-input-container>
+                              </td>
+                              <td rowspan="2">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                  <label>Category</label>
+                                  <input ng-model="feed.category">
+                                </md-input-container>
+                              </td>
+                              <td rowspan="2">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                  <label>Website URL</label>
+                                  <input ng-model="feed.websiteUrl">
+                                </md-input-container>
+                              </td>
+                              <td rowspan="2">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                  <label>Feed URL</label>
+                                  <input ng-model="feed.feedUrl">
+                                </md-input-container>
+                              </td>
+                              <td style="display: inline-flex;"><md-button class="md-raised md-warn" ng-click="updateFeed()">Amend Feed</md-button></td>
+                          </tr>
+                          <tr></tr>
+                          <!--Displays The Newsfeeds List Data In A Table-->
+                          <tr ng-repeat="feed in newsfeeds">
+                              <td>{{feed.name}}</td>
+                              <td><img src="{{feed.icon}}" width="48" height="48"/></td>
+                              <td>{{feed.region}}</td>
+                              <td>{{feed.category}}</td>
+                              <td><a href="{{feed.websiteUrl}}">{{feed.websiteUrl}}</a></td>
+                              <td><a href="{{feed.feedUrl}}">{{feed.feedUrl}}</a></td>
+                              <td style="display: inline-flex;"><md-button class="md-primary" ng-click="editFeed(feed._id)">Add To List</md-button></td>
+                              <td style="display: inline-flex;"><md-button class="md-accent" ng-click="deleteFeed(feed._id)">Edit</md-button></td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </md-content>
+            </md-tab>
             <md-tab id="HomeTab" label="Add NewsFeeds" hide-gt-md>
               <md-content flex layout-padding>
                 <h2 align="center">Add Newsfeeds</h2>
