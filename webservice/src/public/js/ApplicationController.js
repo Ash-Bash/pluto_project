@@ -4,6 +4,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   console.log("Hello World from StationsListController");
 
   //Declared Vars
+  $scope.dsnIP = "http://192.168.1.10";
   $scope.batchFileUrl = "";
   $scope.jsonBatchData = [];
 
