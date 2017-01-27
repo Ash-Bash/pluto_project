@@ -94,14 +94,6 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
     $scope.jsonBatchData = $.parseJSON(fileString);
     $('#jsonViewer').text(fileString);
     console.log($scope.jsonBatchData);
-
-    // Handle UTF-16 file dump
-    if(utils.regexp.isChinese(fileString)) {
-      //Chinese Characters + Name validation
-    }
-    else {
-      // run other charset test
-    }
   }
 
   $scope.batchFileErrorHandler = function(evt) {
@@ -111,10 +103,9 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   }
 
   $scope.uploadBatchFile = function() {
-    $.get($scope.batchFileUrl.replace("c://", ""), function(data) {
-      //$('#jsonViewer').text($.parseJSON( data ) );
-      console.log( $.parseJSON( data ) );
-    });
+    for (var i = 0; i < $scope.jsonBatchData.length; i++) {
+      console.log($scope.jsonBatchData[i]);
+    }
   }
 
 }]);
