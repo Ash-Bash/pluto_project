@@ -15,10 +15,10 @@
     "angular-material": "^1.1.1",
     "angular-material-icons": "^0.7.1",
     "angular-messages": "^1.6.1",
-    "body-parser": "^1.15.0",
+    "body-parser": "^1.16.0",
     "cloud-env": "^0.2.2",
     "express": "^4.14.0",
-    "mongoose": "^4.4.6",
+    "mongoose": "^4.7.9",
     "node-restful": "^0.2.5",
     "svg-morpheus": "^0.3.0"
   }
