@@ -1,4 +1,4 @@
-const electron = require('electron')
+const electron = require('electron');
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -14,6 +14,8 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 1024, height: 768, frame: false})
+
+  //limit width to 647
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({

@@ -5,3 +5,15 @@
 button, md-menu, md-tab, md-list, md-list-item, md-tabs {
   -webkit-app-region: no-drag;
 }
+
+md-menu {
+  margin-top: 3px;
+}
+
+md-grid-list {
+  padding-bottom: 0px !important;
+  height: calc(100% - 170px) !important;
+}
+md-grid-tile-footer {
+  background: rgba(0, 0, 0, 0.75) !important;
+}

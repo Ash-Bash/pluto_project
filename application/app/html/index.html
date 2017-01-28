@@ -9,18 +9,6 @@
     <link rel="stylesheet" href="../../node_modules/angular-material/angular-material.min.css">
   </head>
   <body ng-app="BlankApp" style="-webkit-app-region: drag" ng-cloak>
-    <!--<h1>Hello, World!</h1>
-    <h2 id="sm_iot_testheader">IoT Device</h2>
-    <h2 id="sm_mobile_testheader">Small Mobile Device (iPhone 4, 3.5in)</h2>
-    <h2 id="m_mobile_testheader">Medium Mobile Device (iPhone 5, 4in)</h2>
-    <h2 id="l_mobile_testheader">Large Mobile Device (iPhone 6, 4.7in)</h2>
-    <h2 id="xl_mobile_testheader">Extra Large Mobile Device (iPhone 6Plus, 5.5in)</h2>
-    <h2 id="portait_tablet_testheader">Portait Table Device (iPad)</h2>
-    <h2 id="landscape_tablet_testheader">Landscape Table Device (iPad)</h2>
-    <h2 id="m_desktop_testheader">Medium Desktop Device (Windows, Mac and Linux, 18in)</h2>
-    <h2 id="l_desktop_testheader">Large Desktop Device (Windows, Mac and Linux, 21in)</h2>
-    <h2 id="xl_desktop_testheader">Extra Large Desktop Device (Windows, Mac and Linux, 24in)</h2>
-    <h2 id="xxl_desktop_testheader">Extra Extra Large Desktop Device (Windows, Mac and Linux, 27in)</h2>-->
 
     <div ng-controller="ApplicationController" ng-cloak style="bottom: 0 !important; height: 100% !important; overflow: hidden;">
       <div>
@@ -418,22 +406,124 @@
                 <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
               </md-content>
             </md-tab>
-            <md-tab id="FeedListTab" label="Feed List">
-              <md-content>
+            <md-tab id="FeedListTab" label="Feed List" md-dynamic-height md-border-bottom>
+              <div>
                 <md-toolbar class="md-theme-indigo">
                   <div class="md-toolbar-tools">
                     <h2>
                       <span>Feed List</span>
                     </h2>
                     <span flex></span>
-                    <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-button class="md-icon-button" aria-label="Favorite" ng-click="toggleAddCustomFeed()">
                       <ng-md-icon icon="add" style="fill: white; margin-right: 10px;"></ng-md-icon>
                     </md-button>
                   </div>
                 </md-toolbar>
-                <h1 class="md-display-2">Feed List</h1>
-                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-              </md-content>
+                <md-content style="overflow-y: scroll" layout-padding>
+                  <md-grid-list
+                        md-cols="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="6"
+                        md-row-height-gt-md="1:1" md-row-height="1:1"
+                        md-gutter="8px" md-gutter-gt-sm="4px" >
+
+                    <md-grid-tile class="md-whiteframe-3dp" ng-repeat="item in newsfeeds"
+                                  md-colspan-sm="1"
+                                  md-colspan-xs="1"
+                                  ng-class="item.name"
+                                  ng-click="toggleAddFeed(item)" >
+                      <img ng-src="{{item.icon}}" style="width: 100%; height: 100%;"></img>
+                      <md-grid-tile-footer><h3>{{item.name}}</h3></md-grid-tile-footer>
+                    </md-grid-tile>
+                  </md-grid-list>
+                </md-content>
+                <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="rightsidenav_addcustomfeed" style="width: 335px;">
+                  <md-toolbar class="md-theme-light">
+                    <h1 class="md-toolbar-tools">Add Custom Feed</h1>
+                  </md-toolbar>
+                  <md-content layout-padding>
+                    <form>
+                      <md-input-container style="width: 100%;">
+                        <label for="testInput">Feed Name</label>
+                        <input type="text" id="testInput" ng-model="addcustomfeedItem.name">
+                      </md-input-container>
+                      <md-input-container style="width: 100%;">
+                        <label for="testInput">Feed Region</label>
+                        <input type="text" id="testInput" ng-model="addcustomfeedItem.region">
+                      </md-input-container>
+                      <md-input-container style="width: 100%;">
+                        <label for="testInput">Feed Category</label>
+                        <input type="text" id="testInput" ng-model="addcustomfeedItem.category">
+                      </md-input-container>
+                      <md-input-container style="width: 100%;">
+                        <label for="testInput">Feed Website</label>
+                        <input type="text" id="testInput" ng-model="addcustomfeedItem.websiteUrl">
+                      </md-input-container>
+                      <md-input-container>
+                        <label for="testInput">Feed Url</label>
+                        <input type="text" id="testInput" ng-model="addcustomfeedItem.feedUrl">
+                      </md-input-container>
+                      <md-input-container style="width: 100%;">
+                        <label for="testInput">Feed Icon</label>
+                        <input type="text" id="testInput" ng-model="addcustomfeedItem.icon">
+                      </md-input-container>
+                    </form>
+
+                  </md-content>
+                  <md-content style="bottom: 5; position: absolute; margin-bottom: 10px;">
+                    <md-button style="Display: inline-block; padding-right: 0px; margin-right: 0px;" class="md-accent" ng-click="toggleAddCustomFeed()">
+                      cancel
+                    </md-button>
+                    <md-button style="Display: inline-block; padding-right: 0px; margin-right: 0px;" class="md-warn" ng-click="requestFeed($event)">
+                      Request Feed
+                    </md-button>
+                    <md-button style="Display: inline-block;" class="md-primary">
+                      Save
+                    </md-button>
+                  </md-content>
+                </md-sidenav>
+
+                <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="rightsidenav_addfeed" style="width: 335px;">
+                  <md-toolbar class="md-theme-light">
+                    <h1 class="md-toolbar-tools">Add Feed</h1>
+                  </md-toolbar>
+                  <md-content layout-padding>
+                    <form >
+                      <md-input-container style="width: 100%;">
+                        <label for="testInput">Feed Name</label>
+                        <input type="text" id="testInput" ng-model="addfeedItem.name">
+                      </md-input-container>
+                      <md-input-container style="width: 100%;" disabled>
+                        <label for="testInput">Feed Region</label>
+                        <input type="text" id="testInput" ng-model="addfeedItem.region" disabled>
+                      </md-input-container>
+                      <md-input-container style="width: 100%;">
+                        <label for="testInput">Feed Category</label>
+                        <input type="text" id="testInput" ng-model="addfeedItem.category" disabled>
+                      </md-input-container>
+                      <md-input-container style="width: 100%;">
+                        <label for="testInput">Feed Website</label>
+                        <input type="text" id="testInput" ng-model="addfeedItem.websiteUrl" disabled>
+                      </md-input-container>
+                      <md-input-container style="width: 100%;">
+                        <label for="testInput">Feed Feed Url</label>
+                        <input type="text" id="testInput" ng-model="addfeedItem.feedUrl" disabled>
+                      </md-input-container>
+                      <md-input-container style="width: 100%;">
+                        <label for="testInput">Feed Icon</label>
+                        <input type="text" id="testInput" ng-model="addfeedItem.relicon" disabled>
+                      </md-input-container>
+                    </form>
+
+                  </md-content>
+                  <md-content style="bottom: 5; position: absolute; margin-bottom: 10px;">
+                    <md-button style="Display: inline-block; padding-right: 0px; margin-right: 0px;" class="md-accent" ng-click="toggleAddFeed(item)">
+                      cancel
+                    </md-button>
+                    <md-button style="Display: inline-block;" class="md-primary">
+                      Save
+                    </md-button>
+                  </md-content>
+                </md-sidenav>
+              </div>
             </md-tab>
             <md-tab id="SettingsTab" label="Settings">
               <md-content>
