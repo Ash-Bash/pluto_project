@@ -1,4 +1,5 @@
 const electron = require('electron');
+const Datastore = require('nedb');
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -10,6 +11,25 @@ const url = require('url')
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+
+var db = new Datastore({ filename: 'app/database/app_pluto.db' });
+db.loadDatabase(function (err) {    // Callback is optional
+// Now commands will be executed
+});
+
+db = {};
+db.feeds = new Datastore('app/database/app_feeds.db');
+db.favorites = new Datastore('app/database/app_favorites.db');
+db.readlater = new Datastore('app/database/app_readlater.db');
+db.history = new Datastore('app/database/app_history.db');
+
+// You need to load each database (here we do it asynchronously)
+db.feeds.loadDatabase();
+db.favorites.loadDatabase();
+db.readlater.loadDatabase();
+db.history.loadDatabase();
+
+
 
 function createWindow () {
   // Create the browser window.

@@ -435,47 +435,48 @@
                     </md-grid-tile>
                   </md-grid-list>
                 </md-content>
-                <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="rightsidenav_addcustomfeed" style="width: 335px;">
+                <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="rightsidenav_addcustomfeed" style="width: 340px;">
                   <md-toolbar class="md-theme-light">
                     <h1 class="md-toolbar-tools">Add Custom Feed</h1>
                   </md-toolbar>
-                  <md-content layout-padding>
-                    <form>
-                      <md-input-container style="width: 100%;">
-                        <label for="testInput">Feed Name</label>
-                        <input type="text" id="testInput" ng-model="addcustomfeedItem.name">
-                      </md-input-container>
-                      <md-input-container style="width: 100%;">
-                        <label for="testInput">Feed Region</label>
-                        <input type="text" id="testInput" ng-model="addcustomfeedItem.region">
-                      </md-input-container>
-                      <md-input-container style="width: 100%;">
-                        <label for="testInput">Feed Category</label>
-                        <input type="text" id="testInput" ng-model="addcustomfeedItem.category">
-                      </md-input-container>
-                      <md-input-container style="width: 100%;">
-                        <label for="testInput">Feed Website</label>
-                        <input type="text" id="testInput" ng-model="addcustomfeedItem.websiteUrl">
-                      </md-input-container>
-                      <md-input-container>
-                        <label for="testInput">Feed Url</label>
-                        <input type="text" id="testInput" ng-model="addcustomfeedItem.feedUrl">
-                      </md-input-container>
-                      <md-input-container style="width: 100%;">
-                        <label for="testInput">Feed Icon</label>
-                        <input type="text" id="testInput" ng-model="addcustomfeedItem.icon">
-                      </md-input-container>
-                    </form>
-
-                  </md-content>
-                  <md-content style="bottom: 5; position: absolute; margin-bottom: 10px;">
+                  <div style="height: 64% !important;">
+                    <md-content style="display: block; overflow-y: auto; overflow-x: none;" layout-padding flex>
+                      <form style="height: 100%; padding-bottom: 0px; margin-bottom: 0px;">
+                        <md-input-container style="width: 100%;">
+                          <label for="testInput">Feed Name</label>
+                          <input type="text" id="testInput" ng-model="addcustomfeedItem.name">
+                        </md-input-container>
+                        <md-input-container style="width: 100%;">
+                          <label for="testInput">Feed Region</label>
+                          <input type="text" id="testInput" ng-model="addcustomfeedItem.region">
+                        </md-input-container>
+                        <md-input-container style="width: 100%;">
+                          <label for="testInput">Feed Category</label>
+                          <input type="text" id="testInput" ng-model="addcustomfeedItem.category">
+                        </md-input-container>
+                        <md-input-container style="width: 100%;">
+                          <label for="testInput">Feed Website</label>
+                          <input type="text" id="testInput" ng-model="addcustomfeedItem.websiteUrl">
+                        </md-input-container>
+                        <md-input-container>
+                          <label for="testInput">Feed Url</label>
+                          <input type="text" id="testInput" ng-model="addcustomfeedItem.feedUrl">
+                        </md-input-container>
+                        <md-input-container style="width: 100%;">
+                          <label for="testInput">Feed Icon</label>
+                          <input type="text" id="testInput" ng-model="addcustomfeedItem.icon">
+                        </md-input-container>
+                      </form>
+                    </md-content>
+                  </div>
+                  <md-content style="display: block; bottom: 0; position: fixed; margin-bottom: 5px;">
                     <md-button style="Display: inline-block; padding-right: 0px; margin-right: 0px;" class="md-accent" ng-click="toggleAddCustomFeed()">
                       cancel
                     </md-button>
                     <md-button style="Display: inline-block; padding-right: 0px; margin-right: 0px;" class="md-warn" ng-click="requestFeed($event)">
                       Request Feed
                     </md-button>
-                    <md-button style="Display: inline-block;" class="md-primary">
+                    <md-button style="Display: inline-block;" class="md-primary" ng-click="addCustomFeedToLocalDatabase(addfeedItem)">
                       Save
                     </md-button>
                   </md-content>
@@ -485,40 +486,41 @@
                   <md-toolbar class="md-theme-light">
                     <h1 class="md-toolbar-tools">Add Feed</h1>
                   </md-toolbar>
-                  <md-content layout-padding>
-                    <form >
-                      <md-input-container style="width: 100%;">
-                        <label for="testInput">Feed Name</label>
-                        <input type="text" id="testInput" ng-model="addfeedItem.name">
-                      </md-input-container>
-                      <md-input-container style="width: 100%;" disabled>
-                        <label for="testInput">Feed Region</label>
-                        <input type="text" id="testInput" ng-model="addfeedItem.region" disabled>
-                      </md-input-container>
-                      <md-input-container style="width: 100%;">
-                        <label for="testInput">Feed Category</label>
-                        <input type="text" id="testInput" ng-model="addfeedItem.category" disabled>
-                      </md-input-container>
-                      <md-input-container style="width: 100%;">
-                        <label for="testInput">Feed Website</label>
-                        <input type="text" id="testInput" ng-model="addfeedItem.websiteUrl" disabled>
-                      </md-input-container>
-                      <md-input-container style="width: 100%;">
-                        <label for="testInput">Feed Feed Url</label>
-                        <input type="text" id="testInput" ng-model="addfeedItem.feedUrl" disabled>
-                      </md-input-container>
-                      <md-input-container style="width: 100%;">
-                        <label for="testInput">Feed Icon</label>
-                        <input type="text" id="testInput" ng-model="addfeedItem.relicon" disabled>
-                      </md-input-container>
-                    </form>
-
-                  </md-content>
+                  <div style="height: 64% !important;">
+                    <md-content style="display: block; overflow-y: auto; overflow-x: none;" layout-padding>
+                      <form style="height: 100%; padding-bottom: 0px; margin-bottom: 0px;">
+                        <md-input-container style="width: 100%;">
+                          <label for="testInput">Feed Name</label>
+                          <input type="text" id="testInput" ng-model="addfeedItem.name">
+                        </md-input-container>
+                        <md-input-container style="width: 100%;" disabled>
+                          <label for="testInput">Feed Region</label>
+                          <input type="text" id="testInput" ng-model="addfeedItem.region" disabled>
+                        </md-input-container>
+                        <md-input-container style="width: 100%;">
+                          <label for="testInput">Feed Category</label>
+                          <input type="text" id="testInput" ng-model="addfeedItem.category" disabled>
+                        </md-input-container>
+                        <md-input-container style="width: 100%;">
+                          <label for="testInput">Feed Website</label>
+                          <input type="text" id="testInput" ng-model="addfeedItem.websiteUrl" disabled>
+                        </md-input-container>
+                        <md-input-container style="width: 100%;">
+                          <label for="testInput">Feed Feed Url</label>
+                          <input type="text" id="testInput" ng-model="addfeedItem.feedUrl" disabled>
+                        </md-input-container>
+                        <md-input-container style="width: 100%;">
+                          <label for="testInput">Feed Icon</label>
+                          <input type="text" id="testInput" ng-model="addfeedItem.relicon" disabled>
+                        </md-input-container>
+                      </form>
+                    </md-content>
+                  </div>
                   <md-content style="bottom: 5; position: absolute; margin-bottom: 10px;">
                     <md-button style="Display: inline-block; padding-right: 0px; margin-right: 0px;" class="md-accent" ng-click="toggleAddFeed(item)">
                       cancel
                     </md-button>
-                    <md-button style="Display: inline-block;" class="md-primary">
+                    <md-button style="Display: inline-block;" class="md-primary" ng-click="addFeedToLocalDatabase(addfeedItem)">
                       Save
                     </md-button>
                   </md-content>

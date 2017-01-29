@@ -108,6 +108,13 @@ _TeamCity*
 *.ncrunch*
 .*crunch*.local.xml
 
+# Database Files
+app_pluto.db
+app_feeds.db
+app_favorites.db
+app_readlater.db
+app_history.db
+
 # Installshield output folder
 [Ee]xpress/
 

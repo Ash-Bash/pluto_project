@@ -1,5 +1,26 @@
 const {BrowserWindow} = require('electron').remote;
 var remote = require('electron').remote;
+const Datastore = require('nedb');
+
+db = {};
+db.feeds = new Datastore({ filename: 'app/database/app_feeds.db', autoload: true });
+db.favorites = new Datastore({ filename: 'app/database/app_favorites.db', autoload: true });
+db.readlater = new Datastore({ filename: 'app/database/app_readlater.db', autoload: true });
+db.history = new Datastore({ filename: 'app/database/app_history.db', autoload: true });
+
+// You need to load each database (here we do it asynchronously)
+db.feeds.loadDatabase(function (err) {    // Callback is optional
+// Now commands will be executed
+});
+db.favorites.loadDatabase(function (err) {    // Callback is optional
+// Now commands will be executed
+});
+db.readlater.loadDatabase(function (err) {    // Callback is optional
+// Now commands will be executed
+});
+db.history.loadDatabase(function (err) {    // Callback is optional
+// Now commands will be executed
+});
 
 angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
@@ -18,8 +39,14 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
   $scope.newsfeeds = "";
   $scope.feed = "";
-  $scope.addfeedItem = "";
-  $scope.addcustomfeedItem = "";
+  //$scope.addfeedItem = "";
+  //$scope.addcustomfeedItem = "";
+
+  // Database Document Objects
+  $scope.app_feeds_doc = {};
+  $scope.app_favorites_doc = {};
+  $scope.app_readlater_doc = {};
+  $scope.app_history_doc = {};
 
   // HTTP Get Requests
   // Gets Newsfeeds Database
@@ -54,6 +81,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
     $mdSidenav("rightsidenav_addfeed").toggle();
 
     $scope.addfeedItem = feedItem;
+
   }
 
   $scope.requestFeed = function(ev) {
@@ -69,6 +97,40 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
             .ok('Ok')
             .targetEvent(ev)
         );
+    });
+  }
+
+  $scope.addFeedToLocalDatabase = function(feedItem) {
+    $scope.app_feeds_doc = {
+      name: feedItem.name,
+      icon: feedItem.relicon,
+      region: feedItem.region,
+      category: feedItem.category,
+      websiteUrl: feedItem.websiteUrl,
+      feedUrl: feedItem.feedUrl
+    };
+
+    db.feeds.insert($scope.app_feeds_doc, function (err, newDoc) {   // Callback is optional
+      // newDoc is the newly inserted document, including its _id
+      // newDoc has no key called notToBeSaved since its value was undefined
+      $mdSidenav("rightsidenav_addfeed").toggle();
+    });
+  }
+
+  $scope.addCustomFeedToLocalDatabase = function(feedItem) {
+    $scope.app_feeds_doc = {
+      name: feedItem.name,
+      icon: feedItem.icon,
+      region: feedItem.region,
+      category: feedItem.category,
+      websiteUrl: feedItem.websiteUrl,
+      feedUrl: feedItem.feedUrl
+    };
+
+    db.feeds.insert($scope.app_feeds_doc, function (err, newDoc) {   // Callback is optional
+      // newDoc is the newly inserted document, including its _id
+      // newDoc has no key called notToBeSaved since its value was undefined
+      $mdSidenav("rightsidenav_addcustomfeed").toggle();
     });
   }
 
