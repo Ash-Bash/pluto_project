@@ -1,5 +1,5 @@
 {
-  "name": "pluto_webservice",
+  "name": "charon_webservice",
   "version": "1.0.0",
   "description": "",
   "main": "./src/server.js",

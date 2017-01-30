@@ -1,5 +1,5 @@
 {
-  "name": "hp_newsfeeds_application",
+  "name": "pluto_application",
   "version": "1.0.0",
   "description": "An application that provides uses with daily news content",
   "main": "./app/app.js",
