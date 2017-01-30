@@ -333,17 +333,16 @@
                     <h1 class="md-toolbar-tools">Favorites</h1>
                   </md-toolbar>
                   <md-content>
-                    <md-list>
+                    <md-list flex>
                       <md-subheader class="md-no-sticky">Favorites</md-subheader>
-                        <md-list-item ng-click="">
+                        <md-list-item ng-click="null">
                           <ng-md-icon icon="star" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
                           <p>Favorites</p>
                         </md-list-item>
-                        <md-list-item ng-click="">
+                        <md-list-item ng-click="null">
                           <ng-md-icon icon="visibility" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
                           <p>Read Later</p>
                         </md-list-item>
-                        <md-divider></md-divider>
                     </md-list>
                   </md-content>
                 </md-sidenav>
@@ -435,7 +434,7 @@
                     </md-grid-tile>
                   </md-grid-list>
                 </md-content>
-                <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="rightsidenav_addcustomfeed" style="width: 340px;">
+                <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="rightsidenav_addcustomfeed" style="width: 331px;">
                   <md-toolbar class="md-theme-light">
                     <h1 class="md-toolbar-tools">Add Custom Feed</h1>
                   </md-toolbar>
@@ -458,7 +457,7 @@
                           <label for="testInput">Feed Website</label>
                           <input type="text" id="testInput" ng-model="addcustomfeedItem.websiteUrl">
                         </md-input-container>
-                        <md-input-container>
+                        <md-input-container style="width: 100%;">
                           <label for="testInput">Feed Url</label>
                           <input type="text" id="testInput" ng-model="addcustomfeedItem.feedUrl">
                         </md-input-container>
