@@ -1,14 +1,23 @@
+////////////////////////////////////////////////////////
+//-----------------Dependencies-Section---------------//
+////////////////////////////////////////////////////////
 const {BrowserWindow} = require('electron').remote;
 var remote = require('electron').remote;
 const Datastore = require('nedb');
 
+////////////////////////////////////////////////////////
+//----------------Local-Database-Section--------------//
+////////////////////////////////////////////////////////
+
+//Initilizing Databases
 db = {};
 db.feeds = new Datastore({ filename: 'app/database/app_feeds.db', autoload: true });
 db.favorites = new Datastore({ filename: 'app/database/app_favorites.db', autoload: true });
 db.readlater = new Datastore({ filename: 'app/database/app_readlater.db', autoload: true });
 db.history = new Datastore({ filename: 'app/database/app_history.db', autoload: true });
 
-// You need to load each database (here we do it asynchronously)
+//Loading Databases Into Memory
+// load each database (here we do it asynchronously)
 db.feeds.loadDatabase(function (err) {    // Callback is optional
 // Now commands will be executed
 });
@@ -22,9 +31,16 @@ db.history.loadDatabase(function (err) {    // Callback is optional
 // Now commands will be executed
 });
 
+////////////////////////////////////////////////////////
+//------------AngularJS-Controllers-Section-----------//
+////////////////////////////////////////////////////////
+
 angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
+//Main Application AngularJS Controller
 .controller('ApplicationController', function($mdMedia, $timeout, $mdSidenav, $mdDialog, $mdUtil, $scope, $http) {
+
+  //AngularJS / $scope Variables
   $scope.webserviceAddress = "http://192.168.1.10:2000";
   $scope.isMobile = true;
   $scope.isTablet = false;
@@ -34,13 +50,11 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   $scope.isMaximized = false;
 
   $scope.zoomFactor = 0;
-
+  
   $scope.selectedIndex = 0;
 
   $scope.newsfeeds = "";
   $scope.feed = "";
-  //$scope.addfeedItem = "";
-  //$scope.addcustomfeedItem = "";
 
   // Database Document Objects
   $scope.app_feeds_doc = {};
@@ -48,6 +62,9 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   $scope.app_readlater_doc = {};
   $scope.app_history_doc = {};
 
+  ////////////////////////////////////////
+  //-------HTTP/Network-Functions-------//
+  ////////////////////////////////////////
   // HTTP Get Requests
   // Gets Newsfeeds Database
   var refresh = function() {
@@ -64,19 +81,30 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
             $scope.newsfeeds[i].icon = $scope.webserviceAddress + icon
             $scope.newsfeeds[i].relicon = icon;
           }
-
-          //console.log("Feeds: " +  JSON.stringify($scope.newsfeeds));
       });
   };
 
   // Refresh WebPage
   refresh();
 
-  //FeedList View Functions
+  //Generic function for looking up & toggle Sidenav's in the HTML File (Found in Angular Material Guides)
+  function buildToggler(navID) {
+    var debounceFn = $mdUtil.debounce(function () {
+        $mdSidenav(navID)
+            .toggle()
+    }, 100);
+    return debounceFn;
+  }
+
+  ////////////////////////////////////////
+  //------FeedList-View-Functions-------//
+  ////////////////////////////////////////
+  //Toggle The AddCustomFeed SideNav View
   $scope.toggleAddCustomFeed = function() {
     $mdSidenav("rightsidenav_addcustomfeed").toggle();
   }
 
+  //Toggle The AddFeed SideNav View
   $scope.toggleAddFeed = function(feedItem) {
     $mdSidenav("rightsidenav_addfeed").toggle();
 
@@ -84,6 +112,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
   }
 
+  //Sends a request to the webservice that contains a feed that the user entered wanting added to the offical list
   $scope.requestFeed = function(ev) {
     $http.post($scope.webserviceAddress + '/api/requestedfeeds', $scope.addcustomfeedItem).then(function(response) {
         console.log(response);
@@ -100,6 +129,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
     });
   }
 
+  //Gets Feed data that the user selected from the feed list and saves it to the local app database
   $scope.addFeedToLocalDatabase = function(feedItem) {
     $scope.app_feeds_doc = {
       name: feedItem.name,
@@ -117,6 +147,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
     });
   }
 
+  //Gets Feed data that the user entered and saves it to the local app database
   $scope.addCustomFeedToLocalDatabase = function(feedItem) {
     $scope.app_feeds_doc = {
       name: feedItem.name,
@@ -134,34 +165,15 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
     });
   }
 
-  $scope.showAlert = function(ev) {
-    // Appending dialog to document.body to cover sidenav in docs app
-    // Modal dialogs should fully cover application
-    // to prevent interaction outside of dialog
-    $mdDialog.show(
-      $mdDialog.alert()
-        .parent(angular.element(document.querySelector('#popupContainer')))
-        .clickOutsideToClose(true)
-        .title('This is an alert title')
-        .textContent('You can specify some description text in here.')
-        .ariaLabel('Alert Dialog Demo')
-        .ok('Got it!')
-        .targetEvent(ev)
-    );
-  };
-
-  function buildToggler(navID) {
-    var debounceFn = $mdUtil.debounce(function () {
-        $mdSidenav(navID)
-            .toggle()
-    }, 100);
-    return debounceFn;
-  }
-
+  ////////////////////////////////////////
+  //--Menu/Window-Management-Functions--//
+  ////////////////////////////////////////
+  //Checks if Layout is Desktop Size (if so return true)
   $scope.desktopScreenSizeMode = function () {
       return $scope.isBiggerScreenSize = $mdMedia('gt-md');
   }
 
+  //Checks if Layout is Mobile Size (if so return true)
   $scope.mobileScreenSizeMode = function () {
       return $scope.isBiggerScreenSize = !$mdMedia('gt-md');
   }
@@ -227,17 +239,4 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   }
   //Help Menu Section Actions & Functions
 
-  function DialogController($scope, $mdDialog) {
-    $scope.hide = function() {
-      $mdDialog.hide();
-    };
-
-    $scope.cancel = function() {
-      $mdDialog.cancel();
-    };
-
-    $scope.answer = function(answer) {
-      $mdDialog.hide(answer);
-    };
-  }
 });
