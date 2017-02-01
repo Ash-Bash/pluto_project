@@ -19,12 +19,14 @@ db.loadDatabase(function (err) {    // Callback is optional
 
 db = {};
 db.feeds = new Datastore('app/database/app_feeds.db');
+db.pins = new Datastore('app/database/app_pins.db');
 db.favorites = new Datastore('app/database/app_favorites.db');
 db.readlater = new Datastore('app/database/app_readlater.db');
 db.history = new Datastore('app/database/app_history.db');
 
 // You need to load each database (here we do it asynchronously)
 db.feeds.loadDatabase();
+db.pins.loadDatabase();
 db.favorites.loadDatabase();
 db.readlater.loadDatabase();
 db.history.loadDatabase();

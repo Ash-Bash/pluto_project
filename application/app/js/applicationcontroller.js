@@ -3,33 +3,7 @@
 ////////////////////////////////////////////////////////
 const {BrowserWindow} = require('electron').remote;
 var remote = require('electron').remote;
-const Datastore = require('nedb');
-
-////////////////////////////////////////////////////////
-//----------------Local-Database-Section--------------//
-////////////////////////////////////////////////////////
-
-//Initilizing Databases
-db = {};
-db.feeds = new Datastore({ filename: 'app/database/app_feeds.db', autoload: true });
-db.favorites = new Datastore({ filename: 'app/database/app_favorites.db', autoload: true });
-db.readlater = new Datastore({ filename: 'app/database/app_readlater.db', autoload: true });
-db.history = new Datastore({ filename: 'app/database/app_history.db', autoload: true });
-
-//Loading Databases Into Memory
-// load each database (here we do it asynchronously)
-db.feeds.loadDatabase(function (err) {    // Callback is optional
-// Now commands will be executed
-});
-db.favorites.loadDatabase(function (err) {    // Callback is optional
-// Now commands will be executed
-});
-db.readlater.loadDatabase(function (err) {    // Callback is optional
-// Now commands will be executed
-});
-db.history.loadDatabase(function (err) {    // Callback is optional
-// Now commands will be executed
-});
+var Datastore = require('nedb');
 
 ////////////////////////////////////////////////////////
 //------------AngularJS-Controllers-Section-----------//
@@ -49,8 +23,15 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   $scope.isFullScreenMode = false;
   $scope.isMaximized = false;
 
+  //View Management Variables
+  $scope.IsAllNewsSelected = true;
+  $scope.IsMyFeedsSelected = false;
+  $scope.IsFeed_MyFeedsViewSelected = false;
+  $scope.IsFavoritesSelected = true;
+  $scope.IsReadLaterSelected = false;
+
   $scope.zoomFactor = 0;
-  
+
   $scope.selectedIndex = 0;
 
   $scope.newsfeeds = "";
@@ -61,6 +42,23 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   $scope.app_favorites_doc = {};
   $scope.app_readlater_doc = {};
   $scope.app_history_doc = {};
+
+  // Database Document List Objects
+  $scope.app_feeds_data = {};
+
+  //Non $scope Variables
+  var feeddata = null;
+
+  ////////////////////////////////////////////////////////
+  //----------------Local-Database-Section--------------//
+  ////////////////////////////////////////////////////////
+
+  //Initilizing Databases
+  var feeds = new Datastore({ filename: 'app/database/app_feeds.db', autoload: true });
+  var pins = new Datastore({ filename: 'app/database/app_pins.db', autoload: true });
+  var favorites = new Datastore({ filename: 'app/database/app_favorites.db', autoload: true });
+  var readlater = new Datastore({ filename: 'app/database/app_readlater.db', autoload: true });
+  var history = new Datastore({ filename: 'app/database/app_history.db', autoload: true });
 
   ////////////////////////////////////////
   //-------HTTP/Network-Functions-------//
@@ -82,6 +80,34 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
             $scope.newsfeeds[i].relicon = icon;
           }
       });
+
+      //Loading Databases Into Memory
+      // load each database (here we do it asynchronously)
+      feeds.loadDatabase(function (err) {    // Callback is optional
+      // Now commands will be executed
+        feeds.find({}, function (err, docs) {
+          feeddata = docs;
+          if(err) throw err;
+          loadFeedData(feeddata);
+        });
+      });
+      pins.loadDatabase(function (err) {    // Callback is optional
+      // Now commands will be executed
+      });
+      favorites.loadDatabase(function (err) {    // Callback is optional
+      // Now commands will be executed
+      });
+      readlater.loadDatabase(function (err) {    // Callback is optional
+      // Now commands will be executed
+      });
+      history.loadDatabase(function (err) {    // Callback is optional
+      // Now commands will be executed
+      });
+
+      // Find all documents in the collection
+      /*db.find({}, function (err, docs) {
+        $scope.app_feeds_data = docs;
+      });*/
   };
 
   // Refresh WebPage
@@ -94,6 +120,80 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
             .toggle()
     }, 100);
     return debounceFn;
+  }
+
+  function loadFeedData(docs) {
+    $scope.app_feeds_data = docs;
+
+    for (var i = 0; i < $scope.app_feeds_data.length; i++) {
+      var icon = $scope.app_feeds_data[i].icon
+      $scope.app_feeds_data[i].icon = $scope.webserviceAddress + icon
+      $scope.app_feeds_data[i].relicon = icon;
+    }
+    console.log($scope.app_feeds_data);
+  }
+
+  ////////////////////////////////////////
+  //--------Home-View-Functions---------//
+  ////////////////////////////////////////
+  //Allows Views in the Home Section to be hidden or shown id IsAllNewsSelected is true or false
+  $scope.viewHomeSections = function(id) {
+    if(id == "All_News") {
+      $scope.IsAllNewsSelected = true;
+      $scope.IsMyFeedsSelected = false;
+      refresh();
+    } else if (id == "My_Feeds") {
+      $scope.IsAllNewsSelected = false;
+      $scope.IsMyFeedsSelected = true;
+      refresh();
+    }
+  }
+
+  ////////////////////////////////////////
+  //------My-Feeds-View-Functions-------//
+  ////////////////////////////////////////
+  //Opens a Feed View to show the feed that the user selected
+  $scope.openFeed = function(feed) {
+    if ($scope.IsFeed_MyFeedsViewSelected == true) {
+      $scope.IsFeed_MyFeedsViewSelected = false;
+      $scope.IsMyFeedsSelected = true;
+    } else if ($scope.IsFeed_MyFeedsViewSelected == false) {
+      $scope.IsFeed_MyFeedsViewSelected = true;
+      $scope.IsMyFeedsSelected = false;
+    }
+  }
+
+  //Deletes the selected My Feed Item
+  $scope.deleteMyFeedItem = function(ev, item) {
+    var confirm = $mdDialog.confirm()
+          .title('Are You Sure You Want To Delete This Feed?')
+          .textContent('This Feed will be removed from My Feeds')
+          .targetEvent(ev)
+          .ok('Delete')
+          .cancel('Cancel');
+
+    $mdDialog.show(confirm).then(function() {
+      feeds.remove({ _id: item._id }, {}, function (err, numRemoved) {
+        if(err) throw err;
+        refresh();
+      });
+    }, function() {
+
+    });
+  }
+
+  ////////////////////////////////////////
+  //---Favorites-Splitview-Functions----//
+  ////////////////////////////////////////
+  //Allows Views in the Favorites SplitView Section to be hidden or shown id IsFavoritesSelected is true or false
+  $scope.viewFavoritesSections = function(id) {
+    if(id == "Favorites") {
+      $scope.IsFavoritesSelected = true;
+      refresh();
+    } else if (id == "Read_Later") {
+      $scope.IsFavoritesSelected = false;
+      refresh();
+    }
   }
 
   ////////////////////////////////////////
@@ -140,9 +240,10 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
       feedUrl: feedItem.feedUrl
     };
 
-    db.feeds.insert($scope.app_feeds_doc, function (err, newDoc) {   // Callback is optional
+    feeds.insert($scope.app_feeds_doc, function (err, newDoc) {   // Callback is optional
       // newDoc is the newly inserted document, including its _id
       // newDoc has no key called notToBeSaved since its value was undefined
+      refresh();
       $mdSidenav("rightsidenav_addfeed").toggle();
     });
   }
@@ -161,6 +262,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
     db.feeds.insert($scope.app_feeds_doc, function (err, newDoc) {   // Callback is optional
       // newDoc is the newly inserted document, including its _id
       // newDoc has no key called notToBeSaved since its value was undefined
+      refresh();
       $mdSidenav("rightsidenav_addcustomfeed").toggle();
     });
   }
