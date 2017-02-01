@@ -114,6 +114,7 @@ app_feeds.db
 app_favorites.db
 app_readlater.db
 app_history.db
+app_pins.db
 
 # Installshield output folder
 [Ee]xpress/
