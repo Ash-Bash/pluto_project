@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Angular Material style sheet -->
     <link rel="stylesheet" href="../../node_modules/angular-material/angular-material.min.css">
+
+
+    <!--jQuery Library-->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   </head>
   <body ng-app="BlankApp" style="-webkit-app-region: drag" ng-cloak>
 
@@ -265,87 +269,110 @@
               <md-content>
                 <!-- SplitView -->
                 <section layout="row" flex>
-                <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
-                  <md-toolbar class="md-theme-indigo">
-                    <h1 class="md-toolbar-tools">Home</h1>
-                  </md-toolbar>
-                  <md-content>
-                    <md-list>
-                      <md-subheader class="md-no-sticky">Home</md-subheader>
-                        <md-list-item ng-click="viewHomeSections('All_News')">
-                          <ng-md-icon icon="public" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
-                          <p>All News</p>
-                        </md-list-item>
-                        <md-list-item ng-click="viewHomeSections('My_Feeds')">
-                          <ng-md-icon icon="art_track" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
-                          <p>My Feeds</p>
-                        </md-list-item>
-                        <md-divider></md-divider>
-                    </md-list>
-                  </md-content>
-                </md-sidenav>
-                <md-content ng-if="IsAllNewsSelected" id="AllNews_HomeView" flex>
-                  <md-toolbar class="md-theme-indigo">
-                  <div class="md-toolbar-tools">
-                    <h2>
-                      <span>All News</span>
-                    </h2>
-                    <span flex></span>
-                  </div>
-                </md-toolbar>
-                <md-content layout-padding>
-
-                </md-content>
-                </md-content>
-                <md-content ng-if="IsMyFeedsSelected" id="MyFeeds_HomeView" flex>
-                  <md-toolbar class="md-theme-indigo">
-                    <div class="md-toolbar-tools">
-                      <h2>
-                        <span>My Feeds</span>
-                      </h2>
-                      <span flex></span>
-                    </div>
-                  </md-toolbar>
-                  <md-content layout-padding>
-                  <md-grid-list
-                        md-cols="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="6"
-                        md-row-height-gt-md="1:1" md-row-height="1:1"
-                        md-gutter="8px" md-gutter-gt-sm="4px" >
-
-                    <md-grid-tile class="md-whiteframe-3dp" ng-repeat="item in app_feeds_data"
-                                  md-colspan-sm="1"
-                                  md-colspan-xs="1"
-                                  ng-class="item.name">
-                      <img ng-src="{{item.icon}}" style="width: 100%; height: 100%;" ng-click="openFeed(item)"></img>
-                      <md-grid-tile-footer>
-                        <div layout="row">
-                          <div flex="80">
-                            <h3>{{item.name}}</h3>
-                          </div>
-                          <div flex>
-                          <md-button class="md-icon-button" aria-label="Favorite" ng-click="deleteMyFeedItem($event, item)" style="float: right; position: absolute !important; top: 4 !important; right: 0 !important; padding: 0px !important; margin: 0px !important;">
-                          <ng-md-icon icon="close" style="fill: white;"></ng-md-icon>
-                        </md-button>
-                        </div>
+                  <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
+                    <md-toolbar class="md-theme-indigo">
+                      <h1 class="md-toolbar-tools">Home</h1>
+                    </md-toolbar>
+                    <md-content>
+                      <md-list>
+                        <md-subheader class="md-no-sticky">Home</md-subheader>
+                          <md-list-item ng-click="viewHomeSections('All_News')">
+                            <ng-md-icon icon="public" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                            <p>All News</p>
+                          </md-list-item>
+                          <md-list-item ng-click="viewHomeSections('My_Feeds')">
+                            <ng-md-icon icon="art_track" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
+                            <p>My Feeds</p>
+                          </md-list-item>
+                          <md-divider></md-divider>
+                      </md-list>
+                    </md-content>
+                  </md-sidenav>
+                  <md-content ng-if="IsAllNewsHomeViewSelected" id="AllNews_HomeView" flex>
+                    <md-toolbar class="md-theme-indigo">
+                      <div class="md-toolbar-tools">
+                        <h2>
+                          <span>All News</span>
+                        </h2>
+                        <span flex></span>
                       </div>
-                    </md-grid-tile-footer>
-                    </md-grid-tile>
-                  </md-grid-list>
-                  <md-content>
-                </md-content>
-                <md-content ng-if="IsFeed_MyFeedsViewSelected" id="FeedItem_HomeView" flex>
-                  <md-toolbar class="md-theme-indigo">
-                    <div class="md-toolbar-tools">
-                      <h2>
-                        <span>Hello</span>
-                      </h2>
-                      <span flex></span>
-                    </div>
-                  </md-toolbar>
-                  <md-content layout-padding>
-                    LOLS
-                  <md-content>
-                </md-content>
+                    </md-toolbar>
+                    <md-content layout-padding>
+
+                    </md-content>
+                  </md-content>
+                  <md-content ng-if="IsMyFeedsHomeViewSelected" id="MyFeeds_HomeView" flex>
+                    <md-toolbar class="md-theme-indigo">
+                      <div class="md-toolbar-tools">
+                        <h2>
+                          <span>My Feeds</span>
+                        </h2>
+                        <span flex></span>
+                      </div>
+                    </md-toolbar>
+                    <md-content layout-padding>
+                    <md-grid-list
+                          md-cols="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="6"
+                          md-row-height-gt-md="1:1" md-row-height="1:1"
+                          md-gutter="8px" md-gutter-gt-sm="4px" >
+
+                      <md-grid-tile class="md-whiteframe-3dp" ng-repeat="item in app_feeds_data"
+                                    md-colspan-sm="1"
+                                    md-colspan-xs="1"
+                                    ng-class="item.name">
+                        <img ng-src="{{item.icon}}" style="width: 100%; height: 100%;" ng-click="openFeed(item, true)"></img>
+                        <md-grid-tile-footer>
+                          <div layout="row">
+                            <div flex="80">
+                              <h3>{{item.name}}</h3>
+                            </div>
+                            <div flex>
+                            <md-button class="md-icon-button" aria-label="Favorite" ng-click="deleteMyFeedItem($event, item)" style="float: right; position: absolute !important; top: 4 !important; right: 0 !important; padding: 0px !important; margin: 0px !important;">
+                            <ng-md-icon icon="close" style="fill: white;"></ng-md-icon>
+                          </md-button>
+                          </div>
+                        </div>
+                      </md-grid-tile-footer>
+                      </md-grid-tile>
+                    </md-grid-list>
+                  </md-content>
+                  </md-content>
+                  <md-content ng-if="IsFeed_HomeViewSelected" id="FeedItem_HomeView" flex>
+                    <md-content>
+                      <section layout="row" flex>
+                        <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
+                          <md-toolbar class="md-theme-indigo">
+                            <h1 class="md-toolbar-tools">Feed View</h1>
+                          </md-toolbar>
+                          <md-content>
+                            <md-list>
+                              <md-list-item class="md-3-line" ng-click="null">
+                                <img ng-src="" class="md-avatar" alt="" />
+                                <div class="md-list-item-text" layout="column">
+                                  <h3>Feed Item Title</h3>
+                                  <h4>Web URL</h4>
+                                  <p>Description</p>
+                                </div>
+                              </md-list-item>
+                            </md-list>
+                          </md-content>
+                        </md-sidenav>
+                        <md-content flex>
+                          <md-toolbar class="md-theme-indigo">
+                            <div class="md-toolbar-tools">
+                              <h2>
+                                <span>Article View</span>
+                              </h2>
+                              <span flex></span>
+                            </div>
+                          </md-toolbar>
+                          <md-content layout-padding>
+                            <h1>Hello, World!</h1>
+                          </md-content>
+                        </md-content>
+                      </section>
+                    </md-content>
+                  </md-content>
                 </section>
               </md-content>
             </md-tab>
@@ -367,42 +394,80 @@
             <!--My Feeds Tab-->
             <md-tab ng-if="desktopScreenSizeMode()" label="My Feeds">
               <md-content>
-                <md-toolbar class="md-theme-indigo">
-                  <div class="md-toolbar-tools">
-                    <h2>
-                      <span>My Feeds</span>
-                    </h2>
-                    <span flex></span>
-                    <md-button class="md-icon-button" aria-label="Favorite">
-                      <ng-md-icon icon="create" style="fill: white; margin-right: 10px;"></ng-md-icon>
-                    </md-button>
-                  </div>
-                </md-toolbar>
-                <md-content layout-padding>
-                  <md-grid-list
-                        md-cols="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="6"
-                        md-row-height-gt-md="1:1" md-row-height="1:1"
-                        md-gutter="8px" md-gutter-gt-sm="4px" >
+                <md-content ng-if="IsMyFeedsSelected">
+                  <md-toolbar class="md-theme-indigo">
+                    <div class="md-toolbar-tools">
+                      <h2>
+                        <span>My Feeds</span>
+                      </h2>
+                      <span flex></span>
+                      <md-button class="md-icon-button" aria-label="Favorite">
+                        <ng-md-icon icon="create" style="fill: white; margin-right: 10px;"></ng-md-icon>
+                      </md-button>
+                    </div>
+                  </md-toolbar>
+                  <md-content layout-padding>
+                    <md-grid-list
+                          md-cols="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="6"
+                          md-row-height-gt-md="1:1" md-row-height="1:1"
+                          md-gutter="8px" md-gutter-gt-sm="4px" >
 
-                    <md-grid-tile class="md-whiteframe-3dp" ng-repeat="item in app_feeds_data"
-                                  md-colspan-sm="1"
-                                  md-colspan-xs="1"
-                                  ng-class="item.name">
-                      <img ng-src="{{item.icon}}" style="width: 100%; height: 100%;" ng-click="openFeed(item)"></img>
-                      <md-grid-tile-footer>
-                        <div layout="row">
-                          <div flex="80">
-                            <h3>{{item.name}}</h3>
+                      <md-grid-tile class="md-whiteframe-3dp" ng-repeat="item in app_feeds_data"
+                                    md-colspan-sm="1"
+                                    md-colspan-xs="1"
+                                    ng-class="item.name">
+                        <img ng-src="{{item.icon}}" style="width: 100%; height: 100%;" ng-click="openFeed(item, false)"></img>
+                        <md-grid-tile-footer>
+                          <div layout="row">
+                            <div flex="80">
+                              <h3>{{item.name}}</h3>
+                            </div>
+                            <div flex>
+                            <md-button class="md-icon-button" aria-label="Favorite" ng-click="deleteMyFeedItem($event, item)" style="float: right; position: absolute !important; top: 4 !important; right: 0 !important; padding: 0px !important; margin: 0px !important;">
+                            <ng-md-icon icon="close" style="fill: white;"></ng-md-icon>
+                          </md-button>
                           </div>
-                          <div flex>
-                          <md-button class="md-icon-button" aria-label="Favorite" ng-click="deleteMyFeedItem($event, item)" style="float: right; position: absolute !important; top: 4 !important; right: 0 !important; padding: 0px !important; margin: 0px !important;">
-                          <ng-md-icon icon="close" style="fill: white;"></ng-md-icon>
-                        </md-button>
                         </div>
-                      </div>
-                    </md-grid-tile-footer>
-                    </md-grid-tile>
-                <md-content>
+                      </md-grid-tile-footer>
+                      </md-grid-tile>
+                  </md-content>
+                </md-content>
+                <md-content ng-if="IsFeed_MyFeedsViewSelected" id="FeedItem_HomeView" flex>
+                  <md-content>
+                    <section layout="row" flex>
+                      <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
+                        <md-toolbar class="md-theme-indigo">
+                          <h1 class="md-toolbar-tools">Feed View</h1>
+                        </md-toolbar>
+                        <md-content>
+                          <md-list>
+                            <md-list-item class="md-3-line" ng-click="null">
+                              <img ng-src="" class="md-avatar" alt="" />
+                              <div class="md-list-item-text" layout="column">
+                                <h3>Feed Item Title</h3>
+                                <h4>Web URL</h4>
+                                <p>Description</p>
+                              </div>
+                            </md-list-item>
+                          </md-list>
+                        </md-content>
+                      </md-sidenav>
+                      <md-content flex>
+                        <md-toolbar class="md-theme-indigo">
+                          <div class="md-toolbar-tools">
+                            <h2>
+                              <span>Article View</span>
+                            </h2>
+                            <span flex></span>
+                          </div>
+                        </md-toolbar>
+                        <md-content layout-padding>
+                          <h1>Hello, World!</h1>
+                        </md-content>
+                      </md-content>
+                    </section>
+                  </md-content>
+                </md-content>
               </md-content>
             </md-tab>
             <!--Favorites Tab-->

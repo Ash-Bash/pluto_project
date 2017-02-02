@@ -11,8 +11,16 @@ var Datastore = require('nedb');
 
 angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
+.factory('FeedService',['$http',function($http){
+    return {
+        parseFeed : function(url){
+            return $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=15&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
+        }
+      }
+}])
+
 //Main Application AngularJS Controller
-.controller('ApplicationController', function($mdMedia, $timeout, $mdSidenav, $mdDialog, $mdUtil, $scope, $http) {
+.controller('ApplicationController', function($mdMedia, $timeout, $mdSidenav, $mdDialog, $mdUtil, $scope, $http, FeedService) {
 
   //AngularJS / $scope Variables
   $scope.webserviceAddress = "http://192.168.1.10:2000";
@@ -24,9 +32,11 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   $scope.isMaximized = false;
 
   //View Management Variables
-  $scope.IsAllNewsSelected = true;
-  $scope.IsMyFeedsSelected = false;
+  $scope.IsAllNewsHomeViewSelected = true;
+  $scope.IsMyFeedsHomeViewSelected = false;
+  $scope.IsFeed_HomeViewSelected = false;
   $scope.IsFeed_MyFeedsViewSelected = false;
+  $scope.IsMyFeedsSelected = true;
   $scope.IsFavoritesSelected = true;
   $scope.IsReadLaterSelected = false;
 
@@ -36,6 +46,9 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
   $scope.newsfeeds = "";
   $scope.feed = "";
+
+  // RSS Feed Variables
+  $scope.rssFeedData = {};
 
   // Database Document Objects
   $scope.app_feeds_doc = {};
@@ -133,18 +146,49 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
     console.log($scope.app_feeds_data);
   }
 
+  function loadRSSData(feed) {
+    /*$http.get(feed.feedUrl).then(function (data) {
+      $scope.rssFeedData = data.query.rss;
+      console.log($scope.rssFeedData);
+    });*/
+    /*FeedService.parseFeed(feed.feedUrl).then(function (res) {
+        $scope.rssFeedData = res.data.responseData.feed.entries;
+        console.log($scope.rssFeedData);
+    });*/
+    $http.get(" https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(feed.feedUrl) + "&api_key=snrqeovk88j7lybilkvxtfif9muzebeaq3ojlyid")
+            .then(function(data) {
+                $scope.rssFeedData = data;
+                console.log($scope.rssFeedData);
+    });
+    //'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%20%3D%20\'' + encodeURIComponent(feed.feedUrl) + '\'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=JSON_CALLBACK'
+    /*$http({
+        url: 'https://api.rss2json.com/v1/api.json',
+       method: 'GET',
+       dataType: 'json',
+        data: {
+            rss_url: 'https://news.ycombinator.com/rss'
+        }
+    }).then(function(data) {
+        $scope.rssFeedData = data;
+        console.log($scope.rssFeedData);
+    });*/
+
+  }
+
   ////////////////////////////////////////
   //--------Home-View-Functions---------//
   ////////////////////////////////////////
   //Allows Views in the Home Section to be hidden or shown id IsAllNewsSelected is true or false
   $scope.viewHomeSections = function(id) {
     if(id == "All_News") {
-      $scope.IsAllNewsSelected = true;
-      $scope.IsMyFeedsSelected = false;
+      $scope.IsAllNewsHomeViewSelected = true;
+      $scope.IsMyFeedsHomeViewSelected = false;
+      $scope.IsFeed_HomeViewSelected = false;
       refresh();
     } else if (id == "My_Feeds") {
-      $scope.IsAllNewsSelected = false;
-      $scope.IsMyFeedsSelected = true;
+      $scope.IsAllNewsHomeViewSelected = false;
+      $scope.IsMyFeedsHomeViewSelected = true;
+      $scope.IsFeed_HomeViewSelected = false;
       refresh();
     }
   }
@@ -153,13 +197,27 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   //------My-Feeds-View-Functions-------//
   ////////////////////////////////////////
   //Opens a Feed View to show the feed that the user selected
-  $scope.openFeed = function(feed) {
-    if ($scope.IsFeed_MyFeedsViewSelected == true) {
-      $scope.IsFeed_MyFeedsViewSelected = false;
-      $scope.IsMyFeedsSelected = true;
-    } else if ($scope.IsFeed_MyFeedsViewSelected == false) {
-      $scope.IsFeed_MyFeedsViewSelected = true;
-      $scope.IsMyFeedsSelected = false;
+  $scope.openFeed = function(feed, ishomeview) {
+    if (ishomeview == true) {
+      if ($scope.IsFeed_HomeViewSelected == true) {
+        $scope.IsFeed_HomeViewSelected = false;
+        $scope.IsAllNewsHomeViewSelected = false;
+        $scope.IsMyFeedsHomeViewSelected = true;
+      } else if ($scope.IsFeed_HomeViewSelected == false) {
+        loadRSSData(feed);
+        $scope.IsFeed_HomeViewSelected = true;
+        $scope.IsAllNewsHomeViewSelected = false;
+        $scope.IsMyFeedsHomeViewSelected = false;
+      }
+    } else if (ishomeview == false) {
+      if ($scope.IsFeed_MyFeedsViewSelected == true) {
+        $scope.IsFeed_MyFeedsViewSelected = false;
+        $scope.IsMyFeedsSelected = true;
+      } else if ($scope.IsFeed_MyFeedsViewSelected == false) {
+        loadRSSData(feed);
+        $scope.IsFeed_MyFeedsViewSelected = true;
+        $scope.IsMyFeedsSelected = false;
+      }
     }
   }
 

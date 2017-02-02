@@ -1,6 +1,7 @@
 // Dependencies
 var http = require('http');
 var express = require('express');
+var Feed = require('rss-to-json');
 var restful = require('node-restful');
 var mongoose = restful.mongoose;
 var bodyParser = require('body-parser');
@@ -76,6 +77,17 @@ ApprovedFeeds.register(app, '/api/data/approvedfeeds');
 ////////////////////////////////////////////////////////
 
 // Get API's
+
+//----------------------RSS-Feed-Data-------------------//
+
+app.get("/api/rssfeed/url", function(req, res) {
+    console.log("I Received a GET Request");
+
+    Feed.load(req.params.url, function(err, rss){
+      res.json(rss);
+      console.log(rss);
+    });
+});
 
 //------------------------Newsfeeds--------------------//
 
