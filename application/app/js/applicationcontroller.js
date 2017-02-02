@@ -4,6 +4,7 @@
 const {BrowserWindow} = require('electron').remote;
 var remote = require('electron').remote;
 var Datastore = require('nedb');
+//var Feed = require("feed-read-parser");
 
 ////////////////////////////////////////////////////////
 //------------AngularJS-Controllers-Section-----------//
@@ -23,7 +24,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 .controller('ApplicationController', function($mdMedia, $timeout, $mdSidenav, $mdDialog, $mdUtil, $scope, $http, FeedService) {
 
   //AngularJS / $scope Variables
-  $scope.webserviceAddress = "http://192.168.1.10:2000";
+  $scope.webserviceAddress = "http://localhost:2000";
   $scope.isMobile = true;
   $scope.isTablet = false;
   $scope.isDesktop = false;
@@ -58,6 +59,9 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
   // Database Document List Objects
   $scope.app_feeds_data = {};
+
+  $scope.currentSelectedFeed_HomeView = {};
+  $scope.currentSelectedFeed_MyFeedsView = {};
 
   //Non $scope Variables
   var feeddata = null;
@@ -147,32 +151,13 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
   }
 
   function loadRSSData(feed) {
-    /*$http.get(feed.feedUrl).then(function (data) {
-      $scope.rssFeedData = data.query.rss;
-      console.log($scope.rssFeedData);
-    });*/
-    /*FeedService.parseFeed(feed.feedUrl).then(function (res) {
-        $scope.rssFeedData = res.data.responseData.feed.entries;
-        console.log($scope.rssFeedData);
-    });*/
-    $http.get(" https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(feed.feedUrl) + "&api_key=snrqeovk88j7lybilkvxtfif9muzebeaq3ojlyid")
-            .then(function(data) {
-                $scope.rssFeedData = data;
-                console.log($scope.rssFeedData);
+    RSSParser.parseURL(feed.feedUrl, function(err, parsed) {
+      console.log(parsed.feed);
+      $scope.rssFeedData = parsed.feed.entries;
     });
-    //'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%20%3D%20\'' + encodeURIComponent(feed.feedUrl) + '\'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=JSON_CALLBACK'
-    /*$http({
-        url: 'https://api.rss2json.com/v1/api.json',
-       method: 'GET',
-       dataType: 'json',
-        data: {
-            rss_url: 'https://news.ycombinator.com/rss'
-        }
-    }).then(function(data) {
-        $scope.rssFeedData = data;
-        console.log($scope.rssFeedData);
-    });*/
 
+    $scope.currentSelectedFeed_HomeView = feed;
+    $scope.currentSelectedFeed_MyFeedsView = feed;
   }
 
   ////////////////////////////////////////
@@ -238,6 +223,11 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
     }, function() {
 
     });
+  }
+
+  $scope.backToMyFeedsView = function() {
+    $scope.IsFeed_MyFeedsViewSelected = false;
+    $scope.IsMyFeedsSelected = true;
   }
 
   ////////////////////////////////////////
