@@ -347,7 +347,7 @@
                           </md-toolbar>
                           <md-content>
                             <md-list>
-                              <md-list-item class="md-3-line" ng-repeat="item in rssFeedData" ng-click="null">
+                              <md-list-item class="md-3-line" ng-repeat="item in rssFeedData" ng-click="openFeedItem(item, true)">
                                 <img ng-src="{{currentSelectedFeed_HomeView.icon}}" class="md-avatar" alt="" />
                                 <div class="md-list-item-text" layout="column">
                                   <h3>{{item.title}}</h3>
@@ -363,14 +363,21 @@
                           <md-toolbar class="md-theme-indigo">
                             <div class="md-toolbar-tools">
                               <h2>
-                                <span>Article View</span>
+                                <span>{{currentSelectedFeedItem_HomeView.title}}</span>
                               </h2>
                               <span flex></span>
+                              <span flex></span>
+                              <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="backToMyFeedsView()">
+                                <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
+                              </md-button>
+                              <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="backToMyFeedsView()">
+                                <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
+                              </md-button>
                             </div>
                           </md-toolbar>
-                          <md-content layout-padding>
-                            <h1>Hello, World!</h1>
-                          </md-content>
+                          <md-content>
+                            <md-content id="ArticleViewer_MyFeedsHomeView" style="overflow-y: scroll;" ng-bind-html="bodytext_myfeedshomeview" layout-padding flex>
+                            </md-content>
                         </md-content>
                       </section>
                     </md-content>
@@ -453,7 +460,7 @@
                         </md-toolbar>
                         <md-content flex>
                           <md-list>
-                            <md-list-item class="md-3-line" ng-repeat="item in rssFeedData" ng-click="null">
+                            <md-list-item class="md-3-line" ng-repeat="item in rssFeedData" ng-click="openFeedItem(item, false)">
                               <img ng-src="{{currentSelectedFeed_MyFeedsView.icon}}" class="md-avatar" alt="" />
                               <div class="md-list-item-text" layout="column">
                                 <h3>{{item.title}}</h3>
@@ -469,14 +476,21 @@
                         <md-toolbar class="md-theme-indigo">
                           <div class="md-toolbar-tools">
                             <h2>
-                              <span>Article View</span>
+                              <span>{{currentSelectedFeedItem_MyFeedsView.title}}</span>
                             </h2>
                             <span flex></span>
+                            <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="backToMyFeedsView()">
+                              <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="backToMyFeedsView()">
+                              <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
+                            </md-button>
                           </div>
                         </md-toolbar>
-                        <md-content layout-padding>
-                          <h1>Hello, World!</h1>
-                        </md-content>
+                        <md-content>
+                          <md-content id="ArticleViewer_MyFeedsView" style="overflow-y: scroll;" ng-bind-html="bodytext_myfeedsview" layout-padding flex>
+                          </md-content>
+                      </md-content>
                       </md-content>
                     </section>
                   </md-content>
@@ -723,6 +737,7 @@
     <script src="../../node_modules/angular-animate/angular-animate.min.js"></script>
     <script src="../../node_modules/angular-aria/angular-aria.min.js"></script>
     <script src="../../node_modules/angular-messages/angular-messages.min.js"></script>
+    <script src="../../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
 
     <!-- Angular Material Library -->
     <script src="../../node_modules/angular-material/angular-material.min.js"></script>

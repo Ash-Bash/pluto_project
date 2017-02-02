@@ -2,15 +2,18 @@
 //-----------------Dependencies-Section---------------//
 ////////////////////////////////////////////////////////
 const {BrowserWindow} = require('electron').remote;
+const MercuryClient = require('mercury-client');
 var remote = require('electron').remote;
 var Datastore = require('nedb');
 //var Feed = require("feed-read-parser");
+
+const mc = new MercuryClient('56gxBOmJ7SSsq8HHqN2DwTAi4LbE902GmUzBAAyL');
 
 ////////////////////////////////////////////////////////
 //------------AngularJS-Controllers-Section-----------//
 ////////////////////////////////////////////////////////
 
-angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
+angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
 
 .factory('FeedService',['$http',function($http){
     return {
@@ -21,7 +24,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 }])
 
 //Main Application AngularJS Controller
-.controller('ApplicationController', function($mdMedia, $timeout, $mdSidenav, $mdDialog, $mdUtil, $scope, $http, FeedService) {
+.controller('ApplicationController', function($mdMedia, $timeout, $mdSidenav, $mdDialog, $mdUtil, $scope, $http, $compile, $sanitize, FeedService) {
 
   //AngularJS / $scope Variables
   $scope.webserviceAddress = "http://localhost:2000";
@@ -62,6 +65,8 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
   $scope.currentSelectedFeed_HomeView = {};
   $scope.currentSelectedFeed_MyFeedsView = {};
+  $scope.currentSelectedFeedItem_HomeView = {};
+  $scope.currentSelectedFeedItem_MyFeedsView = {};
 
   //Non $scope Variables
   var feeddata = null;
@@ -203,6 +208,31 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
         $scope.IsFeed_MyFeedsViewSelected = true;
         $scope.IsMyFeedsSelected = false;
       }
+    }
+  }
+
+  $scope.openFeedItem = function(feeditem, ishomeview) {
+    if (ishomeview == true) {
+      $scope.currentSelectedFeedItem_HomeView = feeditem;
+
+      mc.parse(feeditem.link)
+      .then((data) => {
+        console.log('data', data)
+        $scope.bodytext_myfeedshomeview = data.content;
+
+      } )
+      .catch((e) => { console.log('error', e)} )
+
+    } else if (ishomeview == false) {
+      $scope.currentSelectedFeedItem_MyFeedsView = feeditem;
+
+      mc.parse(feeditem.link)
+      .then((data) => {
+        console.log('data', data)
+        $scope.bodytext_myfeedsview = data.content;
+
+      } )
+      .catch((e) => { console.log('error', e)} )
     }
   }
 
