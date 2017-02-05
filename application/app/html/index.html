@@ -343,12 +343,12 @@
                       <section layout="row" flex>
                         <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
                           <md-toolbar class="md-theme-indigo">
-                            <h1 class="md-toolbar-tools">{{currentSelectedFeed_HomeView.name}}</h1>
+                            <h1 class="md-toolbar-tools">{{rssFeedName}}</h1>
                           </md-toolbar>
                           <md-content>
                             <md-list>
                               <md-list-item class="md-3-line" ng-repeat="item in rssFeedData" ng-click="openFeedItem(item, true)">
-                                <img ng-src="{{currentSelectedFeed_HomeView.icon}}" class="md-avatar" alt="" />
+                                <img ng-src="{{rssFeedIcon}}" class="md-avatar" alt="" />
                                 <div class="md-list-item-text" layout="column">
                                   <h3>{{item.title}}</h3>
                                   <h4>{{item.link}}</h4>
@@ -367,17 +367,18 @@
                               </h2>
                               <span flex></span>
                               <span flex></span>
-                              <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="backToMyFeedsView()">
+                              <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="saveFeedItemToFavorites(true)">
                                 <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
                               </md-button>
-                              <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="backToMyFeedsView()">
+                              <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="saveFeedItemToReadLater(true)">
                                 <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
                               </md-button>
                             </div>
                           </md-toolbar>
-                          <md-content>
-                            <md-content id="ArticleViewer_MyFeedsHomeView" style="overflow-y: scroll;" ng-bind-html="bodytext_myfeedshomeview" layout-padding flex>
-                            </md-content>
+                          <md-content id="ArticleView" style="overflow-y: auto;">
+                            <div id="ArticleViewer_MyFeedsView" class="md-whiteframe-5dp" style="background-color: white; margin: auto; width: 80%; object-fit: contain;" ng-bind-html="bodytext_myfeedshomeview" layout-padding>
+                            </div>
+                        </md-content>
                         </md-content>
                       </section>
                     </md-content>
@@ -479,17 +480,17 @@
                               <span>{{currentSelectedFeedItem_MyFeedsView.title}}</span>
                             </h2>
                             <span flex></span>
-                            <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="backToMyFeedsView()">
+                            <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="saveFeedItemToFavorites(false)">
                               <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
                             </md-button>
-                            <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="backToMyFeedsView()">
+                            <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="saveFeedItemToReadLater(false)">
                               <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
                             </md-button>
                           </div>
                         </md-toolbar>
-                        <md-content>
-                          <md-content id="ArticleViewer_MyFeedsView" style="overflow-y: scroll;" ng-bind-html="bodytext_myfeedsview" layout-padding flex>
-                          </md-content>
+                        <md-content id="ArticleView" style="overflow-y: auto;" flex>
+                          <div id="ArticleViewer_MyFeedsView" class="md-whiteframe-5dp" style="background-color: white; margin: auto; width: 80%; object-fit: contain;" ng-bind-html="bodytext_myfeedsview" layout-padding>
+                          </div>
                       </md-content>
                       </md-content>
                     </section>
@@ -532,54 +533,159 @@
             <!--Favorites Standalone Tab-->
             <md-tab ng-if="desktopScreenSizeMode()" id="FavoritesStandaloneTab" label="Favorites">
               <md-content>
-                <md-toolbar class="md-theme-indigo">
-                  <div class="md-toolbar-tools">
-                    <h2>
-                      <span>Favorites</span>
-                    </h2>
-                    <span flex></span>
-                    <md-button class="md-icon-button" aria-label="Favorite">
-                      <ng-md-icon icon="create" style="fill: white; margin-right: 10px;"></ng-md-icon>
-                    </md-button>
-                  </div>
-                </md-toolbar>
-                <h1 class="md-display-2">Favorites</h1>
-                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                <section layout="row" flex>
+                  <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
+                    <md-toolbar class="md-theme-indigo">
+                      <div layout="row">
+                        <div flex="90">
+                          <span><h1 class="md-toolbar-tools">Favorites</h1></span>
+                        </div>
+                        <span flex></span>
+                      </div>
+                    </md-toolbar>
+                    <md-content flex>
+                      <md-list>
+                        <md-list-item class="md-3-line" ng-repeat="item in app_favorites_data" ng-click="openFavoritesItem(item, false)">
+                          <img ng-src="{{item.icon}}" class="md-avatar" alt="" />
+                          <div class="md-list-item-text" layout="column">
+                            <h3>{{item.title}}</h3>
+                            <h4>{{item.link}}</h4>
+                            <p style="height: 48px; overflow: hidden;"><span>{{item.content}}</span></p>
+                          </div>
+                          <md-list-divider></md-list-divider>
+                        </md-list-item>
+                      </md-list>
+                    </md-content>
+                  </md-sidenav>
+                  <md-content flex>
+                    <md-toolbar class="md-theme-indigo">
+                      <div class="md-toolbar-tools">
+                        <h2>
+                          <span>{{currentSelectedFeedItem_MyFeedsView.title}}</span>
+                        </h2>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="backToMyFeedsView()">
+                          <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="backToMyFeedsView()">
+                          <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="backToMyFeedsView()">
+                          <ng-md-icon icon="delete" style="fill: white;"></ng-md-icon>
+                        </md-button>
+                      </div>
+                    </md-toolbar>
+                    <md-content id="ArticleView" style="overflow-y: auto;" flex>
+                      <div id="ArticleViewer_MyFeedsView" class="md-whiteframe-5dp" style="background-color: white; margin: auto; width: 80%; object-fit: contain;" ng-bind-html="bodytext_myfeedsview" layout-padding>
+                      </div>
+                  </md-content>
+                  </md-content>
+                </section>
               </md-content>
             </md-tab>
             <!--Read Later Tab-->
             <md-tab ng-if="desktopScreenSizeMode()" id="ReadLaterTab" label="Read Later">
               <md-content>
-                <md-toolbar class="md-theme-indigo">
-                  <div class="md-toolbar-tools">
-                    <h2>
-                      <span>Read Later</span>
-                    </h2>
-                    <span flex></span>
-                    <md-button class="md-icon-button" aria-label="Favorite">
-                      <ng-md-icon icon="create" style="fill: white; margin-right: 10px;"></ng-md-icon>
-                    </md-button>
-                  </div>
-                </md-toolbar>
-                <h1 class="md-display-2">Read Later</h1>
-                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                <section layout="row" flex>
+                  <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
+                    <md-toolbar class="md-theme-indigo">
+                      <div layout="row">
+                        <div flex="90">
+                          <span><h1 class="md-toolbar-tools">Read Later</h1></span>
+                        </div>
+                        <span flex></span>
+                      </div>
+                    </md-toolbar>
+                    <md-content flex>
+                      <md-list>
+                        <md-list-item class="md-3-line" ng-repeat="item in app_readlater_data" ng-click="openReadLaterItem(item, false)">
+                          <img ng-src="{{item.icon}}" class="md-avatar" alt="" />
+                          <div class="md-list-item-text" layout="column">
+                            <h3>{{item.title}}</h3>
+                            <h4>{{item.link}}</h4>
+                            <p style="height: 48px; overflow: hidden;"><span>{{item.content}}</span></p>
+                          </div>
+                          <md-list-divider></md-list-divider>
+                        </md-list-item>
+                      </md-list>
+                    </md-content>
+                  </md-sidenav>
+                  <md-content flex>
+                    <md-toolbar class="md-theme-indigo">
+                      <div class="md-toolbar-tools">
+                        <h2>
+                          <span>{{currentSelectedFeedItem_MyFeedsView.title}}</span>
+                        </h2>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="backToMyFeedsView()">
+                          <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="backToMyFeedsView()">
+                          <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="backToMyFeedsView()">
+                          <ng-md-icon icon="delete" style="fill: white;"></ng-md-icon>
+                        </md-button>
+                      </div>
+                    </md-toolbar>
+                    <md-content id="ArticleView" style="overflow-y: auto;" flex>
+                      <div id="ArticleViewer_MyFeedsView" class="md-whiteframe-5dp" style="background-color: white; margin: auto; width: 80%; object-fit: contain;" ng-bind-html="bodytext_myfeedsview" layout-padding>
+                      </div>
+                  </md-content>
+                  </md-content>
+                </section>
               </md-content>
             </md-tab>
             <md-tab id="HistoryTab" label="History">
               <md-content>
-                <md-toolbar class="md-theme-indigo">
-                  <div class="md-toolbar-tools">
-                    <h2>
-                      <span>History</span>
-                    </h2>
-                    <span flex></span>
-                    <md-button class="md-icon-button" aria-label="Favorite">
-                      <ng-md-icon icon="create" style="fill: white; margin-right: 10px;"></ng-md-icon>
-                    </md-button>
-                  </div>
-                </md-toolbar>
-                <h1 class="md-display-2">History</h1>
-                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                <section layout="row" flex>
+                  <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
+                    <md-toolbar class="md-theme-indigo">
+                      <div layout="row">
+                        <div flex="90">
+                          <span><h1 class="md-toolbar-tools">History</h1></span>
+                        </div>
+                        <span flex></span>
+                      </div>
+                    </md-toolbar>
+                    <md-content flex>
+                      <md-list>
+                        <md-list-item class="md-3-line" ng-repeat="item in app_history_data" ng-click="openHistoryItem(item, false)">
+                          <img ng-src="{{item.icon}}" class="md-avatar" alt="" />
+                          <div class="md-list-item-text" layout="column">
+                            <h3>{{item.title}}</h3>
+                            <h4>{{item.link}}</h4>
+                            <p style="height: 48px; overflow: hidden;"><span>{{item.content}}</span></p>
+                          </div>
+                          <md-list-divider></md-list-divider>
+                        </md-list-item>
+                      </md-list>
+                    </md-content>
+                  </md-sidenav>
+                  <md-content flex>
+                    <md-toolbar class="md-theme-indigo">
+                      <div class="md-toolbar-tools">
+                        <h2>
+                          <span>{{currentSelectedFeedItem_MyFeedsView.title}}</span>
+                        </h2>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="backToMyFeedsView()">
+                          <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="backToMyFeedsView()">
+                          <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="backToMyFeedsView()">
+                          <ng-md-icon icon="delete" style="fill: white;"></ng-md-icon>
+                        </md-button>
+                      </div>
+                    </md-toolbar>
+                    <md-content id= style="overflow-y: auto;" flex>
+                      <div id="ArticleViewer_MyFeedsView" class="md-whiteframe-5dp" style="background-color: white; margin: auto; width: 80%; object-fit: contain;" ng-bind-html="bodytext_myfeedsview" layout-padding>
+                      </div>
+                  </md-content>
+                  </md-content>
+                </section>
               </md-content>
             </md-tab>
             <md-tab id="FeedListTab" label="Feed List" md-dynamic-height md-border-bottom>

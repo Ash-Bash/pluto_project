@@ -62,11 +62,23 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
 
   // Database Document List Objects
   $scope.app_feeds_data = {};
+  $scope.app_favorites_data = {};
+  $scope.app_readlater_data = {};
+  $scope.app_history_data = {};
 
   $scope.currentSelectedFeed_HomeView = {};
   $scope.currentSelectedFeed_MyFeedsView = {};
   $scope.currentSelectedFeedItem_HomeView = {};
   $scope.currentSelectedFeedItem_MyFeedsView = {};
+  $scope.currentSelectedHistory = {};
+  $scope.currentSelectedFavorites = {};
+  $scope.currentSelectedFavorites_FavSplitView = {};
+  $scope.currentSelectedReadLater = {};
+  $scope.currentSelectedReadLater_FavSplitView = {};
+
+  $scope.rssFeedName = "No Feed";
+  $scope.rssFeedIcon = "";
+  $scope.rssFeedRelIcon = "";
 
   //Non $scope Variables
   var feeddata = null;
@@ -106,7 +118,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       //Loading Databases Into Memory
       // load each database (here we do it asynchronously)
       feeds.loadDatabase(function (err) {    // Callback is optional
-      // Now commands will be executed
+        // Now commands will be executed
         feeds.find({}, function (err, docs) {
           feeddata = docs;
           if(err) throw err;
@@ -114,16 +126,34 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
         });
       });
       pins.loadDatabase(function (err) {    // Callback is optional
-      // Now commands will be executed
+        // Now commands will be executed
+        pins.find({}, function (err, docs) {
+          //feeddata = docs;
+          if(err) throw err;
+          //loadFeedData(feeddata);
+        });
+
       });
       favorites.loadDatabase(function (err) {    // Callback is optional
-      // Now commands will be executed
+        // Now commands will be executed
+        favorites.find({}, function (err, docs) {
+          if(err) throw err;
+          loadFavoritesData(docs);
+        });
       });
       readlater.loadDatabase(function (err) {    // Callback is optional
-      // Now commands will be executed
+        // Now commands will be executed
+        readlater.find({}, function (err, docs) {
+          if(err) throw err;
+          loadReoadLaterData(docs);
+        });
       });
       history.loadDatabase(function (err) {    // Callback is optional
-      // Now commands will be executed
+        // Now commands will be executed
+        history.find({}, function (err, docs) {
+          if(err) throw err;
+          loadHistoryData(docs);
+        });
       });
 
       // Find all documents in the collection
@@ -151,18 +181,71 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       var icon = $scope.app_feeds_data[i].icon
       $scope.app_feeds_data[i].icon = $scope.webserviceAddress + icon
       $scope.app_feeds_data[i].relicon = icon;
+      $scope.app_feeds_data[i].feeddata = null;
+
+      loadRSSFeedData(i, $scope.app_feeds_data[i].feedUrl)
     }
-    console.log($scope.app_feeds_data);
+    //console.log($scope.app_feeds_data);
+  }
+
+  function loadHistoryData(docs) {
+    $scope.app_history_data = docs;
+  }
+
+  function loadFavoritesData(docs) {
+    $scope.app_favorites_data = docs;
+  }
+
+  function loadReoadLaterData(docs) {
+    $scope.app_readlater_data = docs;
+  }
+
+  function loadRSSFeedData(id, feed) {
+    RSSParser.parseURL(feed, function(err, parsed) {
+      $scope.app_feeds_data[id].feeddata = parsed.feed.entries;
+
+      for (var i = 0; i < $scope.app_feeds_data[id].feeddata.length; i++) {
+
+        loadBodyTextFeedData(id, i, $scope.app_feeds_data[id].feeddata[i].link);
+        //console.log($scope.app_feeds_data[id].feeddata[i]);
+      }
+
+      //console.log($scope.app_feeds_data[id].feeddata);
+      //console.log($scope.app_feeds_data);
+    });
   }
 
   function loadRSSData(feed) {
     RSSParser.parseURL(feed.feedUrl, function(err, parsed) {
-      console.log(parsed.feed);
+      //console.log(parsed.feed);
       $scope.rssFeedData = parsed.feed.entries;
+
+      for (var i = 0; i < $scope.rssFeedData.length; i++) {
+        loadBodyText(i, $scope.rssFeedData[i].link);
+        //$scope.rssFeedData[i].bodytext = bodytext;
+        //console.log($scope.rssFeedData[i]);
+      }
     });
 
     $scope.currentSelectedFeed_HomeView = feed;
     $scope.currentSelectedFeed_MyFeedsView = feed;
+  }
+
+  function loadBodyText(id, link) {
+    mc.parse(link)
+    .then((data) => {
+      $scope.rssFeedData[id].bodytext = data.content;
+    } )
+    .catch((e) => { console.log('error', e)} )
+  }
+
+  function loadBodyTextFeedData(feedid, rssid, link) {
+    mc.parse(link)
+    .then((data) => {
+      $scope.app_feeds_data[feedid].feeddata[rssid].bodytext = data.content;
+      //console.log($scope.app_feeds_data);
+    } )
+    .catch((e) => { console.log('error', e)} )
   }
 
   ////////////////////////////////////////
@@ -194,7 +277,10 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
         $scope.IsAllNewsHomeViewSelected = false;
         $scope.IsMyFeedsHomeViewSelected = true;
       } else if ($scope.IsFeed_HomeViewSelected == false) {
-        loadRSSData(feed);
+        $scope.rssFeedData = feed.feeddata;
+        $scope.rssFeedName = feed.name;
+        $scope.rssFeedIcon = feed.icon;
+        $scope.rssFeedRelIcon = feed.relicon;
         $scope.IsFeed_HomeViewSelected = true;
         $scope.IsAllNewsHomeViewSelected = false;
         $scope.IsMyFeedsHomeViewSelected = false;
@@ -204,7 +290,10 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
         $scope.IsFeed_MyFeedsViewSelected = false;
         $scope.IsMyFeedsSelected = true;
       } else if ($scope.IsFeed_MyFeedsViewSelected == false) {
-        loadRSSData(feed);
+        $scope.rssFeedData = feed.feeddata;
+        $scope.rssFeedName = feed.name;
+        $scope.rssFeedIcon = feed.icon;
+        $scope.rssFeedRelIcon = feed.relicon;
         $scope.IsFeed_MyFeedsViewSelected = true;
         $scope.IsMyFeedsSelected = false;
       }
@@ -214,26 +303,75 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
   $scope.openFeedItem = function(feeditem, ishomeview) {
     if (ishomeview == true) {
       $scope.currentSelectedFeedItem_HomeView = feeditem;
+      $scope.bodytext_myfeedshomeview = feeditem.bodytext;
+      console.log($scope.currentSelectedFeedItem_HomeView);
+      $scope.saveArticleToHistory($scope.rssFeedIcon, $scope.rssFeedRelIcon, feeditem);
 
-      mc.parse(feeditem.link)
-      .then((data) => {
-        console.log('data', data)
-        $scope.bodytext_myfeedshomeview = data.content;
-
-      } )
-      .catch((e) => { console.log('error', e)} )
+      console.log($scope.currentSelectedFeedItem_HomeView);
 
     } else if (ishomeview == false) {
       $scope.currentSelectedFeedItem_MyFeedsView = feeditem;
+      $scope.bodytext_myfeedsview = feeditem.bodytext;
 
-      mc.parse(feeditem.link)
-      .then((data) => {
-        console.log('data', data)
-        $scope.bodytext_myfeedsview = data.content;
-
-      } )
-      .catch((e) => { console.log('error', e)} )
+      $scope.saveArticleToHistory($scope.rssFeedIcon, $scope.rssFeedRelIcon, feeditem);
     }
+  }
+
+  $scope.saveArticleToHistory = function(icon, relicon, article) {
+    $scope.app_history_doc = {
+      title: article.title,
+      icon: icon,
+      relicon: relicon,
+      content: article.content,
+      link: article.link,
+      guid: article.guidm,
+      pubDate: article.pubDate,
+      bodytext: article.bodytext
+    };
+
+    history.insert($scope.app_history_doc, function (err, newDoc) {   // Callback is optional
+      // newDoc is the newly inserted document, including its _id
+      // newDoc has no key called notToBeSaved since its value was undefined
+      refresh();
+    });
+  }
+
+  $scope.saveArticleToFavorites = function(icon, relicon, article) {
+    $scope.app_favorites_doc = {
+      title: article.name,
+      icon: icon,
+      relicon: relicon,
+      content: article.content,
+      link: article.link,
+      guid: article.guidm,
+      pubDate: article.pubDate,
+      bodytext: article.bodytext
+    };
+
+    favorites.insert($scope.app_favorites_doc, function (err, newDoc) {   // Callback is optional
+      // newDoc is the newly inserted document, including its _id
+      // newDoc has no key called notToBeSaved since its value was undefined
+      refresh();
+    });
+  }
+
+  $scope.saveArticleToReadLater = function(icon, relicon, article) {
+    $scope.app_readlater_doc = {
+      title: article.name,
+      icon: icon,
+      relicon: relicon,
+      content: article.content,
+      link: article.link,
+      guid: article.guidm,
+      pubDate: article.pubDate,
+      bodytext: article.bodytext
+    };
+
+    readlater.insert($scope.app_readlater_doc, function (err, newDoc) {   // Callback is optional
+      // newDoc is the newly inserted document, including its _id
+      // newDoc has no key called notToBeSaved since its value was undefined
+      refresh();
+    });
   }
 
   //Deletes the selected My Feed Item

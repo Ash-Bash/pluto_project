@@ -17,3 +17,7 @@ md-grid-list {
 md-grid-tile-footer {
   background: rgba(0, 0, 0, 0.75) !important;
 }
+
+#ArticleView {
+  height: calc(100% - 155px) !important;
+}

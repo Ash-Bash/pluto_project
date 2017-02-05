@@ -1,7 +1,7 @@
 angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
 .controller('ApplicationController',  ['$scope', '$http', function($scope, $http) {
-  console.log("Hello World from StationsListController");
+  console.log("Hello World from ApplicationController");
 
   //Declared Vars
   $scope.dsnIP = "http://192.168.1.10";
@@ -77,6 +77,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
 
         $http.post('/api/approvedfeeds', $scope.requestedfeed).success(function(response) {
             console.log(response);
+            refresh();
             $http.delete('/api/requestedfeeds/' + id).success(function(response) {
                 console.log(response);
                 // Refresh WebPage
@@ -101,7 +102,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons'])
     console.log($scope.approvedfeed);
     $http.post('/api/newsfeeds', $scope.approvedfeed).success(function(response) {
         console.log(response);
-
+        refresh();
         $http.delete('/api/approvedfeeds/' + $scope.approvedfeed._id).success(function(response) {
             console.log(response);
             // Refresh WebPage
