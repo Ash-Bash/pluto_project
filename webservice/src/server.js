@@ -12,7 +12,7 @@ var schema = mongoose.Schema;
 var port = 2000;
 
 // MongoDB
-mongoose.connect('mongodb://b00240396:admin@ds129189.mlab.com:29189/pluto_db');
+//mongoose.connect('mongodb://b00240396:admin@ds129189.mlab.com:29189/pluto_db');
 
 // Express
 var app = express();
@@ -66,7 +66,7 @@ approvedfeeds.loadDatabase(function (err) {    // Callback is optional
 
 // Database Schema's
 // Newsfeeds Schema
-var NewsFeedsSchema = schema ({
+/*var NewsFeedsSchema = schema ({
     name: String,
     icon: String,
     region: String,
@@ -102,7 +102,7 @@ var ApprovedFeedsSchema = schema ({
 });
 var ApprovedFeeds = restful.model('approvedfeeds', ApprovedFeedsSchema);
 ApprovedFeeds.methods(['get', 'put', 'post', 'delete']);
-ApprovedFeeds.register(app, '/api/data/approvedfeeds');
+ApprovedFeeds.register(app, '/api/data/approvedfeeds');*/
 
 ////////////////////////////////////////////////////////
 //-----------------------API-Section------------------//

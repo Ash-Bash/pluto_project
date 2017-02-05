@@ -460,7 +460,7 @@
                           </div>
                         </md-toolbar>
                         <md-content flex>
-                          <md-list>
+                          <md-list id="FeedTableView">
                             <md-list-item class="md-3-line" ng-repeat="item in rssFeedData" ng-click="openFeedItem(item, false)">
                               <img ng-src="{{currentSelectedFeed_MyFeedsView.icon}}" class="md-avatar" alt="" />
                               <div class="md-list-item-text" layout="column">
@@ -544,7 +544,7 @@
                       </div>
                     </md-toolbar>
                     <md-content flex>
-                      <md-list>
+                      <md-list id="FeedTableView">
                         <md-list-item class="md-3-line" ng-repeat="item in app_favorites_data" ng-click="openFavoritesItem(item, false)">
                           <img ng-src="{{item.icon}}" class="md-avatar" alt="" />
                           <div class="md-list-item-text" layout="column">
@@ -597,7 +597,7 @@
                       </div>
                     </md-toolbar>
                     <md-content flex>
-                      <md-list>
+                      <md-list id="FeedTableView">
                         <md-list-item class="md-3-line" ng-repeat="item in app_readlater_data" ng-click="openReadLaterItem(item, false)">
                           <img ng-src="{{item.icon}}" class="md-avatar" alt="" />
                           <div class="md-list-item-text" layout="column">
@@ -649,7 +649,7 @@
                       </div>
                     </md-toolbar>
                     <md-content flex>
-                      <md-list>
+                      <md-list id="FeedTableView">
                         <md-list-item class="md-3-line" ng-repeat="item in app_history_data" ng-click="openHistoryItem(item, false)">
                           <img ng-src="{{item.icon}}" class="md-avatar" alt="" />
                           <div class="md-list-item-text" layout="column">
