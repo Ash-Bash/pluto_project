@@ -276,12 +276,12 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       $scope.IsAllNewsHomeViewSelected = true;
       $scope.IsMyFeedsHomeViewSelected = false;
       $scope.IsFeed_HomeViewSelected = false;
-      refresh();
+      //refresh();
     } else if (id == "My_Feeds") {
       $scope.IsAllNewsHomeViewSelected = false;
       $scope.IsMyFeedsHomeViewSelected = true;
       $scope.IsFeed_HomeViewSelected = false;
-      refresh();
+      //refresh();
     }
   }
 
@@ -343,10 +343,10 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
   $scope.viewFavoritesSections = function(id) {
     if(id == "Favorites") {
       $scope.IsFavoritesSelected = true;
-      refresh();
+      //refresh();
     } else if (id == "Read_Later") {
       $scope.IsFavoritesSelected = false;
-      refresh();
+      //refresh();
     }
   }
 

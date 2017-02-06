@@ -489,7 +489,13 @@
                           </div>
                         </md-toolbar>
                         <md-content id="ArticleView" style="" flex>
-                          <div id="ArticleViewer_MyFeedsView" class="md-whiteframe-5dp" style="background-color: white; margin: auto; width: 80%; object-fit: contain;" ng-bind-html="bodytext_myfeedsview" layout-padding>
+                          <div>
+                            <style scoped>
+                              h1 { color: FireBrick;   }
+                              p  { color: SaddleBrown; }
+                            </style>
+                            <span id="ArticleViewer_MyFeedsView" class="md-whiteframe-5dp" style="background-color: white; margin: auto; width: 80%; object-fit: contain;" ng-bind-html="bodytext_myfeedsview" layout-padding>
+                            </span>
                           </div>
                       </md-content>
                       </md-content>

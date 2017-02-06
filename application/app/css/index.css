@@ -26,3 +26,7 @@ md-grid-tile-footer {
 #ArticleView, #FeedTableView {
   height: calc(100% - 155px) !important;
 }
+
+.img-div img, .img-div-center img, .e_espn_item_wrapper img {
+  width: 100%;
+}
