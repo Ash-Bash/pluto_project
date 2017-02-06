@@ -27,6 +27,18 @@ md-grid-tile-footer {
   height: calc(100% - 155px) !important;
 }
 
-.img-div img, .img-div-center img, .e_espn_item_wrapper img {
+#ArticleView img {
   width: 100%;
+}
+
+#ArticleView a {
+  pointer-events: none;
+  cursor: default;
+  color:black;
+  font-style: normal;
+  text-decoration: none;
+}
+
+#ArticleView p, #ArticleView h1 {
+  text-align: center;
 }
