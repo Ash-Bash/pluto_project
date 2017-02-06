@@ -18,6 +18,11 @@ md-grid-tile-footer {
   background: rgba(0, 0, 0, 0.75) !important;
 }
 
+#ArticleView {
+  background-color: #323232;
+  overflow-y: auto;
+}
+
 #ArticleView, #FeedTableView {
   height: calc(100% - 155px) !important;
 }

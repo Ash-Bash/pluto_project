@@ -70,10 +70,10 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
   $scope.currentSelectedFeed_MyFeedsView = {};
   $scope.currentSelectedFeedItem_HomeView = {};
   $scope.currentSelectedFeedItem_MyFeedsView = {};
-  $scope.currentSelectedHistory = {};
-  $scope.currentSelectedFavorites = {};
+  $scope.currentSelectedHistory_HistoryView = {};
+  $scope.currentSelectedFavorites_FavoritesView = {};
   $scope.currentSelectedFavorites_FavSplitView = {};
-  $scope.currentSelectedReadLater = {};
+  $scope.currentSelectedReadLater_ReadLaterView = {};
   $scope.currentSelectedReadLater_FavSplitView = {};
 
   $scope.rssFeedName = "No Feed";
@@ -201,7 +201,18 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
   }
 
   function loadRSSFeedData(id, feed) {
-    RSSParser.parseURL(feed, function(err, parsed) {
+    $http.get($scope.webserviceAddress + '/api/rssfeed/' + encodeURIComponent(feed)).then(function (response) {
+      //console.log(response);
+        $scope.app_feeds_data[id].feeddata = response.data;
+
+        for (var i = 0; i < $scope.app_feeds_data[id].feeddata.length; i++) {
+
+          loadBodyTextFeedData(id, i, $scope.app_feeds_data[id].feeddata[i].link);
+          //console.log($scope.app_feeds_data[id].feeddata[i]);
+        }
+    });
+
+    /*RSSParser.parseURL(feed, function(err, parsed) {
       $scope.app_feeds_data[id].feeddata = parsed.feed.entries;
 
       for (var i = 0; i < $scope.app_feeds_data[id].feeddata.length; i++) {
@@ -212,7 +223,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
 
       //console.log($scope.app_feeds_data[id].feeddata);
       //console.log($scope.app_feeds_data);
-    });
+    });*/
   }
 
   function loadRSSData(feed) {
@@ -232,6 +243,9 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
   }
 
   function loadBodyText(id, link) {
+    /*$http.get($scope.webserviceAddress + '/api/article_page/' + encodeURIComponent(link)).then(function (response) {
+      $scope.rssFeedData[id].bodytext = response.content;
+    });*/
     mc.parse(link)
     .then((data) => {
       $scope.rssFeedData[id].bodytext = data.content;
@@ -240,6 +254,11 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
   }
 
   function loadBodyTextFeedData(feedid, rssid, link) {
+    /*
+    $http.get($scope.webserviceAddress + '/api/article_page/' + encodeURIComponent(link)).then(function (response) {
+      $scope.app_feeds_data[feedid].feeddata[rssid].bodytext = response.content;
+    });
+    */
     mc.parse(link)
     .then((data) => {
       $scope.app_feeds_data[feedid].feeddata[rssid].bodytext = data.content;
@@ -317,6 +336,98 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
     }
   }
 
+  ////////////////////////////////////////
+  //---Favorites-Splitview-Functions----//
+  ////////////////////////////////////////
+  //Allows Views in the Favorites SplitView Section to be hidden or shown id IsFavoritesSelected is true or false
+  $scope.viewFavoritesSections = function(id) {
+    if(id == "Favorites") {
+      $scope.IsFavoritesSelected = true;
+      refresh();
+    } else if (id == "Read_Later") {
+      $scope.IsFavoritesSelected = false;
+      refresh();
+    }
+  }
+
+  $scope.deleteFavoritesItemFromSPVFavoritesView = function() {
+    $scope.deleteHistoryItem($scope.currentSelectedFavorites_FavSplitView);
+  }
+
+  $scope.addToFavoritesFromSPVReadLaterView = function() {
+    $scope.saveArticleToFavorites($scope.currentSelectedReadLater_FavSplitView.icon, $scope.currentSelectedReadLater_FavSplitView.relicon, $scope.currentSelectedReadLater_FavSplitView);
+  }
+
+  $scope.deleteReadLaterItemFromSPVReadLaterView = function() {
+    $scope.deleteHistoryItem($scope.currentSelectedReadLater_FavSplitView);
+  }
+
+  ////////////////////////////////////////
+  //------Favorites-View-Functions------//
+  ////////////////////////////////////////
+
+  $scope.openFavoritesItem = function(feeditem, isFavSplitView) {
+    if (isFavSplitView == true) {
+      $scope.currentSelectedFavorites_FavSplitView = feeditem;
+      $scope.bodytext_favoritesview = feeditem.bodytext;
+    } else if (isFavSplitView == false){
+      $scope.currentSelectedFavorites_FavoritesView = feeditem;
+      $scope.bodytext_favoritesview = feeditem.bodytext;
+    }
+  }
+
+  $scope.deleteFavoritesItemFromFavoritesView = function() {
+    $scope.deleteHistoryItem($scope.currentSelectedFavorites_FavoritesView);
+  }
+
+  ////////////////////////////////////////
+  //------ReadLater-View-Functions------//
+  ////////////////////////////////////////
+
+  $scope.openReadLaterItem = function(feeditem, isFavSplitView) {
+    if (isFavSplitView == true) {
+      $scope.currentSelectedReadLater_FavSplitView= feeditem;
+      $scope.bodytext_readlaterview = feeditem.bodytext;
+    } else if (isFavSplitView == false){
+      $scope.currentSelectedReadLater_ReadLaterView= feeditem;
+      $scope.bodytext_readlaterview = feeditem.bodytext;
+    }
+  }
+
+  $scope.addToFavoritesFromReadLaterView = function() {
+    $scope.saveArticleToFavorites($scope.currentSelectedReadLater_ReadLaterView.icon, $scope.currentSelectedReadLater_ReadLaterView.relicon, $scope.currentSelectedReadLater_ReadLaterView);
+  }
+
+  $scope.deleteReadLaterItemFromReadLaterView = function() {
+    $scope.deleteHistoryItem($scope.currentSelectedReadLater_ReadLaterView);
+  }
+
+  ////////////////////////////////////////
+  //-------History-View-Functions-------//
+  ////////////////////////////////////////
+
+  $scope.openHistoryItem = function(feeditem) {
+    $scope.currentSelectedHistory_HistoryView = feeditem;
+    $scope.bodytext_historyview = feeditem.bodytext;
+  }
+
+  $scope.addToFavoritesFromHistoryView = function() {
+    $scope.saveArticleToFavorites($scope.currentSelectedHistory_HistoryView.icon, $scope.currentSelectedHistory_HistoryView.relicon, $scope.currentSelectedHistory_HistoryView);
+  }
+
+  $scope.addToReadLaterFromHistoryView = function() {
+    $scope.saveArticleToReadLater($scope.currentSelectedHistory_HistoryView.icon, $scope.currentSelectedHistory_HistoryView.relicon, $scope.currentSelectedHistory_HistoryView);
+  }
+
+  $scope.deleteHistoryItemFromHistoryView = function() {
+    $scope.deleteHistoryItem($scope.currentSelectedHistory_HistoryView);
+  }
+
+  $scope.clearAllHistoryItems = function() {
+
+  }
+
+  //Saves an feed item to the History Database
   $scope.saveArticleToHistory = function(icon, relicon, article) {
     $scope.app_history_doc = {
       title: article.title,
@@ -324,7 +435,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       relicon: relicon,
       content: article.content,
       link: article.link,
-      guid: article.guidm,
+      guid: article.guid,
       pubDate: article.pubDate,
       bodytext: article.bodytext
     };
@@ -336,14 +447,15 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
     });
   }
 
+  //Saves an feed item to the Favorites Database
   $scope.saveArticleToFavorites = function(icon, relicon, article) {
     $scope.app_favorites_doc = {
-      title: article.name,
+      title: article.title,
       icon: icon,
       relicon: relicon,
       content: article.content,
       link: article.link,
-      guid: article.guidm,
+      guid: article.guid,
       pubDate: article.pubDate,
       bodytext: article.bodytext
     };
@@ -355,14 +467,15 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
     });
   }
 
+  //Saves an feed item to the ReadLater Database
   $scope.saveArticleToReadLater = function(icon, relicon, article) {
     $scope.app_readlater_doc = {
-      title: article.name,
+      title: article.title,
       icon: icon,
       relicon: relicon,
       content: article.content,
       link: article.link,
-      guid: article.guidm,
+      guid: article.guid,
       pubDate: article.pubDate,
       bodytext: article.bodytext
     };
@@ -371,6 +484,28 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       // newDoc is the newly inserted document, including its _id
       // newDoc has no key called notToBeSaved since its value was undefined
       refresh();
+    });
+  }
+
+  $scope.deleteHistoryItem = function(item) {
+    history.remove({ _id: item.item }, {}, function (err, numRemoved) {
+      if(err) throw err;
+      refresh();
+    });
+  }
+
+  $scope.deleteFavoriteItem = function(item) {
+    favorites.remove({ _id: item.item }, {}, function (err, numRemoved) {
+      if(err) throw err;
+      refresh();
+    });
+  }
+
+  $scope.deleteReadLaterItem = function(item) {
+    readlater.remove({ _id: item.item }, {}, function (err, numRemoved) {
+      if(err) throw err;
+      refresh();
+
     });
   }
 
@@ -396,20 +531,6 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
   $scope.backToMyFeedsView = function() {
     $scope.IsFeed_MyFeedsViewSelected = false;
     $scope.IsMyFeedsSelected = true;
-  }
-
-  ////////////////////////////////////////
-  //---Favorites-Splitview-Functions----//
-  ////////////////////////////////////////
-  //Allows Views in the Favorites SplitView Section to be hidden or shown id IsFavoritesSelected is true or false
-  $scope.viewFavoritesSections = function(id) {
-    if(id == "Favorites") {
-      $scope.IsFavoritesSelected = true;
-      refresh();
-    } else if (id == "Read_Later") {
-      $scope.IsFavoritesSelected = false;
-      refresh();
-    }
   }
 
   ////////////////////////////////////////
@@ -475,7 +596,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       feedUrl: feedItem.feedUrl
     };
 
-    db.feeds.insert($scope.app_feeds_doc, function (err, newDoc) {   // Callback is optional
+    feeds.insert($scope.app_feeds_doc, function (err, newDoc) {   // Callback is optional
       // newDoc is the newly inserted document, including its _id
       // newDoc has no key called notToBeSaved since its value was undefined
       refresh();
