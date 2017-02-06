@@ -61,10 +61,10 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
   $scope.app_history_doc = {};
 
   // Database Document List Objects
-  $scope.app_feeds_data = {};
-  $scope.app_favorites_data = {};
-  $scope.app_readlater_data = {};
-  $scope.app_history_data = {};
+  $scope.app_feeds_data = null;
+  $scope.app_favorites_data = null;
+  $scope.app_readlater_data = null;
+  $scope.app_history_data = null;
 
   $scope.currentSelectedFeed_HomeView = {};
   $scope.currentSelectedFeed_MyFeedsView = {};
