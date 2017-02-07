@@ -58,17 +58,22 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
   $scope.app_readlater_data = null;
   $scope.app_history_data = null;
 
-  $scope.currentSelectedAllNews_HomeView = {};
-  $scope.currentSelectedFeed_HomeView = {};
-  $scope.currentSelectedAllNews_AllNewsView = {};
-  $scope.currentSelectedFeed_MyFeedsView = {};
-  $scope.currentSelectedFeedItem_HomeView = {};
-  $scope.currentSelectedFeedItem_MyFeedsView = {};
-  $scope.currentSelectedHistory_HistoryView = {};
-  $scope.currentSelectedFavorites_FavoritesView = {};
-  $scope.currentSelectedFavorites_FavSplitView = {};
-  $scope.currentSelectedReadLater_ReadLaterView = {};
-  $scope.currentSelectedReadLater_FavSplitView = {};
+  $scope.isfeedsempty = true;
+  $scope.isfavoritesempty = true;
+  $scope.isreadlaterempty = true;
+  $scope.ishistoryempty = true;
+
+  $scope.currentSelectedAllNews_HomeView = null;
+  $scope.currentSelectedFeed_HomeView = null;
+  $scope.currentSelectedAllNews_AllNewsView = null;
+  $scope.currentSelectedFeed_MyFeedsView = null;
+  $scope.currentSelectedFeedItem_HomeView = null;
+  $scope.currentSelectedFeedItem_MyFeedsView = null;
+  $scope.currentSelectedHistory_HistoryView = null;
+  $scope.currentSelectedFavorites_FavoritesView = null;
+  $scope.currentSelectedFavorites_FavSplitView = null;
+  $scope.currentSelectedReadLater_ReadLaterView = null;
+  $scope.currentSelectedReadLater_FavSplitView = null;
 
   $scope.rssFeedName = "No Feed";
   $scope.rssFeedIcon = "";
@@ -118,6 +123,27 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       refreshHistoryData();
   };
 
+  function refreshVars() {
+
+    if($scope.app_favorites_data == null || $scope.app_favorites_data == {}) {
+      $scope.isfavoritesempty = true;
+    } else {
+      $scope.isfavoritesempty = false;
+    }
+
+    if($scope.app_readlater_data == null || $scope.app_readlater_data == {}) {
+      $scope.isreadlaterempty = true;
+    } else {
+      $scope.isreadlaterempty = false;
+    }
+
+    if($scope.app_history_data == null || $scope.app_history_data == {}) {
+      $scope.ishistoryempty = true;
+    } else {
+      $scope.ishistoryempty = false;
+    }
+  }
+
   function refreshFeedData() {
     feeds.loadDatabase(function (err) {    // Callback is optional
       // Now commands will be executed
@@ -125,6 +151,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
         feeddata = docs;
         if(err) throw err;
         loadFeedData(feeddata);
+        refreshVars();
       });
     });
   }
@@ -136,6 +163,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
         //feeddata = docs;
         if(err) throw err;
         //loadFeedData(feeddata);
+        refreshVars();
       });
     });
   }
@@ -146,6 +174,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       favorites.find({}, function (err, docs) {
         if(err) throw err;
         loadFavoritesData(docs);
+        refreshVars();
       });
     });
   };
@@ -156,6 +185,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       readlater.find({}, function (err, docs) {
         if(err) throw err;
         loadReoadLaterData(docs);
+        refreshVars();
       });
     });
   }
@@ -166,6 +196,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       history.find({}, function (err, docs) {
         if(err) throw err;
         loadHistoryData(docs);
+        refreshVars();
       });
     });
   }

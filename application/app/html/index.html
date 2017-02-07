@@ -112,7 +112,7 @@
                         <ng-md-icon icon="star_half" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
                       </span>
                       <span style="margin-left: 10px;">
-                        Favorites
+                        Saved Articles
                       </span>
                     </div>
                   </md-button>
@@ -237,7 +237,7 @@
                 <md-menu-item ng-if="mobileScreenSizeMode()">
                   <md-button ng-click="changeMainTabViewSelectedIndex(1)">
                     <ng-md-icon icon="star_half" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
-                    Show Favorites
+                    Show Saved Articles
                   </md-button>
                 </md-menu-item>
                 <md-menu-item ng-if="desktopScreenSizeMode()">
@@ -283,7 +283,7 @@
                     </div>
                   </md-button>
                 </md-menu-item>
-                <md-menu-item ng-if="app_favorites_data != null">
+                <md-menu-item ng-hide="isfavoritesempty">
                   <md-button ng-click="deleteAllFavoritesItems($event)">
                     <div layout="row">
                       <span>
@@ -817,17 +817,17 @@
               </md-content>
             </md-tab>
             <!--Favorites Tab-->
-            <md-tab ng-if="mobileScreenSizeMode()" id="FavoritesTab" label="Favorites">
+            <md-tab ng-if="mobileScreenSizeMode()" id="FavoritesTab" label="Saved Articles">
               <md-content>
                 <!-- SplitView -->
                 <section layout="row" flex>
                 <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
                   <md-toolbar class="md-theme-indigo">
-                    <h1 class="md-toolbar-tools">Favorites</h1>
+                    <h1 class="md-toolbar-tools">Saved Articles</h1>
                   </md-toolbar>
                   <md-content>
                     <md-list flex>
-                      <md-subheader class="md-no-sticky">Favorites</md-subheader>
+                      <md-subheader class="md-no-sticky">Saved Articles</md-subheader>
                         <md-list-item ng-click="viewFavoritesSections('Favorites')">
                           <ng-md-icon icon="star" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
                           <p>Favorites</p>
