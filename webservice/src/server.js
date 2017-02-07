@@ -12,7 +12,7 @@ var bodyParser = require('body-parser');
 const mc = new MercuryClient('56gxBOmJ7SSsq8HHqN2DwTAi4LbE902GmUzBAAyL');
 
 // Connection Infomation
-var port = 2000;
+var port = 2017;
 
 // Debug Vars
 var isDebug = false;
@@ -411,4 +411,4 @@ app.delete('/api/approvedfeeds/:id', function(req, res){
 
 // Starts Server
 app.listen(port);
-console.log('Pluto API and Web App is Running on port 2000');
+console.log('Charon API and Web App is Running on port ' + port);

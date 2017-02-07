@@ -27,7 +27,7 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
 .controller('ApplicationController', function($mdMedia, $timeout, $mdSidenav, $mdDialog, $mdUtil, $scope, $http, $compile, $sanitize, FeedService) {
 
   //AngularJS / $scope Variables
-  $scope.webserviceAddress = "http://localhost:2000";
+  $scope.webserviceAddress = "http://localhost:2017";
   $scope.isMobile = true;
   $scope.isTablet = false;
   $scope.isDesktop = false;
@@ -66,7 +66,9 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
   $scope.app_readlater_data = null;
   $scope.app_history_data = null;
 
+  $scope.currentSelectedAllNews_HomeView = {};
   $scope.currentSelectedFeed_HomeView = {};
+  $scope.currentSelectedAllNews_AllNewsView = {};
   $scope.currentSelectedFeed_MyFeedsView = {};
   $scope.currentSelectedFeedItem_HomeView = {};
   $scope.currentSelectedFeedItem_MyFeedsView = {};
@@ -283,6 +285,48 @@ angular.module('BlankApp',['ngMaterial', 'ngMdIcons', "ngSanitize"])
       $scope.IsFeed_HomeViewSelected = false;
       //refresh();
     }
+  }
+
+  $scope.addToFavoritesFromHomeView = function(isallnewsview) {
+    if (isallnewsview == true) {
+      $scope.saveArticleToFavorites($scope.currentSelectedAllNews_AllNewsView.icon, $scope.currentSelectedAllNews_AllNewsView.relicon, $scope.currentSelectedAllNews_AllNewsView);
+    } else if (isallnewsview == false) {
+      $scope.saveArticleToFavorites($scope.currentSelectedFeedItem_HomeView.icon, $scope.currentSelectedFeedItem_HomeView.relicon, $scope.currentSelectedFeedItem_HomeView);
+    }
+  }
+
+  $scope.addToReadLaterFromHomeView = function(isallnewsview) {
+    if (isallnewsview == true) {
+      $scope.saveArticleToReadLater($scope.currentSelectedAllNews_AllNewsView.icon, $scope.currentSelectedAllNews_AllNewsView.relicon, $scope.currentSelectedAllNews_AllNewsView);
+    } else if (isallnewsview == false) {
+      $scope.saveArticleToReadLater($scope.currentSelectedFeedItem_HomeView.icon, $scope.currentSelectedFeedItem_HomeView.relicon, $scope.currentSelectedFeedItem_HomeView);
+    }
+  }
+
+  ////////////////////////////////////////
+  //------All-News-View-Functions-------//
+  ////////////////////////////////////////
+
+  $scope.openAllNewsFeedItem = function(feeditem, articleitem, ishomeview) {
+    if (ishomeview == true) {
+      $scope.currentSelectedAllNews_HomeView = articleitem;
+      $scope.bodytext_allnewsview = articleitem.bodytext;
+
+      $scope.saveArticleToHistory(feeditem.icon, feeditem.relicon, articleitem);
+    } else if (ishomeview == false) {
+      $scope.currentSelectedAllNews_AllNewsView = articleitem;
+      $scope.bodytext_allnewshomeview = articleitem.bodytext;
+
+      $scope.saveArticleToHistory(feeditem.icon, feeditem.relicon, articleitem);
+    }
+  }
+
+  $scope.addToFavoritesFromAllNewsView = function() {
+    $scope.saveArticleToFavorites($scope.currentSelectedAllNews_AllNewsView.icon, $scope.currentSelectedAllNews_AllNewsView.relicon, $scope.currentSelectedAllNews_AllNewsView);
+  }
+
+  $scope.addToReadLaterFromAllNewsView = function() {
+    $scope.saveArticleToReadLater($scope.currentSelectedAllNews_AllNewsView.icon, $scope.currentSelectedAllNews_AllNewsView.relicon, $scope.currentSelectedAllNews_AllNewsView);
   }
 
   ////////////////////////////////////////

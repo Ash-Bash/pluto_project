@@ -6,6 +6,10 @@ button, md-menu, md-tab, md-list, md-list-item, md-tabs {
   -webkit-app-region: no-drag;
 }
 
+md-tab {
+  height: 100% !important;
+}
+
 md-menu {
   margin-top: 3px;
 }
@@ -20,10 +24,13 @@ md-grid-tile-footer {
 
 #ArticleView {
   background-color: #323232;
+}
+
+#ArticleView /*, #FeedListGridView, #MyFeedsGridView*/ {
   overflow-y: auto;
 }
 
-#ArticleView, #FeedTableView {
+#ArticleView, #FeedTableView /*, #FeedListGridView, #MyFeedsGridView*/ {
   height: calc(100% - 155px) !important;
 }
 

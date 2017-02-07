@@ -55,7 +55,7 @@
 				"category": "Unknown",
 				"region": "US",
 				"websiteUrl": "http://www.cnet.com/",
-				"feedUrl": "http://www.cnet.com/feedUrl/crave/"
+				"feedUrl": "http://www.cnet.com/rss/crave/"
 			},
 			{
 				"name": "IGN Wireless Articles",
@@ -104,7 +104,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/rugby_league/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/rugby_league/rss.xml?edition=uk"
 			},
 			{
 				"name": "IGN Xbox One Reviews",
@@ -163,7 +163,7 @@
 				"category": "Technology",
 				"region": "US",
 				"websiteUrl": "http://www.cnet.com/",
-				"feedUrl": "http://www.cnet.com/feedUrl/car-tech/"
+				"feedUrl": "http://www.cnet.com/rss/car-tech/"
 			},
 			{
 				"name": "CNET iPhone Update",
@@ -172,7 +172,7 @@
 				"category": "Technology",
 				"region": "US",
 				"websiteUrl": "http://www.cnet.com/",
-				"feedUrl": "http://www.cnet.com/feedUrl/iphone-update/"
+				"feedUrl": "http://www.cnet.com/rss/iphone-update/"
 			},
 			{
 				"name": "BBC News: Science & Environment",
@@ -233,7 +233,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/football/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/football/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNET Gaming",
@@ -242,7 +242,7 @@
 				"category": "Gaming",
 				"region": "US",
 				"websiteUrl": "http://www.cnet.com/",
-				"feedUrl": "http://www.cnet.com/feedUrl/gaming/"
+				"feedUrl": "http://www.cnet.com/rss/gaming/"
 			},
 			{
 				"name": "BBC Sport: Boxing",
@@ -251,7 +251,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/boxing/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/boxing/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNN: Africa",
@@ -276,7 +276,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/other_sports/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/other_sports/rss.xml?edition=uk"
 			},
 			{
 				"name": "Sky News: Technology",
@@ -302,7 +302,7 @@
 				"category": "Reviews",
 				"region": "US",
 				"websiteUrl": "http://www.cnet.com/",
-				"feedUrl": "http://www.cnet.com/feedUrl/reviews/"
+				"feedUrl": "http://www.cnet.com/rss/reviews/"
 			},
 			{
 				"name": "BBC News: Entertainment & Arts",
@@ -328,7 +328,7 @@
 				"category": "Technology",
 				"region": "US",
 				"websiteUrl": "http://www.cnet.com/",
-				"feedUrl": "http://www.cnet.com/feedUrl/android-update/"
+				"feedUrl": "http://www.cnet.com/rss/android-update/"
 			},
 			{
 				"name": "IGN DS & 3DS Articles",
@@ -361,7 +361,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/athletics/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/athletics/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC News: Africa",
@@ -455,7 +455,7 @@
 				"category": "General",
 				"region": "US",
 				"websiteUrl": "http://www.cnet.com/",
-				"feedUrl": "http://www.cnet.com/feedUrl/all/"
+				"feedUrl": "http://www.cnet.com/rss/all/"
 			},
 			{
 				"name": "CNN: Football",
@@ -497,7 +497,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/front_page/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/front_page/rss.xml?edition=uk"
 			},
 			{
 				"name": "Sky News: US",
@@ -509,13 +509,13 @@
 				"feedUrl": "http://feeds.skynews.com/feeds/rss/us.xml"
 			},
 			{
-				"name": "WinBeta",
-				"icon": "/assets/feedicons/WinBeta.png",
-				"icon_set": "Feedicon-WinBeta",
+				"name": "OnMSFT",
+				"icon": "/assets/feedicons/OnMSFT.jpg",
+				"icon_set": "Feedicon-OnMSFT",
 				"category": "Technology",
 				"region": "US",
-				"websiteUrl": "http://www.winbeta.org/",
-				"feedUrl": "http://www.winbeta.org/feedburner/rss.xml?edition=uk"
+				"websiteUrl": "https://www.onmsft.com/",
+				"feedUrl": "https://www.onmsft.com/feed"
 			},
 			{
 				"name": "BBC News: Technology",
@@ -549,7 +549,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/tennis/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/tennis/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNN: World Sport",
@@ -624,7 +624,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/rugby_union/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/rugby_union/rss.xml?edition=uk"
 			},
 			{
 				"name": "IGN PC Articles",
@@ -668,7 +668,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/golf/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/golf/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC Sport: Horse Racing",
@@ -677,7 +677,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/other_sports/horse_racing/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/other_sports/horse_racing/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNET Deals",
@@ -686,7 +686,7 @@
 				"category": "General",
 				"region": "US",
 				"websiteUrl": "http://www.cnet.com/",
-				"feedUrl": "http://www.cnet.com/feedUrl/deals/"
+				"feedUrl": "http://www.cnet.com/rss/deals/"
 			},
 			{
 				"name": "BBC News: Middle East",
@@ -730,7 +730,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/other_sports/snooker/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/other_sports/snooker/rss.xml?edition=uk"
 			},
 			{
 				"name": "IGN PS4 Articles",
@@ -780,7 +780,7 @@
 				"category": "Top Stories",
 				"region": "US",
 				"websiteUrl": "http://www.cnet.com/",
-				"feedUrl": "http://www.cnet.com/feedUrl/news/"
+				"feedUrl": "http://www.cnet.com/rss/news/"
 			},
 			{
 				"name": "BBC Sport: Latest Stories",
@@ -789,7 +789,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/latest_published_stories/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/latest_published_stories/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC Sport: Cricket",
@@ -798,7 +798,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/cricket/rss.xml?edition=uk"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/rss/sportonline_uk_edition/cricket/rss.xml?edition=uk"
 			},
 			{
 				"name": "Sky News: Entertainment",
@@ -847,7 +847,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.formula1.com/",
-				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/latest.rss"
+				"feedUrl": "http://origin.lb.formula1.com/rss/news/latest.rss"
 			},
 			{
 				"name": "Formula One - Latest Headlines",
@@ -855,7 +855,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.formula1.com/",
-				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/headlines.rss"
+				"feedUrl": "http://origin.lb.formula1.com/rss/news/headlines.rss"
 			},
 			{
 				"name": "Formula One - Latest Features",
@@ -863,7 +863,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.formula1.com/",
-				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/features.rss"
+				"feedUrl": "http://origin.lb.formula1.com/rss/news/features.rss"
 			},
 			{
 				"name": "Formula One - Latest Interviews",
@@ -871,7 +871,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.formula1.com/",
-				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/interviews.rss"
+				"feedUrl": "http://origin.lb.formula1.com/rss/news/interviews.rss"
 			},
 			{
 				"name": "ABC News: Top Stories",
@@ -999,7 +999,7 @@
 				"category": "Top Stories",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/main"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/main"
 			},
 			{
 				"name": "CBS News: U.S.",
@@ -1007,7 +1007,7 @@
 				"category": "US",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/us"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/us"
 			},
 			{
 				"name": "CBS News: Politics",
@@ -1015,7 +1015,7 @@
 				"category": "Politics",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/politics"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/politics"
 			},
 			{
 				"name": "CBS News: World",
@@ -1023,7 +1023,7 @@
 				"category": "World",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/world"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/world"
 			},
 			{
 				"name": "CBS News: Sci-Tech",
@@ -1031,7 +1031,7 @@
 				"category": "Technology",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/tech"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/tech"
 			},
 			{
 				"name": "CBS News: Health",
@@ -1039,7 +1039,7 @@
 				"category": "Health",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/health"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/health"
 			},
 			{
 				"name": "CBS News: Entertainment",
@@ -1047,7 +1047,7 @@
 				"category": "Entertainment",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/entertainment"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/entertainment"
 			},
 			{
 				"name": "CBS News: Moneywatch",
@@ -1055,7 +1055,7 @@
 				"category": "Money",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/moneywatch"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/moneywatch"
 			},
 			{
 				"name": "CBS News: This Morning",
@@ -1063,7 +1063,7 @@
 				"category": "General",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/cbs-this-morning"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/cbs-this-morning"
 			},
 			{
 				"name": "CBS News: Evening News",
@@ -1071,7 +1071,7 @@
 				"category": "General",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/evening-news"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/evening-news"
 			},
 			{
 				"name": "CBS News: Sunday News",
@@ -1079,7 +1079,7 @@
 				"category": "General",
 				"region": "US",
 				"websiteUrl": "http://www.cbsnews.com/",
-				"feedUrl": "http://www.cbsnews.com/latest/feedUrl/sunday-morning"
+				"feedUrl": "http://www.cbsnews.com/latest/rss/sunday-morning"
 			},
 			{
 				"name": "USAToday: Top Headlines",
@@ -1087,7 +1087,7 @@
 				"category": "Top Stories",
 				"region": "US",
 				"websiteUrl": "http://www.usatoday.com/",
-				"feedUrl": "http://feedUrlfeeds.usatoday.com/usatoday-NewsTopStories"
+				"feedUrl": "http://rssfeeds.usatoday.com/usatoday-NewsTopStories"
 			},
 			{
 				"name": "ABC News(AUS): Top Stories",
@@ -1223,7 +1223,7 @@
 				"category": "Top Stories",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/topstories.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/topstories.xml"
 			},
 			{
 				"name": "CBC News: World",
@@ -1231,7 +1231,7 @@
 				"category": "World",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/world.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/world.xml"
 			},
 			{
 				"name": "CBC News: Canada",
@@ -1239,7 +1239,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada.xml"
 			},
 			{
 				"name": "CBC News: Politics",
@@ -1247,7 +1247,7 @@
 				"category": "Politics",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/politics.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/politics.xml"
 			},
 			{
 				"name": "CBC News: Business",
@@ -1255,7 +1255,7 @@
 				"category": "Business",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/business.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/business.xml"
 			},
 			{
 				"name": "CBC News: Health",
@@ -1263,7 +1263,7 @@
 				"category": "Health",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/health.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/health.xml"
 			},
 			{
 				"name": "CBC News: Arts & Entertainment",
@@ -1271,7 +1271,7 @@
 				"category": "Entertainment",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/arts.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/arts.xml"
 			},
 			{
 				"name": "CBC News: Technology & Science",
@@ -1279,7 +1279,7 @@
 				"category": "Technology",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/technology.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/technology.xml"
 			},
 			{
 				"name": "CBC News: Offbeat",
@@ -1287,7 +1287,7 @@
 				"category": "General",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/offbeat.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/offbeat.xml"
 			},
 			{
 				"name": "CBC News: Aboriginal",
@@ -1295,7 +1295,7 @@
 				"category": "General",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://www.cbc.ca/cmlink/feedUrl-cbcaboriginal"
+				"feedUrl": "http://www.cbc.ca/cmlink/rss-cbcaboriginal"
 			},
 			{
 				"name": "CBC News: Sport",
@@ -1303,7 +1303,7 @@
 				"category": "Sport",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/sports.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/sports.xml"
 			},
 			{
 				"name": "CBC News: MLB",
@@ -1311,7 +1311,7 @@
 				"category": "Sport",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/sports-mlb.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/sports-mlb.xml"
 			},
 			{
 				"name": "CBC News: NBA",
@@ -1319,7 +1319,7 @@
 				"category": "Sport",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/sports-nba.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/sports-nba.xml"
 			},
 			{
 				"name": "CBC News: Curling",
@@ -1327,7 +1327,7 @@
 				"category": "Sport",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/sports-curling.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/sports-curling.xml"
 			},
 			{
 				"name": "CBC News: CFL",
@@ -1335,7 +1335,7 @@
 				"category": "Sport",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/sports-cfl.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/sports-cfl.xml"
 			},
 			{
 				"name": "CBC News: NFL",
@@ -1343,7 +1343,7 @@
 				"category": "Sport",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/sports-nfl.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/sports-nfl.xml"
 			},
 			{
 				"name": "CBC News: NHL",
@@ -1351,7 +1351,7 @@
 				"category": "Sport",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/sports-nhl.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/sports-nhl.xml"
 			},
 			{
 				"name": "CBC News: Soccer",
@@ -1359,7 +1359,7 @@
 				"category": "Sport",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/sports-soccer.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/sports-soccer.xml"
 			},
 			{
 				"name": "CBC News: Figure Skating",
@@ -1367,7 +1367,7 @@
 				"category": "Sport",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/sports-figureskating.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/sports-figureskating.xml"
 			},
 			{
 				"name": "CBC News: British Columbia",
@@ -1375,7 +1375,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-britishcolumbia.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-britishcolumbia.xml"
 			},
 			{
 				"name": "CBC News: Kamloops",
@@ -1383,7 +1383,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-kamloops.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-kamloops.xml"
 			},
 			{
 				"name": "CBC News: Calgary",
@@ -1391,7 +1391,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-calgary.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-calgary.xml"
 			},
 			{
 				"name": "CBC News: Edmonton",
@@ -1399,7 +1399,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-edmonton.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-edmonton.xml"
 			},
 			{
 				"name": "CBC News: Saskatchewan",
@@ -1407,7 +1407,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-saskatchewan.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-saskatchewan.xml"
 			},
 			{
 				"name": "CBC News: Saskatoon",
@@ -1415,7 +1415,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-saskatoon.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-saskatoon.xml"
 			},
 			{
 				"name": "CBC News: Manitoba",
@@ -1423,7 +1423,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-manitoba.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-manitoba.xml"
 			},
 			{
 				"name": "CBC News: Thunder Bay",
@@ -1431,7 +1431,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-thunderbay.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-thunderbay.xml"
 			},
 			{
 				"name": "CBC News: Sudbury",
@@ -1439,7 +1439,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-sudbury.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-sudbury.xml"
 			},
 			{
 				"name": "CBC News: Windsor",
@@ -1447,7 +1447,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-windsor.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-windsor.xml"
 			},
 			{
 				"name": "CBC News: Kitchener-Waterloo",
@@ -1455,7 +1455,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-kitchenerwaterloo.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-kitchenerwaterloo.xml"
 			},
 			{
 				"name": "CBC News: Toronto",
@@ -1463,7 +1463,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-toronto.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-toronto.xml"
 			},
 			{
 				"name": "CBC News: Ottawa",
@@ -1471,7 +1471,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-ottawa.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-ottawa.xml"
 			},
 			{
 				"name": "CBC News: Montreal",
@@ -1479,7 +1479,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-montreal.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-montreal.xml"
 			},
 			{
 				"name": "CBC News: New Brunswick",
@@ -1487,7 +1487,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-newbrunswick.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-newbrunswick.xml"
 			},
 			{
 				"name": "CBC News: Prince Edward Island",
@@ -1495,7 +1495,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-pei.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-pei.xml"
 			},
 			{
 				"name": "CBC News: Nova Scotia",
@@ -1503,7 +1503,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-novascotia.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-novascotia.xml"
 			},
 			{
 				"name": "CBC News: Newfoundland & Labrador",
@@ -1511,7 +1511,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-newfoundland.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-newfoundland.xml"
 			},
 			{
 				"name": "CBC News: North",
@@ -1519,7 +1519,7 @@
 				"category": "Canada",
 				"region": "CA",
 				"websiteUrl": "http://www.cbc.ca/",
-				"feedUrl": "http://feedUrl.cbc.ca/lineup/canada-north.xml"
+				"feedUrl": "http://rss.cbc.ca/lineup/canada-north.xml"
 			},
 			{
 				"name": "The Hindu: Home",
@@ -1527,7 +1527,7 @@
 				"category": "Top Stories",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/?service=rss"
 			},
 			{
 				"name": "The Hindu: News",
@@ -1535,7 +1535,7 @@
 				"category": "Top Stories",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/?service=rss"
 			},
 			{
 				"name": "The Hindu: Cites",
@@ -1543,7 +1543,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/?service=rss"
 			},
 			{
 				"name": "The Hindu: Bengaluru",
@@ -1551,7 +1551,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/bangalore/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/bangalore/?service=rss"
 			},
 			{
 				"name": "The Hindu: Chennai",
@@ -1559,7 +1559,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/chennai/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/chennai/?service=rss"
 			},
 			{
 				"name": "The Hindu: Coimbatore",
@@ -1567,7 +1567,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/Coimbatore/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/Coimbatore/?service=rss"
 			},
 			{
 				"name": "The Hindu: Delhi",
@@ -1575,7 +1575,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/Delhi/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/Delhi/?service=rss"
 			},
 			{
 				"name": "The Hindu: Hyderabad",
@@ -1583,7 +1583,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/Hyderabad/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/Hyderabad/?service=rss"
 			},
 			{
 				"name": "The Hindu: Kochi",
@@ -1591,7 +1591,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/Kochi/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/Kochi/?service=rss"
 			},
 			{
 				"name": "The Hindu: Kozhikode",
@@ -1599,7 +1599,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/kozhikode/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/kozhikode/?service=rss"
 			},
 			{
 				"name": "The Hindu: Kolkata",
@@ -1607,7 +1607,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/kolkata/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/kolkata/?service=rss"
 			},
 			{
 				"name": "The Hindu: Madurai",
@@ -1615,7 +1615,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/Madurai/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/Madurai/?service=rss"
 			},
 			{
 				"name": "The Hindu: Mangaluru",
@@ -1623,7 +1623,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/Mangalore/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/Mangalore/?service=rss"
 			},
 			{
 				"name": "The Hindu: Mumbai",
@@ -1631,7 +1631,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/mumbai/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/mumbai/?service=rss"
 			},
 			{
 				"name": "The Hindu: Puducherry",
@@ -1639,7 +1639,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/puducherry/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/puducherry/?service=rss"
 			},
 			{
 				"name": "The Hindu: Thiruvananthapuram",
@@ -1647,7 +1647,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/Thiruvananthapuram/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/Thiruvananthapuram/?service=rss"
 			},
 			{
 				"name": "The Hindu: Tiruchirapalli",
@@ -1655,7 +1655,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/Tiruchirapalli/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/Tiruchirapalli/?service=rss"
 			},
 			{
 				"name": "The Hindu: Vijayawada",
@@ -1663,7 +1663,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/Vijayawada/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/Vijayawada/?service=rss"
 			},
 			{
 				"name": "The Hindu: Visakhapatnam",
@@ -1671,7 +1671,7 @@
 				"category": "Cites",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/cities/Visakhapatnam/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/cities/Visakhapatnam/?service=rss"
 			},
 			{
 				"name": "The Hindu: National",
@@ -1679,7 +1679,7 @@
 				"category": "National",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/national/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/national/?service=rss"
 			},
 			{
 				"name": "The Hindu: Andhra Pradesh",
@@ -1687,7 +1687,7 @@
 				"category": "National",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/national/andhra-pradesh/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/national/andhra-pradesh/?service=rss"
 			},
 			{
 				"name": "The Hindu: Karnataka",
@@ -1695,7 +1695,7 @@
 				"category": "National",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/national/karnataka/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/national/karnataka/?service=rss"
 			},
 			{
 				"name": "The Hindu: Kerala",
@@ -1703,7 +1703,7 @@
 				"category": "National",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/national/kerala/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/national/kerala/?service=rss"
 			},
 			{
 				"name": "The Hindu: Tamil Nadu",
@@ -1711,7 +1711,7 @@
 				"category": "National",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/national/tamil-nadu/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/national/tamil-nadu/?service=rss"
 			},
 			{
 				"name": "The Hindu: Telangana",
@@ -1719,7 +1719,7 @@
 				"category": "National",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/national/telangana/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/national/telangana/?service=rss"
 			},
 			{
 				"name": "The Hindu: Other States",
@@ -1727,7 +1727,7 @@
 				"category": "National",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/national/other-states/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/national/other-states/?service=rss"
 			},
 			{
 				"name": "The Hindu: International",
@@ -1735,7 +1735,7 @@
 				"category": "International",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/international/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/international/?service=rss"
 			},
 			{
 				"name": "The Hindu: South Asia",
@@ -1743,7 +1743,7 @@
 				"category": "Asia",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/international/south-asia/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/international/south-asia/?service=rss"
 			},
 			{
 				"name": "The Hindu: World",
@@ -1751,7 +1751,7 @@
 				"category": "World",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/news/international/world/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/news/international/world/?service=rss"
 			},
 			{
 				"name": "The Hindu: Opinion",
@@ -1759,7 +1759,7 @@
 				"category": "Opinion",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/opinion/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/opinion/?service=rss"
 			},
 			{
 				"name": "The Hindu: Business",
@@ -1767,7 +1767,7 @@
 				"category": "Business",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/business/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/business/?service=rss"
 			},
 			{
 				"name": "The Hindu: Agri-Business",
@@ -1775,7 +1775,7 @@
 				"category": "Business",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/business/agri-business/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/business/agri-business/?service=rss"
 			},
 			{
 				"name": "The Hindu: Industry",
@@ -1783,7 +1783,7 @@
 				"category": "Business",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/business/Industry/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/business/Industry/?service=rss"
 			},
 			{
 				"name": "The Hindu: Economy",
@@ -1791,7 +1791,7 @@
 				"category": "Business",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/business/Economy/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/business/Economy/?service=rss"
 			},
 			{
 				"name": "The Hindu: Markets",
@@ -1799,7 +1799,7 @@
 				"category": "Business",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/business/markets/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/business/markets/?service=rss"
 			},
 			{
 				"name": "The Hindu: Sport",
@@ -1807,7 +1807,7 @@
 				"category": "Sport",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sport/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sport/?service=rss"
 			},
 			{
 				"name": "The Hindu: Cricket",
@@ -1815,7 +1815,7 @@
 				"category": "Sport",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sport/cricket/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sport/cricket/?service=rss"
 			},
 			{
 				"name": "The Hindu: Indian Premier League",
@@ -1823,7 +1823,7 @@
 				"category": "Sport",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sport/cricket/ipl/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sport/cricket/ipl/?service=rss"
 			},
 			{
 				"name": "The Hindu: Football",
@@ -1831,7 +1831,7 @@
 				"category": "Sport",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sport/football/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sport/football/?service=rss"
 			},
 			{
 				"name": "The Hindu: Hockey",
@@ -1839,7 +1839,7 @@
 				"category": "Sport",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sport/hockey/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sport/hockey/?service=rss"
 			},
 			{
 				"name": "The Hindu: Tennis",
@@ -1847,7 +1847,7 @@
 				"category": "Sport",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sport/tennis/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sport/tennis/?service=rss"
 			},
 			{
 				"name": "The Hindu: Races",
@@ -1855,7 +1855,7 @@
 				"category": "Sport",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sport/races/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sport/races/?service=rss"
 			},
 			{
 				"name": "The Hindu: Other Sports",
@@ -1863,7 +1863,7 @@
 				"category": "Sport",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sport/other-sports/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sport/other-sports/?service=rss"
 			},
 			{
 				"name": "The Hindu: Features",
@@ -1871,7 +1871,7 @@
 				"category": "General",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/features/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/features/?service=rss"
 			},
 			{
 				"name": "The Hindu: Sci-Tech",
@@ -1879,7 +1879,7 @@
 				"category": "Technology",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sci-tech/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sci-tech/?service=rss"
 			},
 			{
 				"name": "The Hindu: Technology",
@@ -1887,7 +1887,7 @@
 				"category": "Technology",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sci-tech/technology/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sci-tech/technology/?service=rss"
 			},
 			{
 				"name": "The Hindu: Environment",
@@ -1895,7 +1895,7 @@
 				"category": "Environment",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sci-tech/energy-and-environment/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sci-tech/energy-and-environment/?service=rss"
 			},
 			{
 				"name": "The Hindu: Health",
@@ -1903,7 +1903,7 @@
 				"category": "Health",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sci-tech/health/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sci-tech/health/?service=rss"
 			},
 			{
 				"name": "The Hindu: Science",
@@ -1911,7 +1911,7 @@
 				"category": "Science",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sci-tech/science/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sci-tech/science/?service=rss"
 			},
 			{
 				"name": "The Hindu: Agriculture",
@@ -1919,7 +1919,7 @@
 				"category": "Agriculture",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/sci-tech/agriculture/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/sci-tech/agriculture/?service=rss"
 			},
 			{
 				"name": "The Hindu: Entertainment",
@@ -1927,7 +1927,7 @@
 				"category": "Entertainment",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/entertainment/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/entertainment/?service=rss"
 			},
 			{
 				"name": "The Hindu: Art",
@@ -1935,7 +1935,7 @@
 				"category": "Entertainment",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-art/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-art/?service=rss"
 			},
 			{
 				"name": "The Hindu: Cinema",
@@ -1943,7 +1943,7 @@
 				"category": "Entertainment",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-cinema/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-cinema/?service=rss"
 			},
 			{
 				"name": "The Hindu: Dance",
@@ -1951,7 +1951,7 @@
 				"category": "Entertainment",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-dance/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-dance/?service=rss"
 			},
 			{
 				"name": "The Hindu: History And Culture",
@@ -1959,7 +1959,7 @@
 				"category": "Entertainment",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-history/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-history/?service=rss"
 			},
 			{
 				"name": "The Hindu: Music",
@@ -1967,7 +1967,7 @@
 				"category": "Entertainment",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-music/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-music/?service=rss"
 			},
 			{
 				"name": "The Hindu: Theatre",
@@ -1975,7 +1975,15 @@
 				"category": "Entertainment",
 				"region": "IN",
 				"websiteUrl": "http://www.thehindu.com/",
-				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-theatre/?service=feedUrl"
+				"feedUrl": "http://www.thehindu.com/entertainment/entertainment-theatre/?service=rss"
+			},
+			{
+				"name": "InfoWars: Daily News",
+				"icon": "/assets/feedicons/InfoWars.png",
+				"category": "Top Stories",
+				"region": "US",
+				"websiteUrl": "http://www.infowars.com/",
+				"feedUrl": "http://www.infowars.com/rss/daily/"
 			},
 			{
 				"name": "InfoWars",
@@ -1983,7 +1991,15 @@
 				"category": "Top Stories",
 				"region": "US",
 				"websiteUrl": "http://www.infowars.com/",
-				"feedUrl": "http://www.infowars.com/feed/custom_feed_feedUrl"
+				"feedUrl": "http://www.infowars.com/feed/custom_feed_rss"
+			},
+			{
+				"name": "InfoWars: Featured Stories",
+				"icon": "/assets/feedicons/InfoWars.png",
+				"category": "Top Stories",
+				"region": "US",
+				"websiteUrl": "http://www.infowars.com/",
+				"feedUrl": "http://www.infowars.com/category/featured-stories/feed/"
 			},
 			{
 				"name": "The Times: News",
@@ -1991,7 +2007,7 @@
 				"category": "Top Stories",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/rss"
 			},
 			{
 				"name": "The Times: UK News",
@@ -1999,7 +2015,7 @@
 				"category": "UK",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/uk/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/uk/rss"
 			},
 			{
 				"name": "The Times: Defence",
@@ -2007,7 +2023,7 @@
 				"category": "Defence",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/uk/defence/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/uk/defence/rss"
 			},
 			{
 				"name": "The Times: Scottish News",
@@ -2015,7 +2031,7 @@
 				"category": "Scotland",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/uk/scotland/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/uk/scotland/rss"
 			},
 			{
 				"name": "The Times: Crime",
@@ -2023,7 +2039,7 @@
 				"category": "Crime",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/uk/crime/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/uk/crime/rss"
 			},
 			{
 				"name": "The Times: Media News",
@@ -2031,7 +2047,7 @@
 				"category": "Media",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/medianews/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/medianews/rss"
 			},
 			{
 				"name": "The Times: World News",
@@ -2039,7 +2055,7 @@
 				"category": "World",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/rss"
 			},
 			{
 				"name": "The Times: Africa",
@@ -2047,7 +2063,7 @@
 				"category": "Africa",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/africa/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/africa/rss"
 			},
 			{
 				"name": "The Times: Asia",
@@ -2055,7 +2071,7 @@
 				"category": "Asia",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/asia/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/asia/rss"
 			},
 			{
 				"name": "The Times: Australia And New Zealand",
@@ -2063,7 +2079,7 @@
 				"category": "Australia And New Zealand",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/australia-newzealand/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/australia-newzealand/rss"
 			},
 			{
 				"name": "The Times: Europe",
@@ -2071,7 +2087,7 @@
 				"category": "Europe",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/europe/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/europe/rss"
 			},
 			{
 				"name": "The Times: Middle East",
@@ -2079,7 +2095,7 @@
 				"category": "Middle East",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/middleeast/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/middleeast/rss"
 			},
 			{
 				"name": "The Times: US And Americas",
@@ -2087,7 +2103,7 @@
 				"category": "Americas",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/americas/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/world/americas/rss"
 			},
 			{
 				"name": "The Times: Environment",
@@ -2095,7 +2111,7 @@
 				"category": "Environment",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/environment/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/environment/rss"
 			},
 			{
 				"name": "The Times: Faith",
@@ -2103,7 +2119,7 @@
 				"category": "Faith",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/faith/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/faith/rss"
 			},
 			{
 				"name": "The Times: Politics",
@@ -2111,7 +2127,7 @@
 				"category": "Politics",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/news/politics/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/news/politics/rss"
 			},
 			{
 				"name": "The Times: Education",
@@ -2119,7 +2135,7 @@
 				"category": "Education",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/education/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/education/rss"
 			},
 			{
 				"name": "The Times: Science",
@@ -2127,7 +2143,7 @@
 				"category": "Science",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/science/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/science/rss"
 			},
 			{
 				"name": "The Times: Health",
@@ -2135,7 +2151,7 @@
 				"category": "Health",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/health/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/health/rss"
 			},
 			{
 				"name": "The Times: Technology",
@@ -2143,7 +2159,7 @@
 				"category": "Technology",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/technology/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/technology/rss"
 			},
 			{
 				"name": "The Times: Gadgets",
@@ -2151,7 +2167,7 @@
 				"category": "Technology",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/technology/gadgets/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/technology/gadgets/rss"
 			},
 			{
 				"name": "The Times: Games",
@@ -2159,7 +2175,7 @@
 				"category": "Games",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/technology/games/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/technology/games/rss"
 			},
 			{
 				"name": "The Times: Internet",
@@ -2167,7 +2183,7 @@
 				"category": "Technology",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/technology/internet/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/technology/internet/rss"
 			},
 			{
 				"name": "The Times: Business",
@@ -2175,7 +2191,7 @@
 				"category": "Business",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/business/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/business/rss"
 			},
 			{
 				"name": "The Times: Fashion",
@@ -2183,7 +2199,7 @@
 				"category": "Fashion",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/life/fashion/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/life/fashion/rss"
 			},
 			{
 				"name": "The Times: Money",
@@ -2191,7 +2207,7 @@
 				"category": "Money",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/money/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/money/rss"
 			},
 			{
 				"name": "The Times: Sport",
@@ -2199,7 +2215,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/rss"
 			},
 			{
 				"name": "The Times: Football",
@@ -2207,7 +2223,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/football/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/football/rss"
 			},
 			{
 				"name": "The Times: Premier League",
@@ -2215,7 +2231,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/football/premierleague/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/football/premierleague/rss"
 			},
 			{
 				"name": "The Times: Scottish Football",
@@ -2223,7 +2239,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/football/scotland/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/football/scotland/rss"
 			},
 			{
 				"name": "The Times: Athletics",
@@ -2231,7 +2247,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/athletics/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/athletics/rss"
 			},
 			{
 				"name": "The Times: Boxing",
@@ -2239,7 +2255,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/boxing/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/boxing/rss"
 			},
 			{
 				"name": "The Times: Cricket",
@@ -2247,7 +2263,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/cricket/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/cricket/rss"
 			},
 			{
 				"name": "The Times: Cycling",
@@ -2255,7 +2271,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/cycling/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/cycling/rss"
 			},
 			{
 				"name": "The Times: Formula One",
@@ -2263,7 +2279,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/formulaone/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/formulaone/rss"
 			},
 			{
 				"name": "The Times: Golf",
@@ -2271,7 +2287,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/golf/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/golf/rss"
 			},
 			{
 				"name": "The Times: Olympics",
@@ -2279,7 +2295,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/olympics/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/olympics/rss"
 			},
 			{
 				"name": "The Times: Racing",
@@ -2287,7 +2303,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/racing/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/racing/rss"
 			},
 			{
 				"name": "The Times: Rugby League",
@@ -2295,7 +2311,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/rugbyleague/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/rugbyleague/rss"
 			},
 			{
 				"name": "The Times: Rugby Union",
@@ -2303,7 +2319,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/rugbyunion/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/rugbyunion/rss"
 			},
 			{
 				"name": "The Times: Tennis",
@@ -2311,7 +2327,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.thetimes.co.uk/",
-				"feedUrl": "http://www.thetimes.co.uk/tto/sport/tennis/feedUrl"
+				"feedUrl": "http://www.thetimes.co.uk/tto/sport/tennis/rss"
 			},
 			{
 				"name": "Daily Mail: Latest Stories",

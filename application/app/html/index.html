@@ -525,30 +525,42 @@
                             </div>
                           </md-toolbar>
                           <md-content flex>
-                            <md-list id="FeedTableView">
-                              <md-list-item class="md-3-line" ng-repeat="item in rssFeedData" ng-click="openFeedItem(item, false)">
-                                <img ng-src="{{rssFeedIcon}}" class="md-avatar" alt="" />
-                                <div class="md-list-item-text" layout="column">
-                                  <h3>{{item.title}}</h3>
-                                  <h4>{{item.link}}</h4>
-                                  <p style="height: 48px; overflow: hidden;"><span>{{item.content}}</span></p>
+                            <section ng-repeat="feed in app_feeds_data">
+                              <md-subheader class="md-warn">
+                                <div layout="row">
+                                  <span>
+                                    <img ng-src="{{feed.icon}}" style="width: 24px; height: 24px;" class="md-avatar" alt="" />
+                                  </span>
+                                  <span style="margin-left: 10px; margin-top: 5px;">
+                                    {{feed.name}}
+                                  </span>
                                 </div>
-                                <md-list-divider></md-list-divider>
-                              </md-list-item>
-                            </md-list>
+                              </md-subheader>
+                              <md-list layout-padding>
+                                <md-list-item class="md-3-line" ng-repeat="item in feed.feeddata" ng-click="openFeedItem(item, false)">
+                                  <img ng-src="{{rssFeedIcon}}" class="md-avatar" alt="" />
+                                  <div class="md-list-item-text" layout="column">
+                                    <h3>{{item.title}}</h3>
+                                    <h4>{{item.link}}</h4>
+                                    <p style="height: 48px; overflow: hidden;"><span>{{item.content}}</span></p>
+                                  </div>
+                                  <md-list-divider></md-list-divider>
+                                </md-list-item>
+                              </md-list>
+                            </section>
                           </md-content>
                         </md-sidenav>
                         <md-content flex>
                           <md-toolbar class="md-theme-indigo">
                             <div class="md-toolbar-tools">
                               <h2>
-                                <span>{{currentSelectedFeedItem_MyFeedsView.title}}</span>
+                                <span>{{currentSelectedAllNews_HomeView.title}}</span>
                               </h2>
                               <span flex></span>
-                              <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="saveFeedItemToFavorites(false)">
+                              <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="addToFavoritesFromHomeView(true)">
                                 <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
                               </md-button>
-                              <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="saveFeedItemToReadLater(false)">
+                              <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="addToReadLaterFromHomeView(true)">
                                 <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
                               </md-button>
                             </div>
@@ -626,10 +638,10 @@
                               </h2>
                               <span flex></span>
                               <span flex></span>
-                              <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="saveFeedItemToFavorites(true)">
+                              <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="addToFavoritesFromHomeView(false)">
                                 <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
                               </md-button>
-                              <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="saveFeedItemToReadLater(true)">
+                              <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="addToReadLaterFromHomeView(false)">
                                 <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
                               </md-button>
                             </div>
@@ -659,30 +671,42 @@
                       </div>
                     </md-toolbar>
                     <md-content flex>
-                      <md-list id="FeedTableView">
-                        <md-list-item class="md-3-line" ng-repeat="item in rssFeedData" ng-click="openFeedItem(item, false)">
-                          <img ng-src="{{rssFeedIcon}}" class="md-avatar" alt="" />
-                          <div class="md-list-item-text" layout="column">
-                            <h3>{{item.title}}</h3>
-                            <h4>{{item.link}}</h4>
-                            <p style="height: 48px; overflow: hidden;"><span>{{item.content}}</span></p>
+                      <section ng-repeat="feed in app_feeds_data">
+                        <md-subheader class="md-warn">
+                          <div layout="row">
+                            <span>
+                              <img ng-src="{{feed.icon}}" style="width: 24px; height: 24px;" class="md-avatar" alt="" />
+                            </span>
+                            <span style="margin-left: 10px; margin-top: 5px;">
+                              {{feed.name}}
+                            </span>
                           </div>
-                          <md-list-divider></md-list-divider>
-                        </md-list-item>
-                      </md-list>
+                        </md-subheader>
+                        <md-list>
+                          <md-list-item class="md-3-line" ng-repeat="item in feed.feeddata" ng-click="openAllNewsFeedItem(feed, item, false)">
+                            <img ng-src="{{feed.icon}}" class="md-avatar" alt="" />
+                            <div class="md-list-item-text" layout="column">
+                              <h3>{{item.title}}</h3>
+                              <h4>{{item.link}}</h4>
+                              <p style="height: 48px; overflow: hidden;"><span>{{item.content}}</span></p>
+                            </div>
+                            <md-list-divider></md-list-divider>
+                          </md-list-item>
+                        </md-list>
+                      </section>
                     </md-content>
                   </md-sidenav>
                   <md-content flex>
                     <md-toolbar class="md-theme-indigo">
                       <div class="md-toolbar-tools">
                         <h2>
-                          <span>{{currentSelectedFeedItem_MyFeedsView.title}}</span>
+                          <span>{{currentSelectedAllNews_AllNewsView.title}}</span>
                         </h2>
                         <span flex></span>
-                        <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="saveFeedItemToFavorites(false)">
+                        <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="addToFavoritesFromAllNewsView()">
                           <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
                         </md-button>
-                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="saveFeedItemToReadLater(false)">
+                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="addToReadLaterFromAllNewsView()">
                           <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
                         </md-button>
                       </div>
@@ -699,6 +723,7 @@
             <md-tab ng-if="desktopScreenSizeMode()" label="My Feeds">
               <md-content>
                 <md-content ng-if="IsMyFeedsSelected">
+                  <section layout="column">
                   <md-toolbar class="md-theme-indigo">
                     <div class="md-toolbar-tools">
                       <h2>
@@ -710,7 +735,7 @@
                       </md-button>
                     </div>
                   </md-toolbar>
-                  <md-content layout-padding>
+                  <md-content id="MyFeedsGridView" layout-padding>
                     <md-grid-list
                           md-cols="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="6"
                           md-row-height-gt-md="1:1" md-row-height="1:1"
@@ -735,8 +760,9 @@
                       </md-grid-tile-footer>
                       </md-grid-tile>
                   </md-content>
+                </section>
                 </md-content>
-                <md-content ng-if="IsFeed_MyFeedsViewSelected" id="FeedItem_HomeView" flex>
+                <md-content ng-if="IsFeed_MyFeedsViewSelected" id="FeedItem_HomeView" style="height: 100%;">
                   <md-content>
                     <section layout="row" flex>
                       <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="0" md-is-locked-open="true" style="bottom: 0 !important; height: 100% !important;">
@@ -1063,8 +1089,7 @@
                 </section>
               </md-content>
             </md-tab>
-            <md-tab id="FeedListTab" label="Feed List" md-dynamic-height md-border-bottom>
-              <div>
+            <md-tab id="FeedListTab" label="Feed List">
                 <md-toolbar class="md-theme-indigo">
                   <div class="md-toolbar-tools">
                     <h2>
@@ -1076,7 +1101,7 @@
                     </md-button>
                   </div>
                 </md-toolbar>
-                <md-content style="overflow-y: scroll" layout-padding>
+                <md-content id="FeedListGridView" style="overflow-y: scroll" layout-padding>
                   <md-grid-list
                         md-cols="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="6"
                         md-row-height-gt-md="1:1" md-row-height="1:1"
@@ -1182,7 +1207,6 @@
                     </md-button>
                   </md-content>
                 </md-sidenav>
-              </div>
             </md-tab>
             <md-tab id="SettingsTab" label="Settings">
               <md-content>
