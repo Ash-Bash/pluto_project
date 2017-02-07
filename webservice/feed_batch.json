@@ -5,7 +5,7 @@
 				"category": "Motorsport",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_motorsport.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_motorsport.rss"
 			},
 			{
 				"name": "BBC News: Top Stories",
@@ -13,7 +13,7 @@
 				"category": "Top Stories",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC News: Scotland",
@@ -22,7 +22,7 @@
 				"category": "Top Stories",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/scotland/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/scotland/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNN: Asia",
@@ -30,7 +30,7 @@
 				"category": "Asia",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_asia.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_asia.rss"
 			},
 			{
 				"name": "IGN Xbox One Articles",
@@ -46,7 +46,7 @@
 				"category": "Latin America",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/world/latin_america/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/world/latin_america/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNET CAVE",
@@ -79,7 +79,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_tennis.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_tennis.rss"
 			},
 			{
 				"name": "CNN: Golf",
@@ -87,7 +87,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_golf.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_golf.rss"
 			},
 			{
 				"name": "IGN Movie Articles",
@@ -104,7 +104,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/rugby_league/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/rugby_league/rss.xml?edition=uk"
 			},
 			{
 				"name": "IGN Xbox One Reviews",
@@ -120,7 +120,7 @@
 				"category": "Top Stories",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition.rss"
 			},
 			{
 				"name": "IGN E3 Articles",
@@ -137,7 +137,7 @@
 				"category": "America",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/world/us_and_canada/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml?edition=uk"
 			},
 			{
 				"name": "IGN Video Game Articles",
@@ -154,7 +154,7 @@
 				"category": "Education",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/education/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/education/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNET Car Tech",
@@ -181,7 +181,7 @@
 				"category": "Science",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/science_and_environment/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/science_and_environment/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC News: Northern Ireland",
@@ -190,7 +190,7 @@
 				"category": "UK",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/northern_ireland/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/northern_ireland/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC News: Europe",
@@ -199,7 +199,7 @@
 				"category": "Europe",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/world/europe/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/world/europe/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC News: Wales",
@@ -208,7 +208,7 @@
 				"category": "UK",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/wales/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/wales/rss.xml?edition=uk"
 			},
 			{
 				"name": "IGN News",
@@ -233,7 +233,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/football/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/football/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNET Gaming",
@@ -251,7 +251,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/boxing/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/boxing/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNN: Africa",
@@ -259,7 +259,7 @@
 				"category": "Africa",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_africa.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_africa.rss"
 			},
 			{
 				"name": "CNN: Money",
@@ -267,7 +267,7 @@
 				"category": "Money",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/money_news_international.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/money_news_international.rss"
 			},
 			{
 				"name": "BBC Sport: Other Sport",
@@ -276,7 +276,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/other_sports/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/other_sports/rss.xml?edition=uk"
 			},
 			{
 				"name": "Sky News: Technology",
@@ -285,7 +285,7 @@
 				"category": "Technology",
 				"region": "UK",
 				"websiteUrl": "http://news.sky.com/",
-				"feedUrl": "http://feeds.skynews.com/feeds/feedUrl/technology.xml"
+				"feedUrl": "http://feeds.skynews.com/feeds/rss/technology.xml"
 			},
 			{
 				"name": "IGN Reviews",
@@ -311,7 +311,7 @@
 				"category": "Entertainment",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/entertainment_and_arts/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNN: Science & Space",
@@ -319,7 +319,7 @@
 				"category": "Science",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_space.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_space.rss"
 			},
 			{
 				"name": "CNET Android Update",
@@ -361,7 +361,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/athletics/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/athletics/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC News: Africa",
@@ -370,7 +370,7 @@
 				"category": "Africa",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/world/africa/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/world/africa/rss.xml?edition=uk"
 			},
 			{
 				"name": "IGN DS & 3DS Reviews",
@@ -394,7 +394,7 @@
 				"category": "America",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_americas.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_americas.rss"
 			},
 			{
 				"name": "Sky News: Politics",
@@ -403,7 +403,7 @@
 				"category": "Politics",
 				"region": "US",
 				"websiteUrl": "http://news.sky.com/",
-				"feedUrl": "http://feeds.skynews.com/feeds/feedUrl/politics.xml"
+				"feedUrl": "http://feeds.skynews.com/feeds/rss/politics.xml"
 			},
 			{
 				"name": "CNN: Europe",
@@ -411,7 +411,7 @@
 				"category": "Europe",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_europe.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_europe.rss"
 			},
 			{
 				"name": "IGN PS4 Reviews",
@@ -428,7 +428,7 @@
 				"category": "General",
 				"region": "UK",
 				"websiteUrl": "http://news.sky.com/",
-				"feedUrl": "http://feeds.skynews.com/feeds/feedUrl/strange.xml"
+				"feedUrl": "http://feeds.skynews.com/feeds/rss/strange.xml"
 			},
 			{
 				"name": "Sky News: World",
@@ -437,7 +437,7 @@
 				"category": "World",
 				"region": "UK",
 				"websiteUrl": "http://news.sky.com/",
-				"feedUrl": "http://feeds.skynews.com/feeds/feedUrl/world.xml"
+				"feedUrl": "http://feeds.skynews.com/feeds/rss/world.xml"
 			},
 			{
 				"name": "BBC News: England",
@@ -446,7 +446,7 @@
 				"category": "UK",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/england/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/england/rss.xml?edition=uk"
 			},
 			{
 				"name": "All Of CNET",
@@ -463,7 +463,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_football.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_football.rss"
 			},
 			{
 				"name": "BBC News: World",
@@ -472,7 +472,7 @@
 				"category": "World",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/world/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/world/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNN: U.S.",
@@ -480,7 +480,7 @@
 				"category": "America",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_us.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_us.rss"
 			},
 			{
 				"name": "IGN Xbox 360 Articles",
@@ -497,7 +497,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/front_page/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/front_page/rss.xml?edition=uk"
 			},
 			{
 				"name": "Sky News: US",
@@ -506,7 +506,7 @@
 				"category": "America",
 				"region": "US",
 				"websiteUrl": "http://news.sky.com/",
-				"feedUrl": "http://feeds.skynews.com/feeds/feedUrl/us.xml"
+				"feedUrl": "http://feeds.skynews.com/feeds/rss/us.xml"
 			},
 			{
 				"name": "WinBeta",
@@ -515,7 +515,7 @@
 				"category": "Technology",
 				"region": "US",
 				"websiteUrl": "http://www.winbeta.org/",
-				"feedUrl": "http://www.winbeta.org/feedburner/feedUrl.xml"
+				"feedUrl": "http://www.winbeta.org/feedburner/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC News: Technology",
@@ -524,7 +524,7 @@
 				"category": "Technology",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/technology/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/technology/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNN: Entertainment",
@@ -532,7 +532,7 @@
 				"category": "Entertainment",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_entertainment.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_entertainment.rss"
 			},
 			{
 				"name": "IGN PS Vita Articles",
@@ -549,7 +549,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/tennis/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/tennis/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNN: World Sport",
@@ -557,7 +557,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_sport.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_sport.rss"
 			},
 			{
 				"name": "Sky News: Business",
@@ -566,7 +566,7 @@
 				"category": "Business",
 				"region": "UK",
 				"websiteUrl": "http://news.sky.com/",
-				"feedUrl": "http://feeds.skynews.com/feeds/feedUrl/business.xml"
+				"feedUrl": "http://feeds.skynews.com/feeds/rss/business.xml"
 			},
 			{
 				"name": "IGN TV Articles",
@@ -590,7 +590,7 @@
 				"category": "Technology",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_technology.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_technology.rss"
 			},
 			{
 				"name": "IGN Movie Reviews",
@@ -607,7 +607,7 @@
 				"category": "Asia",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/world/asia/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/world/asia/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNN: Middle East",
@@ -615,7 +615,7 @@
 				"category": "Middle East",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_meast.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_meast.rss"
 			},
 			{
 				"name": "BBC Sport: Rugby Union",
@@ -624,7 +624,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/rugby_union/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/rugby_union/rss.xml?edition=uk"
 			},
 			{
 				"name": "IGN PC Articles",
@@ -641,7 +641,7 @@
 				"category": "UK",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/uk/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/uk/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC News: Politics",
@@ -650,7 +650,7 @@
 				"category": "Politics",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/politics/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/politics/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC News: Health",
@@ -659,7 +659,7 @@
 				"category": "Health",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/health/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/health/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC Sport: Golf",
@@ -668,7 +668,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/golf/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/golf/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC Sport: Horse Racing",
@@ -677,7 +677,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/other_sports/horse_racing/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/other_sports/horse_racing/rss.xml?edition=uk"
 			},
 			{
 				"name": "CNET Deals",
@@ -695,7 +695,7 @@
 				"category": "Middle East",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/world/middle_east/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/world/middle_east/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC News: Business",
@@ -704,7 +704,7 @@
 				"category": "Business",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://feeds.bbci.co.uk/news/business/feedUrl.xml"
+				"feedUrl": "http://feeds.bbci.co.uk/news/business/rss.xml?edition=uk"
 			},
 			{
 				"name": "IGN PS Vita Reviews",
@@ -721,7 +721,7 @@
 				"category": "UK",
 				"region": "UK",
 				"websiteUrl": "http://news.sky.com/",
-				"feedUrl": "http://feeds.skynews.com/feeds/feedUrl/uk.xml"
+				"feedUrl": "http://feeds.skynews.com/feeds/rss/uk.xml"
 			},
 			{
 				"name": "BBC Sport: Snooker",
@@ -730,7 +730,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/other_sports/snooker/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/other_sports/snooker/rss.xml?edition=uk"
 			},
 			{
 				"name": "IGN PS4 Articles",
@@ -747,7 +747,7 @@
 				"category": "Top Stories",
 				"region": "UK",
 				"websiteUrl": "http://news.sky.com/",
-				"feedUrl": "http://feeds.skynews.com/feeds/feedUrl/home.xml"
+				"feedUrl": "http://feeds.skynews.com/feeds/rss/home.xml"
 			},
 			{
 				"name": "IGN All Game Reviews",
@@ -771,7 +771,7 @@
 				"category": "World",
 				"region": "US",
 				"websiteUrl": "http://www.cnn.com/",
-				"feedUrl": "http://feedUrl.cnn.com/feedUrl/edition_world.feedUrl"
+				"feedUrl": "http://rss.cnn.com/rss/edition_world.rss"
 			},
 			{
 				"name": "CNET News",
@@ -789,7 +789,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/latest_published_stories/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/latest_published_stories/rss.xml?edition=uk"
 			},
 			{
 				"name": "BBC Sport: Cricket",
@@ -798,7 +798,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.bbc.co.uk/",
-				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/cricket/feedUrl.xml"
+				"feedUrl": "http://newsfeedUrl.bbc.co.uk/feedUrl/sportonline_uk_edition/cricket/rss.xml?edition=uk"
 			},
 			{
 				"name": "Sky News: Entertainment",
@@ -807,7 +807,7 @@
 				"category": "Entertainment",
 				"region": "UK",
 				"websiteUrl": "http://news.sky.com/",
-				"feedUrl": "http://feeds.skynews.com/feeds/feedUrl/entertainment.xml"
+				"feedUrl": "http://feeds.skynews.com/feeds/rss/entertainment.xml"
 			},
 			{
 				"name": "IGN Wii Reviews",
@@ -847,7 +847,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.formula1.com/",
-				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/latest.feedUrl"
+				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/latest.rss"
 			},
 			{
 				"name": "Formula One - Latest Headlines",
@@ -855,7 +855,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.formula1.com/",
-				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/headlines.feedUrl"
+				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/headlines.rss"
 			},
 			{
 				"name": "Formula One - Latest Features",
@@ -863,7 +863,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.formula1.com/",
-				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/features.feedUrl"
+				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/features.rss"
 			},
 			{
 				"name": "Formula One - Latest Interviews",
@@ -871,7 +871,7 @@
 				"category": "Sport",
 				"region": "US",
 				"websiteUrl": "http://www.formula1.com/",
-				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/interviews.feedUrl"
+				"feedUrl": "http://origin.lb.formula1.com/feedUrl/news/interviews.rss"
 			},
 			{
 				"name": "ABC News: Top Stories",
@@ -1095,7 +1095,7 @@
 				"category": "Top Stories",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/45910/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/45910/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): World",
@@ -1103,7 +1103,7 @@
 				"category": "World",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/52278/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/52278/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Australla",
@@ -1111,7 +1111,7 @@
 				"category": "Australia",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/46182/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/46182/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Business",
@@ -1119,7 +1119,7 @@
 				"category": "Business",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/51892/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/51892/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Entertainment",
@@ -1127,7 +1127,7 @@
 				"category": "Entertainment",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/46800/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/46800/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Sport",
@@ -1135,7 +1135,7 @@
 				"category": "Sport",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/45924/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/45924/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Just In",
@@ -1143,7 +1143,7 @@
 				"category": "General",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/51120/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/51120/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): The Drum",
@@ -1151,7 +1151,7 @@
 				"category": "General",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/1054578/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/1054578/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): New South Wales",
@@ -1159,7 +1159,7 @@
 				"category": "Australia",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/52498/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/52498/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Victoria",
@@ -1167,7 +1167,7 @@
 				"category": "Australia",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/54242/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/54242/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Queensland",
@@ -1175,7 +1175,7 @@
 				"category": "Australia",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/50990/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/50990/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Western Australia",
@@ -1183,7 +1183,7 @@
 				"category": "Australia",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/52764/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/52764/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): South Australia",
@@ -1191,7 +1191,7 @@
 				"category": "Australia",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/54702/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/54702/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Tasmania",
@@ -1199,7 +1199,7 @@
 				"category": "Australia",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/50042/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/50042/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Australian Capital Territory",
@@ -1207,7 +1207,7 @@
 				"category": "Australia",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/48320/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/48320/rss.xml?edition=uk"
 			},
 			{
 				"name": "ABC News(AUS): Northern Territory",
@@ -1215,7 +1215,7 @@
 				"category": "Australia",
 				"region": "AUS",
 				"websiteUrl": "http://www.abc.net.au/",
-				"feedUrl": "http://www.abc.net.au/news/feed/53408/feedUrl.xml"
+				"feedUrl": "http://www.abc.net.au/news/feed/53408/rss.xml?edition=uk"
 			},
 			{
 				"name": "CBC News: Top Stories",
@@ -2319,7 +2319,7 @@
 				"category": "Top Stories",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/articles.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/articles.rss"
 			},
 			{
 				"name": "Daily Mail: Home",
@@ -2327,7 +2327,7 @@
 				"category": "Top Stories",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/home/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/home/index.rss"
 			},
 			{
 				"name": "Daily Mail: News",
@@ -2335,7 +2335,7 @@
 				"category": "Top Stories",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/news/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/news/index.rss"
 			},
 			{
 				"name": "Daily Mail: U.S.",
@@ -2343,7 +2343,7 @@
 				"category": "US",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/ushome/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/ushome/index.rss"
 			},
 			{
 				"name": "Daily Mail: Australia",
@@ -2351,7 +2351,7 @@
 				"category": "AU",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/auhome/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/auhome/index.rss"
 			},
 			{
 				"name": "Daily Mail: Sport",
@@ -2359,7 +2359,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sport/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sport/index.rss"
 			},
 			{
 				"name": "Daily Mail: TV And Showbiz",
@@ -2367,7 +2367,7 @@
 				"category": "Entertainment",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/tvshowbiz/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/tvshowbiz/index.rss"
 			},
 			{
 				"name": "Daily Mail: Health",
@@ -2375,7 +2375,7 @@
 				"category": "Health",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/health/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/health/index.rss"
 			},
 			{
 				"name": "Daily Mail: Science",
@@ -2383,7 +2383,7 @@
 				"category": "Science",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sciencetech/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sciencetech/index.rss"
 			},
 			{
 				"name": "Daily Mail: Money",
@@ -2391,7 +2391,7 @@
 				"category": "Money",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/money/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/money/index.rss"
 			},
 			{
 				"name": "Daily Mail: Travel",
@@ -2399,7 +2399,7 @@
 				"category": "Travel",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/travel/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/travel/index.rss"
 			},
 			{
 				"name": "Daily Mail: Top Stories",
@@ -2407,7 +2407,7 @@
 				"category": "Top Stories",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/home/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/home/index.rss"
 			},
 			{
 				"name": "Daily Mail: Motoring",
@@ -2415,7 +2415,7 @@
 				"category": "Motoring",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/motoring/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/motoring/index.rss"
 			},
 			{
 				"name": "Daily Mail: Headlines",
@@ -2423,7 +2423,7 @@
 				"category": "Top Stories",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/news/headlines/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/news/headlines/index.rss"
 			},
 			{
 				"name": "Daily Mail: Arts",
@@ -2431,7 +2431,7 @@
 				"category": "Entertainment",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/news/arts/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/news/arts/index.rss"
 			},
 			{
 				"name": "Daily Mail: World News",
@@ -2439,7 +2439,7 @@
 				"category": "World",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/news/worldnews/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/news/worldnews/index.rss"
 			},
 			{
 				"name": "Daily Mail: Sport Headlines",
@@ -2447,7 +2447,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sport/headlines/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sport/headlines/index.rss"
 			},
 			{
 				"name": "Daily Mail: Top Football Stories",
@@ -2455,7 +2455,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sport/football/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sport/football/index.rss"
 			},
 			{
 				"name": "Daily Mail: Latest Football Stories",
@@ -2463,7 +2463,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sport/football/articles.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sport/football/articles.rss"
 			},
 			{
 				"name": "Daily Mail: Transfer News",
@@ -2471,7 +2471,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sport/transfernews/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sport/transfernews/index.rss"
 			},
 			{
 				"name": "Daily Mail: Extra Time",
@@ -2479,7 +2479,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sport/extratime/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sport/extratime/index.rss"
 			},
 			{
 				"name": "Daily Mail: Cricket",
@@ -2487,7 +2487,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sport/cricket/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sport/cricket/index.rss"
 			},
 			{
 				"name": "Daily Mail: F1",
@@ -2495,7 +2495,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sport/formulaone/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sport/formulaone/index.rss"
 			},
 			{
 				"name": "Daily Mail: Rugby Union",
@@ -2503,7 +2503,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sport/rugbyunion/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sport/rugbyunion/index.rss"
 			},
 			{
 				"name": "Daily Mail: Tennis",
@@ -2511,7 +2511,7 @@
 				"category": "Sport",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/sport/tennis/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/sport/tennis/index.rss"
 			},
 			{
 				"name": "Daily Mail: TV And Showbiz Headlines",
@@ -2519,7 +2519,7 @@
 				"category": "Entertainment",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/tvshowbiz/headlines/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/tvshowbiz/headlines/index.rss"
 			},
 			{
 				"name": "Daily Mail: Top Australia Stories",
@@ -2527,6 +2527,6 @@
 				"category": "AU",
 				"region": "UK",
 				"websiteUrl": "http://www.dailymail.co.uk/",
-				"feedUrl": "http://www.dailymail.co.uk/auhome/index.feedUrl"
+				"feedUrl": "http://www.dailymail.co.uk/auhome/index.rss"
 			}
 ]
