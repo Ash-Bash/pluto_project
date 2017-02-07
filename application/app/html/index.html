@@ -272,7 +272,7 @@
                   </md-button>
                 </md-menu-item>
                 <md-menu-item ng-repeat="item in app_favorites_data | limitTo: 8">
-                  <md-button ng-click="">
+                  <md-button ng-click="openFavoritesView(item)">
                     <div layout="row">
                       <span>
                         <img ng-src="{{item.icon}}" style=" display: inline-block; width: 24px; height: 24px; margin: auto; "/>
@@ -284,7 +284,7 @@
                   </md-button>
                 </md-menu-item>
                 <md-menu-item ng-if="app_favorites_data != null">
-                  <md-button ng-click="">
+                  <md-button ng-click="deleteAllFavoritesItems($event)">
                     <div layout="row">
                       <span>
                         <ng-md-icon icon="delete_sweep" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
@@ -303,7 +303,7 @@
                   </md-button>
                 </md-menu-item>
                 <md-menu-item ng-repeat="item in app_readlater_data | limitTo: 8">
-                  <md-button ng-click="">
+                  <md-button ng-click="openReadLaterView(item)">
                     <div layout="row">
                       <span>
                         <img ng-src="{{item.icon}}" style=" display: inline-block; width: 24px; height: 24px; margin: auto; "/>
@@ -315,7 +315,7 @@
                   </md-button>
                 </md-menu-item>
                 <md-menu-item ng-if="app_readlater_data != null">
-                  <md-button ng-click="">
+                  <md-button ng-click="deleteAllReadLaterItems($event)">
                     <div layout="row">
                       <span>
                         <ng-md-icon icon="delete_sweep" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
@@ -354,7 +354,7 @@
 
                 </md-menu-item>
                 <md-menu-item ng-repeat="item in app_history_data | limitTo: 16">
-                  <md-button ng-click="">
+                  <md-button ng-click="openHistoryView(item)">
                     <div layout="row">
                       <span>
                         <img ng-src="{{item.icon}}" style=" display: inline-block; width: 24px; height: 24px; margin: auto; "/>
@@ -367,7 +367,7 @@
                 </md-menu-item>
                 <md-menu-divider></md-menu-divider>
                 <md-menu-item ng-if="app_history_data != null">
-                  <md-button ng-click="">
+                  <md-button ng-click="deleteAllHistoryItems($event)">
                     <div layout="row">
                       <span>
                         <ng-md-icon icon="delete_sweep" style="fill: #484848; margin-right: 10px;"></ng-md-icon>
@@ -536,15 +536,14 @@
                                   </span>
                                 </div>
                               </md-subheader>
-                              <md-list layout-padding>
-                                <md-list-item class="md-3-line" ng-repeat="item in feed.feeddata" ng-click="openFeedItem(item, false)">
-                                  <img ng-src="{{rssFeedIcon}}" class="md-avatar" alt="" />
+                              <md-list>
+                                <md-list-item class="md-3-line" ng-repeat="item in feed.feeddata" ng-click="openAllNewsFeedItem(feed, item, true)">
+                                  <img ng-src="{{feed.icon}}" class="md-avatar" alt="" />
                                   <div class="md-list-item-text" layout="column">
                                     <h3>{{item.title}}</h3>
                                     <h4>{{item.link}}</h4>
                                     <p style="height: 48px; overflow: hidden;"><span>{{item.content}}</span></p>
                                   </div>
-                                  <md-list-divider></md-list-divider>
                                 </md-list-item>
                               </md-list>
                             </section>
@@ -690,7 +689,6 @@
                               <h4>{{item.link}}</h4>
                               <p style="height: 48px; overflow: hidden;"><span>{{item.content}}</span></p>
                             </div>
-                            <md-list-divider></md-list-divider>
                           </md-list-item>
                         </md-list>
                       </section>
@@ -874,7 +872,7 @@
                               <span>{{currentSelectedFavorites_FavSplitView.title}}</span>
                             </h2>
                             <span flex></span>
-                            <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="deleteFavoritesItemFromSPVFavoritesView()">
+                            <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="deleteFavoritesItemFromSPVFavoritesView($event)">
                               <ng-md-icon icon="delete" style="fill: white;"></ng-md-icon>
                             </md-button>
                           </div>
@@ -923,7 +921,7 @@
                             <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="addToFavoritesFromSPVReadLaterView()">
                               <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
                             </md-button>
-                            <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="deleteReadLaterItemFromSPVReadLaterView()">
+                            <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="deleteReadLaterItemFromSPVReadLaterView($event)">
                               <ng-md-icon icon="delete" style="fill: white;"></ng-md-icon>
                             </md-button>
                           </div>
@@ -973,7 +971,7 @@
                           <span>{{currentSelectedFavorites_FavoritesView.title}}</span>
                         </h2>
                         <span flex></span>
-                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="deleteFavoritesItemFromFavoritesView()">
+                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="deleteFavoritesItemFromFavoritesView($event)">
                           <ng-md-icon icon="delete" style="fill: white;"></ng-md-icon>
                         </md-button>
                       </div>
@@ -1023,7 +1021,7 @@
                         <md-button class="md-icon-button" aria-label="star_border" style="" ng-click="addToFavoritesFromReadLaterView()">
                           <ng-md-icon icon="star_border" style="fill: white;"></ng-md-icon>
                         </md-button>
-                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="deleteReadLaterItemFromReadLaterView()">
+                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="deleteReadLaterItemFromReadLaterView($event)">
                           <ng-md-icon icon="delete" style="fill: white;"></ng-md-icon>
                         </md-button>
                       </div>
@@ -1076,7 +1074,7 @@
                         <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="addToReadLaterFromHistoryView()">
                           <ng-md-icon icon="visibility" style="fill: white;"></ng-md-icon>
                         </md-button>
-                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="deleteHistoryItemFromHistoryView()">
+                        <md-button class="md-icon-button" aria-label="visibility" style="" ng-click="deleteHistoryItemFromHistoryView($event)">
                           <ng-md-icon icon="delete" style="fill: white;"></ng-md-icon>
                         </md-button>
                       </div>
