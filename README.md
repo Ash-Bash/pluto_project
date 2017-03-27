@@ -14,6 +14,7 @@ Session: 16/2017
 * Electron Addon Packages (Some maybe required for Application Packaging)
 
 ### How to install  / run Web Service
+Use the Terminal / Commandline and type theses commands (Make sure you have Node.js Installed)
 
 ```
 cd webservice
@@ -24,6 +25,7 @@ nodemon .
 ```
 
 ### How to install / run Application
+Use the Terminal / Commandline and type theses commands (Make sure you have Node.js Installed)
 
 ```
 cd application
